@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.OffsetDateTime;
@@ -26,25 +25,25 @@ import java.io.Serializable;
 public class AllianceResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("creator_corporation_id")
+    @SerializedName("creator_corporation_id")
     private Integer creatorCorporationId = null;
 
-    @JsonProperty("creator_id")
+    @SerializedName("creator_id")
     private Integer creatorId = null;
 
-    @JsonProperty("date_founded")
+    @SerializedName("date_founded")
     private OffsetDateTime dateFounded = null;
 
-    @JsonProperty("executor_corporation_id")
+    @SerializedName("executor_corporation_id")
     private Integer executorCorporationId = null;
 
-    @JsonProperty("faction_id")
+    @SerializedName("faction_id")
     private Integer factionId = null;
 
-    @JsonProperty("name")
+    @SerializedName("name")
     private String name = null;
 
-    @JsonProperty("ticker")
+    @SerializedName("ticker")
     private String ticker = null;
 
     public AllianceResponse creatorCorporationId(Integer creatorCorporationId) {

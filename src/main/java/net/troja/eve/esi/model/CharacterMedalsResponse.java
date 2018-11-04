@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.OffsetDateTime;
@@ -29,33 +28,35 @@ import java.io.Serializable;
 public class CharacterMedalsResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("corporation_id")
+    @SerializedName("corporation_id")
     private Integer corporationId = null;
 
-    @JsonProperty("date")
+    @SerializedName("date")
     private OffsetDateTime date = null;
 
-    @JsonProperty("description")
+    @SerializedName("description")
     private String description = null;
 
-    @JsonProperty("graphics")
+    @SerializedName("graphics")
     private List<CharacterMedalsGraphic> graphics = new ArrayList<CharacterMedalsGraphic>();
 
-    @JsonProperty("issuer_id")
+    @SerializedName("issuer_id")
     private Integer issuerId = null;
 
-    @JsonProperty("medal_id")
+    @SerializedName("medal_id")
     private Integer medalId = null;
 
-    @JsonProperty("reason")
+    @SerializedName("reason")
     private String reason = null;
 
     /**
      * status string
      */
     public enum StatusEnum {
+        @SerializedName("public")
         PUBLIC("public"),
 
+        @SerializedName("private")
         PRIVATE("private");
 
         private String value;
@@ -68,22 +69,12 @@ public class CharacterMedalsResponse implements Serializable {
         public String toString() {
             return String.valueOf(value);
         }
-
-        @JsonCreator
-        public static StatusEnum fromValue(String text) {
-            for (StatusEnum b : StatusEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
     }
 
-    @JsonProperty("status")
+    @SerializedName("status")
     private StatusEnum status = null;
 
-    @JsonProperty("title")
+    @SerializedName("title")
     private String title = null;
 
     public CharacterMedalsResponse corporationId(Integer corporationId) {

@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -26,16 +25,16 @@ import java.io.Serializable;
 public class Defender implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("alliance_id")
+    @SerializedName("alliance_id")
     private Integer allianceId = null;
 
-    @JsonProperty("corporation_id")
+    @SerializedName("corporation_id")
     private Integer corporationId = null;
 
-    @JsonProperty("isk_destroyed")
+    @SerializedName("isk_destroyed")
     private Float iskDestroyed = null;
 
-    @JsonProperty("ships_killed")
+    @SerializedName("ships_killed")
     private Integer shipsKilled = null;
 
     public Defender allianceId(Integer allianceId) {

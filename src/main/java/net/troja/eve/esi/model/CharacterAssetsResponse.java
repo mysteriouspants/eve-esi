@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -25,175 +24,254 @@ import java.io.Serializable;
 public class CharacterAssetsResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("is_blueprint_copy")
+    @SerializedName("is_blueprint_copy")
     private Boolean isBlueprintCopy = null;
 
-    @JsonProperty("is_singleton")
+    @SerializedName("is_singleton")
     private Boolean isSingleton = null;
 
-    @JsonProperty("item_id")
+    @SerializedName("item_id")
     private Long itemId = null;
 
     /**
      * location_flag string
      */
     public enum LocationFlagEnum {
+        @SerializedName("AssetSafety")
         ASSETSAFETY("AssetSafety"),
 
+        @SerializedName("AutoFit")
         AUTOFIT("AutoFit"),
 
+        @SerializedName("BoosterBay")
         BOOSTERBAY("BoosterBay"),
 
+        @SerializedName("Cargo")
         CARGO("Cargo"),
 
+        @SerializedName("CorpseBay")
         CORPSEBAY("CorpseBay"),
 
+        @SerializedName("Deliveries")
         DELIVERIES("Deliveries"),
 
+        @SerializedName("DroneBay")
         DRONEBAY("DroneBay"),
 
+        @SerializedName("FighterBay")
         FIGHTERBAY("FighterBay"),
 
+        @SerializedName("FighterTube0")
         FIGHTERTUBE0("FighterTube0"),
 
+        @SerializedName("FighterTube1")
         FIGHTERTUBE1("FighterTube1"),
 
+        @SerializedName("FighterTube2")
         FIGHTERTUBE2("FighterTube2"),
 
+        @SerializedName("FighterTube3")
         FIGHTERTUBE3("FighterTube3"),
 
+        @SerializedName("FighterTube4")
         FIGHTERTUBE4("FighterTube4"),
 
+        @SerializedName("FleetHangar")
         FLEETHANGAR("FleetHangar"),
 
+        @SerializedName("Hangar")
         HANGAR("Hangar"),
 
+        @SerializedName("HangarAll")
         HANGARALL("HangarAll"),
 
+        @SerializedName("HiSlot0")
         HISLOT0("HiSlot0"),
 
+        @SerializedName("HiSlot1")
         HISLOT1("HiSlot1"),
 
+        @SerializedName("HiSlot2")
         HISLOT2("HiSlot2"),
 
+        @SerializedName("HiSlot3")
         HISLOT3("HiSlot3"),
 
+        @SerializedName("HiSlot4")
         HISLOT4("HiSlot4"),
 
+        @SerializedName("HiSlot5")
         HISLOT5("HiSlot5"),
 
+        @SerializedName("HiSlot6")
         HISLOT6("HiSlot6"),
 
+        @SerializedName("HiSlot7")
         HISLOT7("HiSlot7"),
 
+        @SerializedName("HiddenModifiers")
         HIDDENMODIFIERS("HiddenModifiers"),
 
+        @SerializedName("Implant")
         IMPLANT("Implant"),
 
+        @SerializedName("LoSlot0")
         LOSLOT0("LoSlot0"),
 
+        @SerializedName("LoSlot1")
         LOSLOT1("LoSlot1"),
 
+        @SerializedName("LoSlot2")
         LOSLOT2("LoSlot2"),
 
+        @SerializedName("LoSlot3")
         LOSLOT3("LoSlot3"),
 
+        @SerializedName("LoSlot4")
         LOSLOT4("LoSlot4"),
 
+        @SerializedName("LoSlot5")
         LOSLOT5("LoSlot5"),
 
+        @SerializedName("LoSlot6")
         LOSLOT6("LoSlot6"),
 
+        @SerializedName("LoSlot7")
         LOSLOT7("LoSlot7"),
 
+        @SerializedName("Locked")
         LOCKED("Locked"),
 
+        @SerializedName("MedSlot0")
         MEDSLOT0("MedSlot0"),
 
+        @SerializedName("MedSlot1")
         MEDSLOT1("MedSlot1"),
 
+        @SerializedName("MedSlot2")
         MEDSLOT2("MedSlot2"),
 
+        @SerializedName("MedSlot3")
         MEDSLOT3("MedSlot3"),
 
+        @SerializedName("MedSlot4")
         MEDSLOT4("MedSlot4"),
 
+        @SerializedName("MedSlot5")
         MEDSLOT5("MedSlot5"),
 
+        @SerializedName("MedSlot6")
         MEDSLOT6("MedSlot6"),
 
+        @SerializedName("MedSlot7")
         MEDSLOT7("MedSlot7"),
 
+        @SerializedName("QuafeBay")
         QUAFEBAY("QuafeBay"),
 
+        @SerializedName("RigSlot0")
         RIGSLOT0("RigSlot0"),
 
+        @SerializedName("RigSlot1")
         RIGSLOT1("RigSlot1"),
 
+        @SerializedName("RigSlot2")
         RIGSLOT2("RigSlot2"),
 
+        @SerializedName("RigSlot3")
         RIGSLOT3("RigSlot3"),
 
+        @SerializedName("RigSlot4")
         RIGSLOT4("RigSlot4"),
 
+        @SerializedName("RigSlot5")
         RIGSLOT5("RigSlot5"),
 
+        @SerializedName("RigSlot6")
         RIGSLOT6("RigSlot6"),
 
+        @SerializedName("RigSlot7")
         RIGSLOT7("RigSlot7"),
 
+        @SerializedName("ShipHangar")
         SHIPHANGAR("ShipHangar"),
 
+        @SerializedName("Skill")
         SKILL("Skill"),
 
+        @SerializedName("SpecializedAmmoHold")
         SPECIALIZEDAMMOHOLD("SpecializedAmmoHold"),
 
+        @SerializedName("SpecializedCommandCenterHold")
         SPECIALIZEDCOMMANDCENTERHOLD("SpecializedCommandCenterHold"),
 
+        @SerializedName("SpecializedFuelBay")
         SPECIALIZEDFUELBAY("SpecializedFuelBay"),
 
+        @SerializedName("SpecializedGasHold")
         SPECIALIZEDGASHOLD("SpecializedGasHold"),
 
+        @SerializedName("SpecializedIndustrialShipHold")
         SPECIALIZEDINDUSTRIALSHIPHOLD("SpecializedIndustrialShipHold"),
 
+        @SerializedName("SpecializedLargeShipHold")
         SPECIALIZEDLARGESHIPHOLD("SpecializedLargeShipHold"),
 
+        @SerializedName("SpecializedMaterialBay")
         SPECIALIZEDMATERIALBAY("SpecializedMaterialBay"),
 
+        @SerializedName("SpecializedMediumShipHold")
         SPECIALIZEDMEDIUMSHIPHOLD("SpecializedMediumShipHold"),
 
+        @SerializedName("SpecializedMineralHold")
         SPECIALIZEDMINERALHOLD("SpecializedMineralHold"),
 
+        @SerializedName("SpecializedOreHold")
         SPECIALIZEDOREHOLD("SpecializedOreHold"),
 
+        @SerializedName("SpecializedPlanetaryCommoditiesHold")
         SPECIALIZEDPLANETARYCOMMODITIESHOLD("SpecializedPlanetaryCommoditiesHold"),
 
+        @SerializedName("SpecializedSalvageHold")
         SPECIALIZEDSALVAGEHOLD("SpecializedSalvageHold"),
 
+        @SerializedName("SpecializedShipHold")
         SPECIALIZEDSHIPHOLD("SpecializedShipHold"),
 
+        @SerializedName("SpecializedSmallShipHold")
         SPECIALIZEDSMALLSHIPHOLD("SpecializedSmallShipHold"),
 
+        @SerializedName("SubSystemBay")
         SUBSYSTEMBAY("SubSystemBay"),
 
+        @SerializedName("SubSystemSlot0")
         SUBSYSTEMSLOT0("SubSystemSlot0"),
 
+        @SerializedName("SubSystemSlot1")
         SUBSYSTEMSLOT1("SubSystemSlot1"),
 
+        @SerializedName("SubSystemSlot2")
         SUBSYSTEMSLOT2("SubSystemSlot2"),
 
+        @SerializedName("SubSystemSlot3")
         SUBSYSTEMSLOT3("SubSystemSlot3"),
 
+        @SerializedName("SubSystemSlot4")
         SUBSYSTEMSLOT4("SubSystemSlot4"),
 
+        @SerializedName("SubSystemSlot5")
         SUBSYSTEMSLOT5("SubSystemSlot5"),
 
+        @SerializedName("SubSystemSlot6")
         SUBSYSTEMSLOT6("SubSystemSlot6"),
 
+        @SerializedName("SubSystemSlot7")
         SUBSYSTEMSLOT7("SubSystemSlot7"),
 
+        @SerializedName("Unlocked")
         UNLOCKED("Unlocked"),
 
+        @SerializedName("Wardrobe")
         WARDROBE("Wardrobe");
 
         private String value;
@@ -206,32 +284,25 @@ public class CharacterAssetsResponse implements Serializable {
         public String toString() {
             return String.valueOf(value);
         }
-
-        @JsonCreator
-        public static LocationFlagEnum fromValue(String text) {
-            for (LocationFlagEnum b : LocationFlagEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
     }
 
-    @JsonProperty("location_flag")
+    @SerializedName("location_flag")
     private LocationFlagEnum locationFlag = null;
 
-    @JsonProperty("location_id")
+    @SerializedName("location_id")
     private Long locationId = null;
 
     /**
      * location_type string
      */
     public enum LocationTypeEnum {
+        @SerializedName("station")
         STATION("station"),
 
+        @SerializedName("solar_system")
         SOLAR_SYSTEM("solar_system"),
 
+        @SerializedName("other")
         OTHER("other");
 
         private String value;
@@ -244,25 +315,15 @@ public class CharacterAssetsResponse implements Serializable {
         public String toString() {
             return String.valueOf(value);
         }
-
-        @JsonCreator
-        public static LocationTypeEnum fromValue(String text) {
-            for (LocationTypeEnum b : LocationTypeEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
     }
 
-    @JsonProperty("location_type")
+    @SerializedName("location_type")
     private LocationTypeEnum locationType = null;
 
-    @JsonProperty("quantity")
+    @SerializedName("quantity")
     private Integer quantity = null;
 
-    @JsonProperty("type_id")
+    @SerializedName("type_id")
     private Integer typeId = null;
 
     public CharacterAssetsResponse isBlueprintCopy(Boolean isBlueprintCopy) {

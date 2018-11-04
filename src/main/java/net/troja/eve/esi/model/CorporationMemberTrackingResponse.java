@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.OffsetDateTime;
@@ -26,25 +25,25 @@ import java.io.Serializable;
 public class CorporationMemberTrackingResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("base_id")
+    @SerializedName("base_id")
     private Integer baseId = null;
 
-    @JsonProperty("character_id")
+    @SerializedName("character_id")
     private Integer characterId = null;
 
-    @JsonProperty("location_id")
+    @SerializedName("location_id")
     private Long locationId = null;
 
-    @JsonProperty("logoff_date")
+    @SerializedName("logoff_date")
     private OffsetDateTime logoffDate = null;
 
-    @JsonProperty("logon_date")
+    @SerializedName("logon_date")
     private OffsetDateTime logonDate = null;
 
-    @JsonProperty("ship_type_id")
+    @SerializedName("ship_type_id")
     private Integer shipTypeId = null;
 
-    @JsonProperty("start_date")
+    @SerializedName("start_date")
     private OffsetDateTime startDate = null;
 
     public CorporationMemberTrackingResponse baseId(Integer baseId) {

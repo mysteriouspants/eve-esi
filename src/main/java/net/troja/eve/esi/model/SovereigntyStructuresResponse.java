@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.OffsetDateTime;
@@ -26,25 +25,25 @@ import java.io.Serializable;
 public class SovereigntyStructuresResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("alliance_id")
+    @SerializedName("alliance_id")
     private Integer allianceId = null;
 
-    @JsonProperty("solar_system_id")
+    @SerializedName("solar_system_id")
     private Integer solarSystemId = null;
 
-    @JsonProperty("structure_id")
+    @SerializedName("structure_id")
     private Long structureId = null;
 
-    @JsonProperty("structure_type_id")
+    @SerializedName("structure_type_id")
     private Integer structureTypeId = null;
 
-    @JsonProperty("vulnerability_occupancy_level")
+    @SerializedName("vulnerability_occupancy_level")
     private Float vulnerabilityOccupancyLevel = null;
 
-    @JsonProperty("vulnerable_end_time")
+    @SerializedName("vulnerable_end_time")
     private OffsetDateTime vulnerableEndTime = null;
 
-    @JsonProperty("vulnerable_start_time")
+    @SerializedName("vulnerable_start_time")
     private OffsetDateTime vulnerableStartTime = null;
 
     public SovereigntyStructuresResponse allianceId(Integer allianceId) {

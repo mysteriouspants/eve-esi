@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -25,16 +24,16 @@ import java.io.Serializable;
 public class OpportunitiesTasksResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("description")
+    @SerializedName("description")
     private String description = null;
 
-    @JsonProperty("name")
+    @SerializedName("name")
     private String name = null;
 
-    @JsonProperty("notification")
+    @SerializedName("notification")
     private String notification = null;
 
-    @JsonProperty("task_id")
+    @SerializedName("task_id")
     private Integer taskId = null;
 
     public OpportunitiesTasksResponse description(String description) {

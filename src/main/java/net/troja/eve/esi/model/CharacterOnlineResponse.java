@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.OffsetDateTime;
@@ -26,16 +25,16 @@ import java.io.Serializable;
 public class CharacterOnlineResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("last_login")
+    @SerializedName("last_login")
     private OffsetDateTime lastLogin = null;
 
-    @JsonProperty("last_logout")
+    @SerializedName("last_logout")
     private OffsetDateTime lastLogout = null;
 
-    @JsonProperty("logins")
+    @SerializedName("logins")
     private Integer logins = null;
 
-    @JsonProperty("online")
+    @SerializedName("online")
     private Boolean online = null;
 
     public CharacterOnlineResponse lastLogin(OffsetDateTime lastLogin) {

@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -25,16 +24,16 @@ import java.io.Serializable;
 public class SystemKillsResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("npc_kills")
+    @SerializedName("npc_kills")
     private Integer npcKills = null;
 
-    @JsonProperty("pod_kills")
+    @SerializedName("pod_kills")
     private Integer podKills = null;
 
-    @JsonProperty("ship_kills")
+    @SerializedName("ship_kills")
     private Integer shipKills = null;
 
-    @JsonProperty("system_id")
+    @SerializedName("system_id")
     private Integer systemId = null;
 
     public SystemKillsResponse npcKills(Integer npcKills) {

@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -25,17 +24,20 @@ import java.io.Serializable;
 public class StructureService implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("name")
+    @SerializedName("name")
     private String name = null;
 
     /**
      * state string
      */
     public enum StateEnum {
+        @SerializedName("online")
         ONLINE("online"),
 
+        @SerializedName("offline")
         OFFLINE("offline"),
 
+        @SerializedName("cleanup")
         CLEANUP("cleanup");
 
         private String value;
@@ -48,19 +50,9 @@ public class StructureService implements Serializable {
         public String toString() {
             return String.valueOf(value);
         }
-
-        @JsonCreator
-        public static StateEnum fromValue(String text) {
-            for (StateEnum b : StateEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
     }
 
-    @JsonProperty("state")
+    @SerializedName("state")
     private StateEnum state = null;
 
     public StructureService name(String name) {

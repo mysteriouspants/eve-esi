@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.OffsetDateTime;
@@ -26,41 +25,53 @@ import java.io.Serializable;
 public class CharacterWalletJournalResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("amount")
+    @SerializedName("amount")
     private Double amount = null;
 
-    @JsonProperty("balance")
+    @SerializedName("balance")
     private Double balance = null;
 
-    @JsonProperty("context_id")
+    @SerializedName("context_id")
     private Long contextId = null;
 
     /**
      * The type of the given context_id if present
      */
     public enum ContextIdTypeEnum {
+        @SerializedName("structure_id")
         STRUCTURE_ID("structure_id"),
 
+        @SerializedName("station_id")
         STATION_ID("station_id"),
 
+        @SerializedName("market_transaction_id")
         MARKET_TRANSACTION_ID("market_transaction_id"),
 
+        @SerializedName("character_id")
         CHARACTER_ID("character_id"),
 
+        @SerializedName("corporation_id")
         CORPORATION_ID("corporation_id"),
 
+        @SerializedName("alliance_id")
         ALLIANCE_ID("alliance_id"),
 
+        @SerializedName("eve_system")
         EVE_SYSTEM("eve_system"),
 
+        @SerializedName("industry_job_id")
         INDUSTRY_JOB_ID("industry_job_id"),
 
+        @SerializedName("contract_id")
         CONTRACT_ID("contract_id"),
 
+        @SerializedName("planet_id")
         PLANET_ID("planet_id"),
 
+        @SerializedName("system_id")
         SYSTEM_ID("system_id"),
 
+        @SerializedName("type_id")
         TYPE_ID("type_id");
 
         private String value;
@@ -73,34 +84,24 @@ public class CharacterWalletJournalResponse implements Serializable {
         public String toString() {
             return String.valueOf(value);
         }
-
-        @JsonCreator
-        public static ContextIdTypeEnum fromValue(String text) {
-            for (ContextIdTypeEnum b : ContextIdTypeEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
     }
 
-    @JsonProperty("context_id_type")
+    @SerializedName("context_id_type")
     private ContextIdTypeEnum contextIdType = null;
 
-    @JsonProperty("date")
+    @SerializedName("date")
     private OffsetDateTime date = null;
 
-    @JsonProperty("description")
+    @SerializedName("description")
     private String description = null;
 
-    @JsonProperty("first_party_id")
+    @SerializedName("first_party_id")
     private Integer firstPartyId = null;
 
-    @JsonProperty("id")
+    @SerializedName("id")
     private Long id = null;
 
-    @JsonProperty("reason")
+    @SerializedName("reason")
     private String reason = null;
 
     /**
@@ -113,238 +114,355 @@ public class CharacterWalletJournalResponse implements Serializable {
      * /master/eve_glue/wallet_journal_ref.py
      */
     public enum RefTypeEnum {
+        @SerializedName("acceleration_gate_fee")
         ACCELERATION_GATE_FEE("acceleration_gate_fee"),
 
+        @SerializedName("advertisement_listing_fee")
         ADVERTISEMENT_LISTING_FEE("advertisement_listing_fee"),
 
+        @SerializedName("agent_donation")
         AGENT_DONATION("agent_donation"),
 
+        @SerializedName("agent_location_services")
         AGENT_LOCATION_SERVICES("agent_location_services"),
 
+        @SerializedName("agent_miscellaneous")
         AGENT_MISCELLANEOUS("agent_miscellaneous"),
 
+        @SerializedName("agent_mission_collateral_paid")
         AGENT_MISSION_COLLATERAL_PAID("agent_mission_collateral_paid"),
 
+        @SerializedName("agent_mission_collateral_refunded")
         AGENT_MISSION_COLLATERAL_REFUNDED("agent_mission_collateral_refunded"),
 
+        @SerializedName("agent_mission_reward")
         AGENT_MISSION_REWARD("agent_mission_reward"),
 
+        @SerializedName("agent_mission_reward_corporation_tax")
         AGENT_MISSION_REWARD_CORPORATION_TAX("agent_mission_reward_corporation_tax"),
 
+        @SerializedName("agent_mission_time_bonus_reward")
         AGENT_MISSION_TIME_BONUS_REWARD("agent_mission_time_bonus_reward"),
 
+        @SerializedName("agent_mission_time_bonus_reward_corporation_tax")
         AGENT_MISSION_TIME_BONUS_REWARD_CORPORATION_TAX("agent_mission_time_bonus_reward_corporation_tax"),
 
+        @SerializedName("agent_security_services")
         AGENT_SECURITY_SERVICES("agent_security_services"),
 
+        @SerializedName("agent_services_rendered")
         AGENT_SERVICES_RENDERED("agent_services_rendered"),
 
+        @SerializedName("agents_preward")
         AGENTS_PREWARD("agents_preward"),
 
+        @SerializedName("alliance_maintainance_fee")
         ALLIANCE_MAINTAINANCE_FEE("alliance_maintainance_fee"),
 
+        @SerializedName("alliance_registration_fee")
         ALLIANCE_REGISTRATION_FEE("alliance_registration_fee"),
 
+        @SerializedName("asset_safety_recovery_tax")
         ASSET_SAFETY_RECOVERY_TAX("asset_safety_recovery_tax"),
 
+        @SerializedName("bounty")
         BOUNTY("bounty"),
 
+        @SerializedName("bounty_prize")
         BOUNTY_PRIZE("bounty_prize"),
 
+        @SerializedName("bounty_prize_corporation_tax")
         BOUNTY_PRIZE_CORPORATION_TAX("bounty_prize_corporation_tax"),
 
+        @SerializedName("bounty_prizes")
         BOUNTY_PRIZES("bounty_prizes"),
 
+        @SerializedName("bounty_reimbursement")
         BOUNTY_REIMBURSEMENT("bounty_reimbursement"),
 
+        @SerializedName("bounty_surcharge")
         BOUNTY_SURCHARGE("bounty_surcharge"),
 
+        @SerializedName("brokers_fee")
         BROKERS_FEE("brokers_fee"),
 
+        @SerializedName("clone_activation")
         CLONE_ACTIVATION("clone_activation"),
 
+        @SerializedName("clone_transfer")
         CLONE_TRANSFER("clone_transfer"),
 
+        @SerializedName("contraband_fine")
         CONTRABAND_FINE("contraband_fine"),
 
+        @SerializedName("contract_auction_bid")
         CONTRACT_AUCTION_BID("contract_auction_bid"),
 
+        @SerializedName("contract_auction_bid_corp")
         CONTRACT_AUCTION_BID_CORP("contract_auction_bid_corp"),
 
+        @SerializedName("contract_auction_bid_refund")
         CONTRACT_AUCTION_BID_REFUND("contract_auction_bid_refund"),
 
+        @SerializedName("contract_auction_sold")
         CONTRACT_AUCTION_SOLD("contract_auction_sold"),
 
+        @SerializedName("contract_brokers_fee")
         CONTRACT_BROKERS_FEE("contract_brokers_fee"),
 
+        @SerializedName("contract_brokers_fee_corp")
         CONTRACT_BROKERS_FEE_CORP("contract_brokers_fee_corp"),
 
+        @SerializedName("contract_collateral")
         CONTRACT_COLLATERAL("contract_collateral"),
 
+        @SerializedName("contract_collateral_deposited_corp")
         CONTRACT_COLLATERAL_DEPOSITED_CORP("contract_collateral_deposited_corp"),
 
+        @SerializedName("contract_collateral_payout")
         CONTRACT_COLLATERAL_PAYOUT("contract_collateral_payout"),
 
+        @SerializedName("contract_collateral_refund")
         CONTRACT_COLLATERAL_REFUND("contract_collateral_refund"),
 
+        @SerializedName("contract_deposit")
         CONTRACT_DEPOSIT("contract_deposit"),
 
+        @SerializedName("contract_deposit_corp")
         CONTRACT_DEPOSIT_CORP("contract_deposit_corp"),
 
+        @SerializedName("contract_deposit_refund")
         CONTRACT_DEPOSIT_REFUND("contract_deposit_refund"),
 
+        @SerializedName("contract_deposit_sales_tax")
         CONTRACT_DEPOSIT_SALES_TAX("contract_deposit_sales_tax"),
 
+        @SerializedName("contract_price")
         CONTRACT_PRICE("contract_price"),
 
+        @SerializedName("contract_price_payment_corp")
         CONTRACT_PRICE_PAYMENT_CORP("contract_price_payment_corp"),
 
+        @SerializedName("contract_reversal")
         CONTRACT_REVERSAL("contract_reversal"),
 
+        @SerializedName("contract_reward")
         CONTRACT_REWARD("contract_reward"),
 
+        @SerializedName("contract_reward_deposited")
         CONTRACT_REWARD_DEPOSITED("contract_reward_deposited"),
 
+        @SerializedName("contract_reward_deposited_corp")
         CONTRACT_REWARD_DEPOSITED_CORP("contract_reward_deposited_corp"),
 
+        @SerializedName("contract_reward_refund")
         CONTRACT_REWARD_REFUND("contract_reward_refund"),
 
+        @SerializedName("contract_sales_tax")
         CONTRACT_SALES_TAX("contract_sales_tax"),
 
+        @SerializedName("copying")
         COPYING("copying"),
 
+        @SerializedName("corporate_reward_payout")
         CORPORATE_REWARD_PAYOUT("corporate_reward_payout"),
 
+        @SerializedName("corporate_reward_tax")
         CORPORATE_REWARD_TAX("corporate_reward_tax"),
 
+        @SerializedName("corporation_account_withdrawal")
         CORPORATION_ACCOUNT_WITHDRAWAL("corporation_account_withdrawal"),
 
+        @SerializedName("corporation_bulk_payment")
         CORPORATION_BULK_PAYMENT("corporation_bulk_payment"),
 
+        @SerializedName("corporation_dividend_payment")
         CORPORATION_DIVIDEND_PAYMENT("corporation_dividend_payment"),
 
+        @SerializedName("corporation_liquidation")
         CORPORATION_LIQUIDATION("corporation_liquidation"),
 
+        @SerializedName("corporation_logo_change_cost")
         CORPORATION_LOGO_CHANGE_COST("corporation_logo_change_cost"),
 
+        @SerializedName("corporation_payment")
         CORPORATION_PAYMENT("corporation_payment"),
 
+        @SerializedName("corporation_registration_fee")
         CORPORATION_REGISTRATION_FEE("corporation_registration_fee"),
 
+        @SerializedName("courier_mission_escrow")
         COURIER_MISSION_ESCROW("courier_mission_escrow"),
 
+        @SerializedName("cspa")
         CSPA("cspa"),
 
+        @SerializedName("cspaofflinerefund")
         CSPAOFFLINEREFUND("cspaofflinerefund"),
 
+        @SerializedName("datacore_fee")
         DATACORE_FEE("datacore_fee"),
 
+        @SerializedName("dna_modification_fee")
         DNA_MODIFICATION_FEE("dna_modification_fee"),
 
+        @SerializedName("docking_fee")
         DOCKING_FEE("docking_fee"),
 
+        @SerializedName("duel_wager_escrow")
         DUEL_WAGER_ESCROW("duel_wager_escrow"),
 
+        @SerializedName("duel_wager_payment")
         DUEL_WAGER_PAYMENT("duel_wager_payment"),
 
+        @SerializedName("duel_wager_refund")
         DUEL_WAGER_REFUND("duel_wager_refund"),
 
+        @SerializedName("factory_slot_rental_fee")
         FACTORY_SLOT_RENTAL_FEE("factory_slot_rental_fee"),
 
+        @SerializedName("gm_cash_transfer")
         GM_CASH_TRANSFER("gm_cash_transfer"),
 
+        @SerializedName("industry_job_tax")
         INDUSTRY_JOB_TAX("industry_job_tax"),
 
+        @SerializedName("infrastructure_hub_maintenance")
         INFRASTRUCTURE_HUB_MAINTENANCE("infrastructure_hub_maintenance"),
 
+        @SerializedName("inheritance")
         INHERITANCE("inheritance"),
 
+        @SerializedName("insurance")
         INSURANCE("insurance"),
 
+        @SerializedName("jump_clone_activation_fee")
         JUMP_CLONE_ACTIVATION_FEE("jump_clone_activation_fee"),
 
+        @SerializedName("jump_clone_installation_fee")
         JUMP_CLONE_INSTALLATION_FEE("jump_clone_installation_fee"),
 
+        @SerializedName("kill_right_fee")
         KILL_RIGHT_FEE("kill_right_fee"),
 
+        @SerializedName("lp_store")
         LP_STORE("lp_store"),
 
+        @SerializedName("manufacturing")
         MANUFACTURING("manufacturing"),
 
+        @SerializedName("market_escrow")
         MARKET_ESCROW("market_escrow"),
 
+        @SerializedName("market_fine_paid")
         MARKET_FINE_PAID("market_fine_paid"),
 
+        @SerializedName("market_transaction")
         MARKET_TRANSACTION("market_transaction"),
 
+        @SerializedName("medal_creation")
         MEDAL_CREATION("medal_creation"),
 
+        @SerializedName("medal_issued")
         MEDAL_ISSUED("medal_issued"),
 
+        @SerializedName("mission_completion")
         MISSION_COMPLETION("mission_completion"),
 
+        @SerializedName("mission_cost")
         MISSION_COST("mission_cost"),
 
+        @SerializedName("mission_expiration")
         MISSION_EXPIRATION("mission_expiration"),
 
+        @SerializedName("mission_reward")
         MISSION_REWARD("mission_reward"),
 
+        @SerializedName("office_rental_fee")
         OFFICE_RENTAL_FEE("office_rental_fee"),
 
+        @SerializedName("operation_bonus")
         OPERATION_BONUS("operation_bonus"),
 
+        @SerializedName("opportunity_reward")
         OPPORTUNITY_REWARD("opportunity_reward"),
 
+        @SerializedName("planetary_construction")
         PLANETARY_CONSTRUCTION("planetary_construction"),
 
+        @SerializedName("planetary_export_tax")
         PLANETARY_EXPORT_TAX("planetary_export_tax"),
 
+        @SerializedName("planetary_import_tax")
         PLANETARY_IMPORT_TAX("planetary_import_tax"),
 
+        @SerializedName("player_donation")
         PLAYER_DONATION("player_donation"),
 
+        @SerializedName("player_trading")
         PLAYER_TRADING("player_trading"),
 
+        @SerializedName("project_discovery_reward")
         PROJECT_DISCOVERY_REWARD("project_discovery_reward"),
 
+        @SerializedName("project_discovery_tax")
         PROJECT_DISCOVERY_TAX("project_discovery_tax"),
 
+        @SerializedName("reaction")
         REACTION("reaction"),
 
+        @SerializedName("release_of_impounded_property")
         RELEASE_OF_IMPOUNDED_PROPERTY("release_of_impounded_property"),
 
+        @SerializedName("repair_bill")
         REPAIR_BILL("repair_bill"),
 
+        @SerializedName("reprocessing_tax")
         REPROCESSING_TAX("reprocessing_tax"),
 
+        @SerializedName("researching_material_productivity")
         RESEARCHING_MATERIAL_PRODUCTIVITY("researching_material_productivity"),
 
+        @SerializedName("researching_technology")
         RESEARCHING_TECHNOLOGY("researching_technology"),
 
+        @SerializedName("researching_time_productivity")
         RESEARCHING_TIME_PRODUCTIVITY("researching_time_productivity"),
 
+        @SerializedName("resource_wars_reward")
         RESOURCE_WARS_REWARD("resource_wars_reward"),
 
+        @SerializedName("reverse_engineering")
         REVERSE_ENGINEERING("reverse_engineering"),
 
+        @SerializedName("security_processing_fee")
         SECURITY_PROCESSING_FEE("security_processing_fee"),
 
+        @SerializedName("shares")
         SHARES("shares"),
 
+        @SerializedName("sovereignity_bill")
         SOVEREIGNITY_BILL("sovereignity_bill"),
 
+        @SerializedName("store_purchase")
         STORE_PURCHASE("store_purchase"),
 
+        @SerializedName("store_purchase_refund")
         STORE_PURCHASE_REFUND("store_purchase_refund"),
 
+        @SerializedName("transaction_tax")
         TRANSACTION_TAX("transaction_tax"),
 
+        @SerializedName("upkeep_adjustment_fee")
         UPKEEP_ADJUSTMENT_FEE("upkeep_adjustment_fee"),
 
+        @SerializedName("war_ally_contract")
         WAR_ALLY_CONTRACT("war_ally_contract"),
 
+        @SerializedName("war_fee")
         WAR_FEE("war_fee"),
 
+        @SerializedName("war_fee_surrender")
         WAR_FEE_SURRENDER("war_fee_surrender");
 
         private String value;
@@ -357,28 +475,18 @@ public class CharacterWalletJournalResponse implements Serializable {
         public String toString() {
             return String.valueOf(value);
         }
-
-        @JsonCreator
-        public static RefTypeEnum fromValue(String text) {
-            for (RefTypeEnum b : RefTypeEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
     }
 
-    @JsonProperty("ref_type")
+    @SerializedName("ref_type")
     private RefTypeEnum refType = null;
 
-    @JsonProperty("second_party_id")
+    @SerializedName("second_party_id")
     private Integer secondPartyId = null;
 
-    @JsonProperty("tax")
+    @SerializedName("tax")
     private Double tax = null;
 
-    @JsonProperty("tax_receiver_id")
+    @SerializedName("tax_receiver_id")
     private Integer taxReceiverId = null;
 
     public CharacterWalletJournalResponse amount(Double amount) {

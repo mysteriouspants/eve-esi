@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -29,10 +28,13 @@ public class CharacterCalendarEvent implements Serializable {
      * response string
      */
     public enum ResponseEnum {
+        @SerializedName("accepted")
         ACCEPTED("accepted"),
 
+        @SerializedName("declined")
         DECLINED("declined"),
 
+        @SerializedName("tentative")
         TENTATIVE("tentative");
 
         private String value;
@@ -45,19 +47,9 @@ public class CharacterCalendarEvent implements Serializable {
         public String toString() {
             return String.valueOf(value);
         }
-
-        @JsonCreator
-        public static ResponseEnum fromValue(String text) {
-            for (ResponseEnum b : ResponseEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
     }
 
-    @JsonProperty("response")
+    @SerializedName("response")
     private ResponseEnum response = null;
 
     public CharacterCalendarEvent response(ResponseEnum response) {

@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.LocalDate;
@@ -26,19 +25,19 @@ import java.io.Serializable;
 public class CorporationMiningObserverResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("character_id")
+    @SerializedName("character_id")
     private Integer characterId = null;
 
-    @JsonProperty("last_updated")
+    @SerializedName("last_updated")
     private LocalDate lastUpdated = null;
 
-    @JsonProperty("quantity")
+    @SerializedName("quantity")
     private Long quantity = null;
 
-    @JsonProperty("recorded_corporation_id")
+    @SerializedName("recorded_corporation_id")
     private Integer recordedCorporationId = null;
 
-    @JsonProperty("type_id")
+    @SerializedName("type_id")
     private Integer typeId = null;
 
     public CorporationMiningObserverResponse characterId(Integer characterId) {

@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.OffsetDateTime;
@@ -26,33 +25,35 @@ import java.io.Serializable;
 public class CharacterResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("alliance_id")
+    @SerializedName("alliance_id")
     private Integer allianceId = null;
 
-    @JsonProperty("ancestry_id")
+    @SerializedName("ancestry_id")
     private Integer ancestryId = null;
 
-    @JsonProperty("birthday")
+    @SerializedName("birthday")
     private OffsetDateTime birthday = null;
 
-    @JsonProperty("bloodline_id")
+    @SerializedName("bloodline_id")
     private Integer bloodlineId = null;
 
-    @JsonProperty("corporation_id")
+    @SerializedName("corporation_id")
     private Integer corporationId = null;
 
-    @JsonProperty("description")
+    @SerializedName("description")
     private String description = null;
 
-    @JsonProperty("faction_id")
+    @SerializedName("faction_id")
     private Integer factionId = null;
 
     /**
      * gender string
      */
     public enum GenderEnum {
+        @SerializedName("female")
         FEMALE("female"),
 
+        @SerializedName("male")
         MALE("male");
 
         private String value;
@@ -65,28 +66,18 @@ public class CharacterResponse implements Serializable {
         public String toString() {
             return String.valueOf(value);
         }
-
-        @JsonCreator
-        public static GenderEnum fromValue(String text) {
-            for (GenderEnum b : GenderEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
     }
 
-    @JsonProperty("gender")
+    @SerializedName("gender")
     private GenderEnum gender = null;
 
-    @JsonProperty("name")
+    @SerializedName("name")
     private String name = null;
 
-    @JsonProperty("race_id")
+    @SerializedName("race_id")
     private Integer raceId = null;
 
-    @JsonProperty("security_status")
+    @SerializedName("security_status")
     private Float securityStatus = null;
 
     public CharacterResponse allianceId(Integer allianceId) {

@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -28,19 +27,19 @@ import java.io.Serializable;
 public class ConstellationResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("constellation_id")
+    @SerializedName("constellation_id")
     private Integer constellationId = null;
 
-    @JsonProperty("name")
+    @SerializedName("name")
     private String name = null;
 
-    @JsonProperty("position")
+    @SerializedName("position")
     private Position position = null;
 
-    @JsonProperty("region_id")
+    @SerializedName("region_id")
     private Integer regionId = null;
 
-    @JsonProperty("systems")
+    @SerializedName("systems")
     private List<Integer> systems = new ArrayList<Integer>();
 
     public ConstellationResponse constellationId(Integer constellationId) {

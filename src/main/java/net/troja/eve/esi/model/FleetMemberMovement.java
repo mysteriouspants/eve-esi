@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -34,12 +33,16 @@ public class FleetMemberMovement implements Serializable {
      * both `wing_id` and `squad_id` should be specified.
      */
     public enum RoleEnum {
+        @SerializedName("fleet_commander")
         FLEET_COMMANDER("fleet_commander"),
 
+        @SerializedName("wing_commander")
         WING_COMMANDER("wing_commander"),
 
+        @SerializedName("squad_commander")
         SQUAD_COMMANDER("squad_commander"),
 
+        @SerializedName("squad_member")
         SQUAD_MEMBER("squad_member");
 
         private String value;
@@ -52,25 +55,15 @@ public class FleetMemberMovement implements Serializable {
         public String toString() {
             return String.valueOf(value);
         }
-
-        @JsonCreator
-        public static RoleEnum fromValue(String text) {
-            for (RoleEnum b : RoleEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
     }
 
-    @JsonProperty("role")
+    @SerializedName("role")
     private RoleEnum role = null;
 
-    @JsonProperty("squad_id")
+    @SerializedName("squad_id")
     private Long squadId = null;
 
-    @JsonProperty("wing_id")
+    @SerializedName("wing_id")
     private Long wingId = null;
 
     public FleetMemberMovement role(RoleEnum role) {

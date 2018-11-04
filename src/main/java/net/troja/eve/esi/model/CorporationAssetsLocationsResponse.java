@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import net.troja.eve.esi.model.CorporationAssetsLocationsPosition;
@@ -26,10 +25,10 @@ import java.io.Serializable;
 public class CorporationAssetsLocationsResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("item_id")
+    @SerializedName("item_id")
     private Long itemId = null;
 
-    @JsonProperty("position")
+    @SerializedName("position")
     private CorporationAssetsLocationsPosition position = null;
 
     public CorporationAssetsLocationsResponse itemId(Long itemId) {

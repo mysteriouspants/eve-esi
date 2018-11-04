@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -29,40 +28,58 @@ public class MailLabel implements Serializable {
      * color string
      */
     public enum ColorEnum {
+        @SerializedName("#0000fe")
         _0000FE("#0000fe"),
 
+        @SerializedName("#006634")
         _006634("#006634"),
 
+        @SerializedName("#0099ff")
         _0099FF("#0099ff"),
 
+        @SerializedName("#00ff33")
         _00FF33("#00ff33"),
 
+        @SerializedName("#01ffff")
         _01FFFF("#01ffff"),
 
+        @SerializedName("#349800")
         _349800("#349800"),
 
+        @SerializedName("#660066")
         _660066("#660066"),
 
+        @SerializedName("#666666")
         _666666("#666666"),
 
+        @SerializedName("#999999")
         _999999("#999999"),
 
+        @SerializedName("#99ffff")
         _99FFFF("#99ffff"),
 
+        @SerializedName("#9a0000")
         _9A0000("#9a0000"),
 
+        @SerializedName("#ccff9a")
         CCFF9A("#ccff9a"),
 
+        @SerializedName("#e6e6e6")
         E6E6E6("#e6e6e6"),
 
+        @SerializedName("#fe0000")
         FE0000("#fe0000"),
 
+        @SerializedName("#ff6600")
         FF6600("#ff6600"),
 
+        @SerializedName("#ffff01")
         FFFF01("#ffff01"),
 
+        @SerializedName("#ffffcd")
         FFFFCD("#ffffcd"),
 
+        @SerializedName("#ffffff")
         FFFFFF("#ffffff");
 
         private String value;
@@ -75,28 +92,18 @@ public class MailLabel implements Serializable {
         public String toString() {
             return String.valueOf(value);
         }
-
-        @JsonCreator
-        public static ColorEnum fromValue(String text) {
-            for (ColorEnum b : ColorEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
     }
 
-    @JsonProperty("color")
+    @SerializedName("color")
     private ColorEnum color = ColorEnum.FFFFFF;
 
-    @JsonProperty("label_id")
+    @SerializedName("label_id")
     private Integer labelId = null;
 
-    @JsonProperty("name")
+    @SerializedName("name")
     private String name = null;
 
-    @JsonProperty("unread_count")
+    @SerializedName("unread_count")
     private Integer unreadCount = null;
 
     public MailLabel color(ColorEnum color) {

@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -29,12 +28,16 @@ public class FactionWarfareSystemsResponse implements Serializable {
      * contested string
      */
     public enum ContestedEnum {
+        @SerializedName("captured")
         CAPTURED("captured"),
 
+        @SerializedName("contested")
         CONTESTED("contested"),
 
+        @SerializedName("uncontested")
         UNCONTESTED("uncontested"),
 
+        @SerializedName("vulnerable")
         VULNERABLE("vulnerable");
 
         private String value;
@@ -47,34 +50,24 @@ public class FactionWarfareSystemsResponse implements Serializable {
         public String toString() {
             return String.valueOf(value);
         }
-
-        @JsonCreator
-        public static ContestedEnum fromValue(String text) {
-            for (ContestedEnum b : ContestedEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
     }
 
-    @JsonProperty("contested")
+    @SerializedName("contested")
     private ContestedEnum contested = null;
 
-    @JsonProperty("occupier_faction_id")
+    @SerializedName("occupier_faction_id")
     private Integer occupierFactionId = null;
 
-    @JsonProperty("owner_faction_id")
+    @SerializedName("owner_faction_id")
     private Integer ownerFactionId = null;
 
-    @JsonProperty("solar_system_id")
+    @SerializedName("solar_system_id")
     private Integer solarSystemId = null;
 
-    @JsonProperty("victory_points")
+    @SerializedName("victory_points")
     private Integer victoryPoints = null;
 
-    @JsonProperty("victory_points_threshold")
+    @SerializedName("victory_points_threshold")
     private Integer victoryPointsThreshold = null;
 
     public FactionWarfareSystemsResponse contested(ContestedEnum contested) {

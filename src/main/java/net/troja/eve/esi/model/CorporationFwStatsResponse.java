@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.OffsetDateTime;
@@ -28,19 +27,19 @@ import java.io.Serializable;
 public class CorporationFwStatsResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("enlisted_on")
+    @SerializedName("enlisted_on")
     private OffsetDateTime enlistedOn = null;
 
-    @JsonProperty("faction_id")
+    @SerializedName("faction_id")
     private Integer factionId = null;
 
-    @JsonProperty("kills")
+    @SerializedName("kills")
     private CorporationFwStatsKills kills = null;
 
-    @JsonProperty("pilots")
+    @SerializedName("pilots")
     private Integer pilots = null;
 
-    @JsonProperty("victory_points")
+    @SerializedName("victory_points")
     private CorporationFwStatsVictoryPoints victoryPoints = null;
 
     public CorporationFwStatsResponse enlistedOn(OffsetDateTime enlistedOn) {

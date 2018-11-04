@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -28,25 +27,25 @@ import java.io.Serializable;
 public class LoyaltyStoreOffersResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("ak_cost")
+    @SerializedName("ak_cost")
     private Integer akCost = null;
 
-    @JsonProperty("isk_cost")
+    @SerializedName("isk_cost")
     private Long iskCost = null;
 
-    @JsonProperty("lp_cost")
+    @SerializedName("lp_cost")
     private Integer lpCost = null;
 
-    @JsonProperty("offer_id")
+    @SerializedName("offer_id")
     private Integer offerId = null;
 
-    @JsonProperty("quantity")
+    @SerializedName("quantity")
     private Integer quantity = null;
 
-    @JsonProperty("required_items")
+    @SerializedName("required_items")
     private List<RequiredItem> requiredItems = new ArrayList<RequiredItem>();
 
-    @JsonProperty("type_id")
+    @SerializedName("type_id")
     private Integer typeId = null;
 
     public LoyaltyStoreOffersResponse akCost(Integer akCost) {

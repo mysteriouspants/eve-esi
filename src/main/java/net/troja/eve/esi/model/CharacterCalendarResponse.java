@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.OffsetDateTime;
@@ -26,22 +25,26 @@ import java.io.Serializable;
 public class CharacterCalendarResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("event_date")
+    @SerializedName("event_date")
     private OffsetDateTime eventDate = null;
 
-    @JsonProperty("event_id")
+    @SerializedName("event_id")
     private Integer eventId = null;
 
     /**
      * event_response string
      */
     public enum EventResponseEnum {
+        @SerializedName("declined")
         DECLINED("declined"),
 
+        @SerializedName("not_responded")
         NOT_RESPONDED("not_responded"),
 
+        @SerializedName("accepted")
         ACCEPTED("accepted"),
 
+        @SerializedName("tentative")
         TENTATIVE("tentative");
 
         private String value;
@@ -54,25 +57,15 @@ public class CharacterCalendarResponse implements Serializable {
         public String toString() {
             return String.valueOf(value);
         }
-
-        @JsonCreator
-        public static EventResponseEnum fromValue(String text) {
-            for (EventResponseEnum b : EventResponseEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
     }
 
-    @JsonProperty("event_response")
+    @SerializedName("event_response")
     private EventResponseEnum eventResponse = null;
 
-    @JsonProperty("importance")
+    @SerializedName("importance")
     private Integer importance = null;
 
-    @JsonProperty("title")
+    @SerializedName("title")
     private String title = null;
 
     public CharacterCalendarResponse eventDate(OffsetDateTime eventDate) {

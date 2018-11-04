@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.OffsetDateTime;
@@ -29,59 +28,71 @@ import java.io.Serializable;
 public class CorporationStructuresResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("corporation_id")
+    @SerializedName("corporation_id")
     private Integer corporationId = null;
 
-    @JsonProperty("fuel_expires")
+    @SerializedName("fuel_expires")
     private OffsetDateTime fuelExpires = null;
 
-    @JsonProperty("next_reinforce_apply")
+    @SerializedName("next_reinforce_apply")
     private OffsetDateTime nextReinforceApply = null;
 
-    @JsonProperty("next_reinforce_hour")
+    @SerializedName("next_reinforce_hour")
     private Integer nextReinforceHour = null;
 
-    @JsonProperty("next_reinforce_weekday")
+    @SerializedName("next_reinforce_weekday")
     private Integer nextReinforceWeekday = null;
 
-    @JsonProperty("profile_id")
+    @SerializedName("profile_id")
     private Integer profileId = null;
 
-    @JsonProperty("reinforce_hour")
+    @SerializedName("reinforce_hour")
     private Integer reinforceHour = null;
 
-    @JsonProperty("reinforce_weekday")
+    @SerializedName("reinforce_weekday")
     private Integer reinforceWeekday = null;
 
-    @JsonProperty("services")
+    @SerializedName("services")
     private List<StructureService> services = new ArrayList<StructureService>();
 
     /**
      * state string
      */
     public enum StateEnum {
+        @SerializedName("anchor_vulnerable")
         ANCHOR_VULNERABLE("anchor_vulnerable"),
 
+        @SerializedName("anchoring")
         ANCHORING("anchoring"),
 
+        @SerializedName("armor_reinforce")
         ARMOR_REINFORCE("armor_reinforce"),
 
+        @SerializedName("armor_vulnerable")
         ARMOR_VULNERABLE("armor_vulnerable"),
 
+        @SerializedName("fitting_invulnerable")
         FITTING_INVULNERABLE("fitting_invulnerable"),
 
+        @SerializedName("hull_reinforce")
         HULL_REINFORCE("hull_reinforce"),
 
+        @SerializedName("hull_vulnerable")
         HULL_VULNERABLE("hull_vulnerable"),
 
+        @SerializedName("online_deprecated")
         ONLINE_DEPRECATED("online_deprecated"),
 
+        @SerializedName("onlining_vulnerable")
         ONLINING_VULNERABLE("onlining_vulnerable"),
 
+        @SerializedName("shield_vulnerable")
         SHIELD_VULNERABLE("shield_vulnerable"),
 
+        @SerializedName("unanchored")
         UNANCHORED("unanchored"),
 
+        @SerializedName("unknown")
         UNKNOWN("unknown");
 
         private String value;
@@ -94,37 +105,27 @@ public class CorporationStructuresResponse implements Serializable {
         public String toString() {
             return String.valueOf(value);
         }
-
-        @JsonCreator
-        public static StateEnum fromValue(String text) {
-            for (StateEnum b : StateEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
     }
 
-    @JsonProperty("state")
+    @SerializedName("state")
     private StateEnum state = null;
 
-    @JsonProperty("state_timer_end")
+    @SerializedName("state_timer_end")
     private OffsetDateTime stateTimerEnd = null;
 
-    @JsonProperty("state_timer_start")
+    @SerializedName("state_timer_start")
     private OffsetDateTime stateTimerStart = null;
 
-    @JsonProperty("structure_id")
+    @SerializedName("structure_id")
     private Long structureId = null;
 
-    @JsonProperty("system_id")
+    @SerializedName("system_id")
     private Integer systemId = null;
 
-    @JsonProperty("type_id")
+    @SerializedName("type_id")
     private Integer typeId = null;
 
-    @JsonProperty("unanchors_at")
+    @SerializedName("unanchors_at")
     private OffsetDateTime unanchorsAt = null;
 
     public CorporationStructuresResponse corporationId(Integer corporationId) {

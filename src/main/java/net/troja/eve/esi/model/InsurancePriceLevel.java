@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -25,13 +24,13 @@ import java.io.Serializable;
 public class InsurancePriceLevel implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("cost")
+    @SerializedName("cost")
     private Float cost = null;
 
-    @JsonProperty("name")
+    @SerializedName("name")
     private String name = null;
 
-    @JsonProperty("payout")
+    @SerializedName("payout")
     private Float payout = null;
 
     public InsurancePriceLevel cost(Float cost) {

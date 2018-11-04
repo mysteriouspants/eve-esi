@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.OffsetDateTime;
@@ -29,19 +28,19 @@ import java.io.Serializable;
 public class SovereigntyCampaignsResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("attackers_score")
+    @SerializedName("attackers_score")
     private Float attackersScore = null;
 
-    @JsonProperty("campaign_id")
+    @SerializedName("campaign_id")
     private Integer campaignId = null;
 
-    @JsonProperty("constellation_id")
+    @SerializedName("constellation_id")
     private Integer constellationId = null;
 
-    @JsonProperty("defender_id")
+    @SerializedName("defender_id")
     private Integer defenderId = null;
 
-    @JsonProperty("defender_score")
+    @SerializedName("defender_score")
     private Float defenderScore = null;
 
     /**
@@ -50,12 +49,16 @@ public class SovereigntyCampaignsResponse implements Serializable {
      * as \"Freeport Events\".
      */
     public enum EventTypeEnum {
+        @SerializedName("tcu_defense")
         TCU_DEFENSE("tcu_defense"),
 
+        @SerializedName("ihub_defense")
         IHUB_DEFENSE("ihub_defense"),
 
+        @SerializedName("station_defense")
         STATION_DEFENSE("station_defense"),
 
+        @SerializedName("station_freeport")
         STATION_FREEPORT("station_freeport");
 
         private String value;
@@ -68,31 +71,21 @@ public class SovereigntyCampaignsResponse implements Serializable {
         public String toString() {
             return String.valueOf(value);
         }
-
-        @JsonCreator
-        public static EventTypeEnum fromValue(String text) {
-            for (EventTypeEnum b : EventTypeEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
     }
 
-    @JsonProperty("event_type")
+    @SerializedName("event_type")
     private EventTypeEnum eventType = null;
 
-    @JsonProperty("participants")
+    @SerializedName("participants")
     private List<SovereigntyCampaignParticipant> participants = new ArrayList<SovereigntyCampaignParticipant>();
 
-    @JsonProperty("solar_system_id")
+    @SerializedName("solar_system_id")
     private Integer solarSystemId = null;
 
-    @JsonProperty("start_time")
+    @SerializedName("start_time")
     private OffsetDateTime startTime = null;
 
-    @JsonProperty("structure_id")
+    @SerializedName("structure_id")
     private Long structureId = null;
 
     public SovereigntyCampaignsResponse attackersScore(Float attackersScore) {

@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -27,13 +26,13 @@ import java.io.Serializable;
 public class SystemPlanet implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("asteroid_belts")
+    @SerializedName("asteroid_belts")
     private List<Integer> asteroidBelts = new ArrayList<Integer>();
 
-    @JsonProperty("moons")
+    @SerializedName("moons")
     private List<Integer> moons = new ArrayList<Integer>();
 
-    @JsonProperty("planet_id")
+    @SerializedName("planet_id")
     private Integer planetId = null;
 
     public SystemPlanet asteroidBelts(List<Integer> asteroidBelts) {

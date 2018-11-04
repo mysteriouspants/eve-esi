@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -25,10 +24,10 @@ import java.io.Serializable;
 public class CharacterLoyaltyPointsResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("corporation_id")
+    @SerializedName("corporation_id")
     private Integer corporationId = null;
 
-    @JsonProperty("loyalty_points")
+    @SerializedName("loyalty_points")
     private Integer loyaltyPoints = null;
 
     public CharacterLoyaltyPointsResponse corporationId(Integer corporationId) {

@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -27,19 +26,23 @@ import java.io.Serializable;
 public class AllianceContactsResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("contact_id")
+    @SerializedName("contact_id")
     private Integer contactId = null;
 
     /**
      * contact_type string
      */
     public enum ContactTypeEnum {
+        @SerializedName("character")
         CHARACTER("character"),
 
+        @SerializedName("corporation")
         CORPORATION("corporation"),
 
+        @SerializedName("alliance")
         ALLIANCE("alliance"),
 
+        @SerializedName("faction")
         FACTION("faction");
 
         private String value;
@@ -52,25 +55,15 @@ public class AllianceContactsResponse implements Serializable {
         public String toString() {
             return String.valueOf(value);
         }
-
-        @JsonCreator
-        public static ContactTypeEnum fromValue(String text) {
-            for (ContactTypeEnum b : ContactTypeEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
     }
 
-    @JsonProperty("contact_type")
+    @SerializedName("contact_type")
     private ContactTypeEnum contactType = null;
 
-    @JsonProperty("label_ids")
+    @SerializedName("label_ids")
     private List<Long> labelIds = new ArrayList<Long>();
 
-    @JsonProperty("standing")
+    @SerializedName("standing")
     private Float standing = null;
 
     public AllianceContactsResponse contactId(Integer contactId) {

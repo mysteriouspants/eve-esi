@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.LocalDate;
@@ -26,16 +25,17 @@ import java.io.Serializable;
 public class CorporationMiningObserversResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("last_updated")
+    @SerializedName("last_updated")
     private LocalDate lastUpdated = null;
 
-    @JsonProperty("observer_id")
+    @SerializedName("observer_id")
     private Long observerId = null;
 
     /**
      * The category of the observing entity
      */
     public enum ObserverTypeEnum {
+        @SerializedName("structure")
         STRUCTURE("structure");
 
         private String value;
@@ -48,19 +48,9 @@ public class CorporationMiningObserversResponse implements Serializable {
         public String toString() {
             return String.valueOf(value);
         }
-
-        @JsonCreator
-        public static ObserverTypeEnum fromValue(String text) {
-            for (ObserverTypeEnum b : ObserverTypeEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
     }
 
-    @JsonProperty("observer_type")
+    @SerializedName("observer_type")
     private ObserverTypeEnum observerType = null;
 
     public CorporationMiningObserversResponse lastUpdated(LocalDate lastUpdated) {

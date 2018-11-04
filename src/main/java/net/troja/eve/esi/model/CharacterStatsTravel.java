@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -25,67 +24,67 @@ import java.io.Serializable;
 public class CharacterStatsTravel implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("acceleration_gate_activations")
+    @SerializedName("acceleration_gate_activations")
     private Long accelerationGateActivations = null;
 
-    @JsonProperty("align_to")
+    @SerializedName("align_to")
     private Long alignTo = null;
 
-    @JsonProperty("distance_warped_high_sec")
+    @SerializedName("distance_warped_high_sec")
     private Long distanceWarpedHighSec = null;
 
-    @JsonProperty("distance_warped_low_sec")
+    @SerializedName("distance_warped_low_sec")
     private Long distanceWarpedLowSec = null;
 
-    @JsonProperty("distance_warped_null_sec")
+    @SerializedName("distance_warped_null_sec")
     private Long distanceWarpedNullSec = null;
 
-    @JsonProperty("distance_warped_wormhole")
+    @SerializedName("distance_warped_wormhole")
     private Long distanceWarpedWormhole = null;
 
-    @JsonProperty("docks_high_sec")
+    @SerializedName("docks_high_sec")
     private Long docksHighSec = null;
 
-    @JsonProperty("docks_low_sec")
+    @SerializedName("docks_low_sec")
     private Long docksLowSec = null;
 
-    @JsonProperty("docks_null_sec")
+    @SerializedName("docks_null_sec")
     private Long docksNullSec = null;
 
-    @JsonProperty("jumps_stargate_high_sec")
+    @SerializedName("jumps_stargate_high_sec")
     private Long jumpsStargateHighSec = null;
 
-    @JsonProperty("jumps_stargate_low_sec")
+    @SerializedName("jumps_stargate_low_sec")
     private Long jumpsStargateLowSec = null;
 
-    @JsonProperty("jumps_stargate_null_sec")
+    @SerializedName("jumps_stargate_null_sec")
     private Long jumpsStargateNullSec = null;
 
-    @JsonProperty("jumps_wormhole")
+    @SerializedName("jumps_wormhole")
     private Long jumpsWormhole = null;
 
-    @JsonProperty("warps_high_sec")
+    @SerializedName("warps_high_sec")
     private Long warpsHighSec = null;
 
-    @JsonProperty("warps_low_sec")
+    @SerializedName("warps_low_sec")
     private Long warpsLowSec = null;
 
-    @JsonProperty("warps_null_sec")
+    @SerializedName("warps_null_sec")
     private Long warpsNullSec = null;
 
-    @JsonProperty("warps_to_bookmark")
+    @SerializedName("warps_to_bookmark")
     private Long warpsToBookmark = null;
 
-    @JsonProperty("warps_to_celestial")
+    @SerializedName("warps_to_celestial")
     private Long warpsToCelestial = null;
 
-    @JsonProperty("warps_to_fleet_member")
+    @SerializedName("warps_to_fleet_member")
     private Long warpsToFleetMember = null;
 
-    @JsonProperty("warps_to_scan_result")
+    @SerializedName("warps_to_scan_result")
     private Long warpsToScanResult = null;
 
-    @JsonProperty("warps_wormhole")
+    @SerializedName("warps_wormhole")
     private Long warpsWormhole = null;
 
     public CharacterStatsTravel accelerationGateActivations(Long accelerationGateActivations) {

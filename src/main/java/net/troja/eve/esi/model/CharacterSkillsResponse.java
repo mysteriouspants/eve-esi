@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -28,13 +27,13 @@ import java.io.Serializable;
 public class CharacterSkillsResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("skills")
+    @SerializedName("skills")
     private List<Skill> skills = new ArrayList<Skill>();
 
-    @JsonProperty("total_sp")
+    @SerializedName("total_sp")
     private Long totalSp = null;
 
-    @JsonProperty("unallocated_sp")
+    @SerializedName("unallocated_sp")
     private Integer unallocatedSp = null;
 
     public CharacterSkillsResponse skills(List<Skill> skills) {

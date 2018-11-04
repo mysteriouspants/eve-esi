@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -25,15 +24,17 @@ import java.io.Serializable;
 public class CloneHomeLocation implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("location_id")
+    @SerializedName("location_id")
     private Long locationId = null;
 
     /**
      * location_type string
      */
     public enum LocationTypeEnum {
+        @SerializedName("station")
         STATION("station"),
 
+        @SerializedName("structure")
         STRUCTURE("structure");
 
         private String value;
@@ -46,19 +47,9 @@ public class CloneHomeLocation implements Serializable {
         public String toString() {
             return String.valueOf(value);
         }
-
-        @JsonCreator
-        public static LocationTypeEnum fromValue(String text) {
-            for (LocationTypeEnum b : LocationTypeEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
     }
 
-    @JsonProperty("location_type")
+    @SerializedName("location_type")
     private LocationTypeEnum locationType = null;
 
     public CloneHomeLocation locationId(Long locationId) {

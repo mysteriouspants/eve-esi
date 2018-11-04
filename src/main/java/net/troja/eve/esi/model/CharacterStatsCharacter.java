@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -25,13 +24,13 @@ import java.io.Serializable;
 public class CharacterStatsCharacter implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("days_of_activity")
+    @SerializedName("days_of_activity")
     private Long daysOfActivity = null;
 
-    @JsonProperty("minutes")
+    @SerializedName("minutes")
     private Long minutes = null;
 
-    @JsonProperty("sessions_started")
+    @SerializedName("sessions_started")
     private Long sessionsStarted = null;
 
     public CharacterStatsCharacter daysOfActivity(Long daysOfActivity) {

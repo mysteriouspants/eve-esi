@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -27,22 +26,22 @@ import java.io.Serializable;
 public class PlanetRoute implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("content_type_id")
+    @SerializedName("content_type_id")
     private Integer contentTypeId = null;
 
-    @JsonProperty("destination_pin_id")
+    @SerializedName("destination_pin_id")
     private Long destinationPinId = null;
 
-    @JsonProperty("quantity")
+    @SerializedName("quantity")
     private Float quantity = null;
 
-    @JsonProperty("route_id")
+    @SerializedName("route_id")
     private Long routeId = null;
 
-    @JsonProperty("source_pin_id")
+    @SerializedName("source_pin_id")
     private Long sourcePinId = null;
 
-    @JsonProperty("waypoints")
+    @SerializedName("waypoints")
     private List<Long> waypoints = new ArrayList<Long>();
 
     public PlanetRoute contentTypeId(Integer contentTypeId) {

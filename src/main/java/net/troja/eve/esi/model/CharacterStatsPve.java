@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -25,16 +24,16 @@ import java.io.Serializable;
 public class CharacterStatsPve implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("dungeons_completed_agent")
+    @SerializedName("dungeons_completed_agent")
     private Long dungeonsCompletedAgent = null;
 
-    @JsonProperty("dungeons_completed_distribution")
+    @SerializedName("dungeons_completed_distribution")
     private Long dungeonsCompletedDistribution = null;
 
-    @JsonProperty("missions_succeeded")
+    @SerializedName("missions_succeeded")
     private Long missionsSucceeded = null;
 
-    @JsonProperty("missions_succeeded_epic_arc")
+    @SerializedName("missions_succeeded_epic_arc")
     private Long missionsSucceededEpicArc = null;
 
     public CharacterStatsPve dungeonsCompletedAgent(Long dungeonsCompletedAgent) {

@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.OffsetDateTime;
@@ -26,13 +25,13 @@ import java.io.Serializable;
 public class CharacterFatigueResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("jump_fatigue_expire_date")
+    @SerializedName("jump_fatigue_expire_date")
     private OffsetDateTime jumpFatigueExpireDate = null;
 
-    @JsonProperty("last_jump_date")
+    @SerializedName("last_jump_date")
     private OffsetDateTime lastJumpDate = null;
 
-    @JsonProperty("last_update_date")
+    @SerializedName("last_update_date")
     private OffsetDateTime lastUpdateDate = null;
 
     public CharacterFatigueResponse jumpFatigueExpireDate(OffsetDateTime jumpFatigueExpireDate) {

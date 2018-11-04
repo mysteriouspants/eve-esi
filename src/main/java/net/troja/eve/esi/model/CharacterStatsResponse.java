@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import net.troja.eve.esi.model.CharacterStatsCharacter;
@@ -37,43 +36,43 @@ import java.io.Serializable;
 public class CharacterStatsResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("character")
+    @SerializedName("character")
     private CharacterStatsCharacter character = null;
 
-    @JsonProperty("combat")
+    @SerializedName("combat")
     private CharacterStatsCombat combat = null;
 
-    @JsonProperty("industry")
+    @SerializedName("industry")
     private CharacterStatsIndustry industry = null;
 
-    @JsonProperty("inventory")
+    @SerializedName("inventory")
     private CharacterStatsInventory inventory = null;
 
-    @JsonProperty("isk")
+    @SerializedName("isk")
     private CharacterStatsIsk isk = null;
 
-    @JsonProperty("market")
+    @SerializedName("market")
     private CharacterStatsMarket market = null;
 
-    @JsonProperty("mining")
+    @SerializedName("mining")
     private CharacterStatsMining mining = null;
 
-    @JsonProperty("module")
+    @SerializedName("module")
     private CharacterStatsModule module = null;
 
-    @JsonProperty("orbital")
+    @SerializedName("orbital")
     private CharacterStatsOrbital orbital = null;
 
-    @JsonProperty("pve")
+    @SerializedName("pve")
     private CharacterStatsPve pve = null;
 
-    @JsonProperty("social")
+    @SerializedName("social")
     private CharacterStatsSocial social = null;
 
-    @JsonProperty("travel")
+    @SerializedName("travel")
     private CharacterStatsTravel travel = null;
 
-    @JsonProperty("year")
+    @SerializedName("year")
     private Integer year = null;
 
     public CharacterStatsResponse character(CharacterStatsCharacter character) {

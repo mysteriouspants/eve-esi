@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import net.troja.eve.esi.model.Position;
@@ -27,22 +26,22 @@ import java.io.Serializable;
 public class StargateResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("destination")
+    @SerializedName("destination")
     private StargateDestination destination = null;
 
-    @JsonProperty("name")
+    @SerializedName("name")
     private String name = null;
 
-    @JsonProperty("position")
+    @SerializedName("position")
     private Position position = null;
 
-    @JsonProperty("stargate_id")
+    @SerializedName("stargate_id")
     private Integer stargateId = null;
 
-    @JsonProperty("system_id")
+    @SerializedName("system_id")
     private Integer systemId = null;
 
-    @JsonProperty("type_id")
+    @SerializedName("type_id")
     private Integer typeId = null;
 
     public StargateResponse destination(StargateDestination destination) {

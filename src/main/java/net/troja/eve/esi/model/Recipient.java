@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -25,19 +24,23 @@ import java.io.Serializable;
 public class Recipient implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("recipient_id")
+    @SerializedName("recipient_id")
     private Integer recipientId = null;
 
     /**
      * recipient_type string
      */
     public enum RecipientTypeEnum {
+        @SerializedName("alliance")
         ALLIANCE("alliance"),
 
+        @SerializedName("character")
         CHARACTER("character"),
 
+        @SerializedName("corporation")
         CORPORATION("corporation"),
 
+        @SerializedName("mailing_list")
         MAILING_LIST("mailing_list");
 
         private String value;
@@ -50,19 +53,9 @@ public class Recipient implements Serializable {
         public String toString() {
             return String.valueOf(value);
         }
-
-        @JsonCreator
-        public static RecipientTypeEnum fromValue(String text) {
-            for (RecipientTypeEnum b : RecipientTypeEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
     }
 
-    @JsonProperty("recipient_type")
+    @SerializedName("recipient_type")
     private RecipientTypeEnum recipientType = null;
 
     public Recipient recipientId(Integer recipientId) {

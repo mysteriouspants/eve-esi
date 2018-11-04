@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.OffsetDateTime;
@@ -31,34 +30,34 @@ import java.io.Serializable;
 public class WarResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("aggressor")
+    @SerializedName("aggressor")
     private Aggressor aggressor = null;
 
-    @JsonProperty("allies")
+    @SerializedName("allies")
     private List<WarAlly> allies = new ArrayList<WarAlly>();
 
-    @JsonProperty("declared")
+    @SerializedName("declared")
     private OffsetDateTime declared = null;
 
-    @JsonProperty("defender")
+    @SerializedName("defender")
     private Defender defender = null;
 
-    @JsonProperty("finished")
+    @SerializedName("finished")
     private OffsetDateTime finished = null;
 
-    @JsonProperty("id")
+    @SerializedName("id")
     private Integer id = null;
 
-    @JsonProperty("mutual")
+    @SerializedName("mutual")
     private Boolean mutual = null;
 
-    @JsonProperty("open_for_allies")
+    @SerializedName("open_for_allies")
     private Boolean openForAllies = null;
 
-    @JsonProperty("retracted")
+    @SerializedName("retracted")
     private OffsetDateTime retracted = null;
 
-    @JsonProperty("started")
+    @SerializedName("started")
     private OffsetDateTime started = null;
 
     public WarResponse aggressor(Aggressor aggressor) {

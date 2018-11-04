@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -25,286 +24,286 @@ import java.io.Serializable;
 public class CharacterStatsCombat implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("cap_drainedby_npc")
+    @SerializedName("cap_drainedby_npc")
     private Long capDrainedbyNpc = null;
 
-    @JsonProperty("cap_drainedby_pc")
+    @SerializedName("cap_drainedby_pc")
     private Long capDrainedbyPc = null;
 
-    @JsonProperty("cap_draining_pc")
+    @SerializedName("cap_draining_pc")
     private Long capDrainingPc = null;
 
-    @JsonProperty("criminal_flag_set")
+    @SerializedName("criminal_flag_set")
     private Long criminalFlagSet = null;
 
-    @JsonProperty("damage_from_np_cs_amount")
+    @SerializedName("damage_from_np_cs_amount")
     private Long damageFromNpCsAmount = null;
 
-    @JsonProperty("damage_from_np_cs_num_shots")
+    @SerializedName("damage_from_np_cs_num_shots")
     private Long damageFromNpCsNumShots = null;
 
-    @JsonProperty("damage_from_players_bomb_amount")
+    @SerializedName("damage_from_players_bomb_amount")
     private Long damageFromPlayersBombAmount = null;
 
-    @JsonProperty("damage_from_players_bomb_num_shots")
+    @SerializedName("damage_from_players_bomb_num_shots")
     private Long damageFromPlayersBombNumShots = null;
 
-    @JsonProperty("damage_from_players_combat_drone_amount")
+    @SerializedName("damage_from_players_combat_drone_amount")
     private Long damageFromPlayersCombatDroneAmount = null;
 
-    @JsonProperty("damage_from_players_combat_drone_num_shots")
+    @SerializedName("damage_from_players_combat_drone_num_shots")
     private Long damageFromPlayersCombatDroneNumShots = null;
 
-    @JsonProperty("damage_from_players_energy_amount")
+    @SerializedName("damage_from_players_energy_amount")
     private Long damageFromPlayersEnergyAmount = null;
 
-    @JsonProperty("damage_from_players_energy_num_shots")
+    @SerializedName("damage_from_players_energy_num_shots")
     private Long damageFromPlayersEnergyNumShots = null;
 
-    @JsonProperty("damage_from_players_fighter_bomber_amount")
+    @SerializedName("damage_from_players_fighter_bomber_amount")
     private Long damageFromPlayersFighterBomberAmount = null;
 
-    @JsonProperty("damage_from_players_fighter_bomber_num_shots")
+    @SerializedName("damage_from_players_fighter_bomber_num_shots")
     private Long damageFromPlayersFighterBomberNumShots = null;
 
-    @JsonProperty("damage_from_players_fighter_drone_amount")
+    @SerializedName("damage_from_players_fighter_drone_amount")
     private Long damageFromPlayersFighterDroneAmount = null;
 
-    @JsonProperty("damage_from_players_fighter_drone_num_shots")
+    @SerializedName("damage_from_players_fighter_drone_num_shots")
     private Long damageFromPlayersFighterDroneNumShots = null;
 
-    @JsonProperty("damage_from_players_hybrid_amount")
+    @SerializedName("damage_from_players_hybrid_amount")
     private Long damageFromPlayersHybridAmount = null;
 
-    @JsonProperty("damage_from_players_hybrid_num_shots")
+    @SerializedName("damage_from_players_hybrid_num_shots")
     private Long damageFromPlayersHybridNumShots = null;
 
-    @JsonProperty("damage_from_players_missile_amount")
+    @SerializedName("damage_from_players_missile_amount")
     private Long damageFromPlayersMissileAmount = null;
 
-    @JsonProperty("damage_from_players_missile_num_shots")
+    @SerializedName("damage_from_players_missile_num_shots")
     private Long damageFromPlayersMissileNumShots = null;
 
-    @JsonProperty("damage_from_players_projectile_amount")
+    @SerializedName("damage_from_players_projectile_amount")
     private Long damageFromPlayersProjectileAmount = null;
 
-    @JsonProperty("damage_from_players_projectile_num_shots")
+    @SerializedName("damage_from_players_projectile_num_shots")
     private Long damageFromPlayersProjectileNumShots = null;
 
-    @JsonProperty("damage_from_players_smart_bomb_amount")
+    @SerializedName("damage_from_players_smart_bomb_amount")
     private Long damageFromPlayersSmartBombAmount = null;
 
-    @JsonProperty("damage_from_players_smart_bomb_num_shots")
+    @SerializedName("damage_from_players_smart_bomb_num_shots")
     private Long damageFromPlayersSmartBombNumShots = null;
 
-    @JsonProperty("damage_from_players_super_amount")
+    @SerializedName("damage_from_players_super_amount")
     private Long damageFromPlayersSuperAmount = null;
 
-    @JsonProperty("damage_from_players_super_num_shots")
+    @SerializedName("damage_from_players_super_num_shots")
     private Long damageFromPlayersSuperNumShots = null;
 
-    @JsonProperty("damage_from_structures_total_amount")
+    @SerializedName("damage_from_structures_total_amount")
     private Long damageFromStructuresTotalAmount = null;
 
-    @JsonProperty("damage_from_structures_total_num_shots")
+    @SerializedName("damage_from_structures_total_num_shots")
     private Long damageFromStructuresTotalNumShots = null;
 
-    @JsonProperty("damage_to_players_bomb_amount")
+    @SerializedName("damage_to_players_bomb_amount")
     private Long damageToPlayersBombAmount = null;
 
-    @JsonProperty("damage_to_players_bomb_num_shots")
+    @SerializedName("damage_to_players_bomb_num_shots")
     private Long damageToPlayersBombNumShots = null;
 
-    @JsonProperty("damage_to_players_combat_drone_amount")
+    @SerializedName("damage_to_players_combat_drone_amount")
     private Long damageToPlayersCombatDroneAmount = null;
 
-    @JsonProperty("damage_to_players_combat_drone_num_shots")
+    @SerializedName("damage_to_players_combat_drone_num_shots")
     private Long damageToPlayersCombatDroneNumShots = null;
 
-    @JsonProperty("damage_to_players_energy_amount")
+    @SerializedName("damage_to_players_energy_amount")
     private Long damageToPlayersEnergyAmount = null;
 
-    @JsonProperty("damage_to_players_energy_num_shots")
+    @SerializedName("damage_to_players_energy_num_shots")
     private Long damageToPlayersEnergyNumShots = null;
 
-    @JsonProperty("damage_to_players_fighter_bomber_amount")
+    @SerializedName("damage_to_players_fighter_bomber_amount")
     private Long damageToPlayersFighterBomberAmount = null;
 
-    @JsonProperty("damage_to_players_fighter_bomber_num_shots")
+    @SerializedName("damage_to_players_fighter_bomber_num_shots")
     private Long damageToPlayersFighterBomberNumShots = null;
 
-    @JsonProperty("damage_to_players_fighter_drone_amount")
+    @SerializedName("damage_to_players_fighter_drone_amount")
     private Long damageToPlayersFighterDroneAmount = null;
 
-    @JsonProperty("damage_to_players_fighter_drone_num_shots")
+    @SerializedName("damage_to_players_fighter_drone_num_shots")
     private Long damageToPlayersFighterDroneNumShots = null;
 
-    @JsonProperty("damage_to_players_hybrid_amount")
+    @SerializedName("damage_to_players_hybrid_amount")
     private Long damageToPlayersHybridAmount = null;
 
-    @JsonProperty("damage_to_players_hybrid_num_shots")
+    @SerializedName("damage_to_players_hybrid_num_shots")
     private Long damageToPlayersHybridNumShots = null;
 
-    @JsonProperty("damage_to_players_missile_amount")
+    @SerializedName("damage_to_players_missile_amount")
     private Long damageToPlayersMissileAmount = null;
 
-    @JsonProperty("damage_to_players_missile_num_shots")
+    @SerializedName("damage_to_players_missile_num_shots")
     private Long damageToPlayersMissileNumShots = null;
 
-    @JsonProperty("damage_to_players_projectile_amount")
+    @SerializedName("damage_to_players_projectile_amount")
     private Long damageToPlayersProjectileAmount = null;
 
-    @JsonProperty("damage_to_players_projectile_num_shots")
+    @SerializedName("damage_to_players_projectile_num_shots")
     private Long damageToPlayersProjectileNumShots = null;
 
-    @JsonProperty("damage_to_players_smart_bomb_amount")
+    @SerializedName("damage_to_players_smart_bomb_amount")
     private Long damageToPlayersSmartBombAmount = null;
 
-    @JsonProperty("damage_to_players_smart_bomb_num_shots")
+    @SerializedName("damage_to_players_smart_bomb_num_shots")
     private Long damageToPlayersSmartBombNumShots = null;
 
-    @JsonProperty("damage_to_players_super_amount")
+    @SerializedName("damage_to_players_super_amount")
     private Long damageToPlayersSuperAmount = null;
 
-    @JsonProperty("damage_to_players_super_num_shots")
+    @SerializedName("damage_to_players_super_num_shots")
     private Long damageToPlayersSuperNumShots = null;
 
-    @JsonProperty("damage_to_structures_total_amount")
+    @SerializedName("damage_to_structures_total_amount")
     private Long damageToStructuresTotalAmount = null;
 
-    @JsonProperty("damage_to_structures_total_num_shots")
+    @SerializedName("damage_to_structures_total_num_shots")
     private Long damageToStructuresTotalNumShots = null;
 
-    @JsonProperty("deaths_high_sec")
+    @SerializedName("deaths_high_sec")
     private Long deathsHighSec = null;
 
-    @JsonProperty("deaths_low_sec")
+    @SerializedName("deaths_low_sec")
     private Long deathsLowSec = null;
 
-    @JsonProperty("deaths_null_sec")
+    @SerializedName("deaths_null_sec")
     private Long deathsNullSec = null;
 
-    @JsonProperty("deaths_pod_high_sec")
+    @SerializedName("deaths_pod_high_sec")
     private Long deathsPodHighSec = null;
 
-    @JsonProperty("deaths_pod_low_sec")
+    @SerializedName("deaths_pod_low_sec")
     private Long deathsPodLowSec = null;
 
-    @JsonProperty("deaths_pod_null_sec")
+    @SerializedName("deaths_pod_null_sec")
     private Long deathsPodNullSec = null;
 
-    @JsonProperty("deaths_pod_wormhole")
+    @SerializedName("deaths_pod_wormhole")
     private Long deathsPodWormhole = null;
 
-    @JsonProperty("deaths_wormhole")
+    @SerializedName("deaths_wormhole")
     private Long deathsWormhole = null;
 
-    @JsonProperty("drone_engage")
+    @SerializedName("drone_engage")
     private Long droneEngage = null;
 
-    @JsonProperty("dscans")
+    @SerializedName("dscans")
     private Long dscans = null;
 
-    @JsonProperty("duel_requested")
+    @SerializedName("duel_requested")
     private Long duelRequested = null;
 
-    @JsonProperty("engagement_register")
+    @SerializedName("engagement_register")
     private Long engagementRegister = null;
 
-    @JsonProperty("kills_assists")
+    @SerializedName("kills_assists")
     private Long killsAssists = null;
 
-    @JsonProperty("kills_high_sec")
+    @SerializedName("kills_high_sec")
     private Long killsHighSec = null;
 
-    @JsonProperty("kills_low_sec")
+    @SerializedName("kills_low_sec")
     private Long killsLowSec = null;
 
-    @JsonProperty("kills_null_sec")
+    @SerializedName("kills_null_sec")
     private Long killsNullSec = null;
 
-    @JsonProperty("kills_pod_high_sec")
+    @SerializedName("kills_pod_high_sec")
     private Long killsPodHighSec = null;
 
-    @JsonProperty("kills_pod_low_sec")
+    @SerializedName("kills_pod_low_sec")
     private Long killsPodLowSec = null;
 
-    @JsonProperty("kills_pod_null_sec")
+    @SerializedName("kills_pod_null_sec")
     private Long killsPodNullSec = null;
 
-    @JsonProperty("kills_pod_wormhole")
+    @SerializedName("kills_pod_wormhole")
     private Long killsPodWormhole = null;
 
-    @JsonProperty("kills_wormhole")
+    @SerializedName("kills_wormhole")
     private Long killsWormhole = null;
 
-    @JsonProperty("npc_flag_set")
+    @SerializedName("npc_flag_set")
     private Long npcFlagSet = null;
 
-    @JsonProperty("probe_scans")
+    @SerializedName("probe_scans")
     private Long probeScans = null;
 
-    @JsonProperty("pvp_flag_set")
+    @SerializedName("pvp_flag_set")
     private Long pvpFlagSet = null;
 
-    @JsonProperty("repair_armor_by_remote_amount")
+    @SerializedName("repair_armor_by_remote_amount")
     private Long repairArmorByRemoteAmount = null;
 
-    @JsonProperty("repair_armor_remote_amount")
+    @SerializedName("repair_armor_remote_amount")
     private Long repairArmorRemoteAmount = null;
 
-    @JsonProperty("repair_armor_self_amount")
+    @SerializedName("repair_armor_self_amount")
     private Long repairArmorSelfAmount = null;
 
-    @JsonProperty("repair_capacitor_by_remote_amount")
+    @SerializedName("repair_capacitor_by_remote_amount")
     private Long repairCapacitorByRemoteAmount = null;
 
-    @JsonProperty("repair_capacitor_remote_amount")
+    @SerializedName("repair_capacitor_remote_amount")
     private Long repairCapacitorRemoteAmount = null;
 
-    @JsonProperty("repair_capacitor_self_amount")
+    @SerializedName("repair_capacitor_self_amount")
     private Long repairCapacitorSelfAmount = null;
 
-    @JsonProperty("repair_hull_by_remote_amount")
+    @SerializedName("repair_hull_by_remote_amount")
     private Long repairHullByRemoteAmount = null;
 
-    @JsonProperty("repair_hull_remote_amount")
+    @SerializedName("repair_hull_remote_amount")
     private Long repairHullRemoteAmount = null;
 
-    @JsonProperty("repair_hull_self_amount")
+    @SerializedName("repair_hull_self_amount")
     private Long repairHullSelfAmount = null;
 
-    @JsonProperty("repair_shield_by_remote_amount")
+    @SerializedName("repair_shield_by_remote_amount")
     private Long repairShieldByRemoteAmount = null;
 
-    @JsonProperty("repair_shield_remote_amount")
+    @SerializedName("repair_shield_remote_amount")
     private Long repairShieldRemoteAmount = null;
 
-    @JsonProperty("repair_shield_self_amount")
+    @SerializedName("repair_shield_self_amount")
     private Long repairShieldSelfAmount = null;
 
-    @JsonProperty("self_destructs")
+    @SerializedName("self_destructs")
     private Long selfDestructs = null;
 
-    @JsonProperty("warp_scramble_pc")
+    @SerializedName("warp_scramble_pc")
     private Long warpScramblePc = null;
 
-    @JsonProperty("warp_scrambledby_npc")
+    @SerializedName("warp_scrambledby_npc")
     private Long warpScrambledbyNpc = null;
 
-    @JsonProperty("warp_scrambledby_pc")
+    @SerializedName("warp_scrambledby_pc")
     private Long warpScrambledbyPc = null;
 
-    @JsonProperty("weapon_flag_set")
+    @SerializedName("weapon_flag_set")
     private Long weaponFlagSet = null;
 
-    @JsonProperty("webifiedby_npc")
+    @SerializedName("webifiedby_npc")
     private Long webifiedbyNpc = null;
 
-    @JsonProperty("webifiedby_pc")
+    @SerializedName("webifiedby_pc")
     private Long webifiedbyPc = null;
 
-    @JsonProperty("webifying_pc")
+    @SerializedName("webifying_pc")
     private Long webifyingPc = null;
 
     public CharacterStatsCombat capDrainedbyNpc(Long capDrainedbyNpc) {

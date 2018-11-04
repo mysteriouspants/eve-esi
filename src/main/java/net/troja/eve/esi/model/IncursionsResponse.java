@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -27,32 +26,35 @@ import java.io.Serializable;
 public class IncursionsResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("constellation_id")
+    @SerializedName("constellation_id")
     private Integer constellationId = null;
 
-    @JsonProperty("faction_id")
+    @SerializedName("faction_id")
     private Integer factionId = null;
 
-    @JsonProperty("has_boss")
+    @SerializedName("has_boss")
     private Boolean hasBoss = null;
 
-    @JsonProperty("infested_solar_systems")
+    @SerializedName("infested_solar_systems")
     private List<Integer> infestedSolarSystems = new ArrayList<Integer>();
 
-    @JsonProperty("influence")
+    @SerializedName("influence")
     private Float influence = null;
 
-    @JsonProperty("staging_solar_system_id")
+    @SerializedName("staging_solar_system_id")
     private Integer stagingSolarSystemId = null;
 
     /**
      * The state of this incursion
      */
     public enum StateEnum {
+        @SerializedName("withdrawing")
         WITHDRAWING("withdrawing"),
 
+        @SerializedName("mobilizing")
         MOBILIZING("mobilizing"),
 
+        @SerializedName("established")
         ESTABLISHED("established");
 
         private String value;
@@ -65,22 +67,12 @@ public class IncursionsResponse implements Serializable {
         public String toString() {
             return String.valueOf(value);
         }
-
-        @JsonCreator
-        public static StateEnum fromValue(String text) {
-            for (StateEnum b : StateEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
     }
 
-    @JsonProperty("state")
+    @SerializedName("state")
     private StateEnum state = null;
 
-    @JsonProperty("type")
+    @SerializedName("type")
     private String type = null;
 
     public IncursionsResponse constellationId(Integer constellationId) {

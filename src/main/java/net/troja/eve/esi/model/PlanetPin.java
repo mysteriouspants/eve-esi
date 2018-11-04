@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.OffsetDateTime;
@@ -31,37 +30,37 @@ import java.io.Serializable;
 public class PlanetPin implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("contents")
+    @SerializedName("contents")
     private List<PlanetContent> contents = new ArrayList<PlanetContent>();
 
-    @JsonProperty("expiry_time")
+    @SerializedName("expiry_time")
     private OffsetDateTime expiryTime = null;
 
-    @JsonProperty("extractor_details")
+    @SerializedName("extractor_details")
     private PlanetExtractorDetails extractorDetails = null;
 
-    @JsonProperty("factory_details")
+    @SerializedName("factory_details")
     private PlanetFactoryDetails factoryDetails = null;
 
-    @JsonProperty("install_time")
+    @SerializedName("install_time")
     private OffsetDateTime installTime = null;
 
-    @JsonProperty("last_cycle_start")
+    @SerializedName("last_cycle_start")
     private OffsetDateTime lastCycleStart = null;
 
-    @JsonProperty("latitude")
+    @SerializedName("latitude")
     private Float latitude = null;
 
-    @JsonProperty("longitude")
+    @SerializedName("longitude")
     private Float longitude = null;
 
-    @JsonProperty("pin_id")
+    @SerializedName("pin_id")
     private Long pinId = null;
 
-    @JsonProperty("schematic_id")
+    @SerializedName("schematic_id")
     private Integer schematicId = null;
 
-    @JsonProperty("type_id")
+    @SerializedName("type_id")
     private Integer typeId = null;
 
     public PlanetPin contents(List<PlanetContent> contents) {

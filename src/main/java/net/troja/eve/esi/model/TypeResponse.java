@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -29,52 +28,52 @@ import java.io.Serializable;
 public class TypeResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("capacity")
+    @SerializedName("capacity")
     private Float capacity = null;
 
-    @JsonProperty("description")
+    @SerializedName("description")
     private String description = null;
 
-    @JsonProperty("dogma_attributes")
+    @SerializedName("dogma_attributes")
     private List<TypeDogmaAttribute> dogmaAttributes = new ArrayList<TypeDogmaAttribute>();
 
-    @JsonProperty("dogma_effects")
+    @SerializedName("dogma_effects")
     private List<TypeDogmaEffect> dogmaEffects = new ArrayList<TypeDogmaEffect>();
 
-    @JsonProperty("graphic_id")
+    @SerializedName("graphic_id")
     private Integer graphicId = null;
 
-    @JsonProperty("group_id")
+    @SerializedName("group_id")
     private Integer groupId = null;
 
-    @JsonProperty("icon_id")
+    @SerializedName("icon_id")
     private Integer iconId = null;
 
-    @JsonProperty("market_group_id")
+    @SerializedName("market_group_id")
     private Integer marketGroupId = null;
 
-    @JsonProperty("mass")
+    @SerializedName("mass")
     private Float mass = null;
 
-    @JsonProperty("name")
+    @SerializedName("name")
     private String name = null;
 
-    @JsonProperty("packaged_volume")
+    @SerializedName("packaged_volume")
     private Float packagedVolume = null;
 
-    @JsonProperty("portion_size")
+    @SerializedName("portion_size")
     private Integer portionSize = null;
 
-    @JsonProperty("published")
+    @SerializedName("published")
     private Boolean published = null;
 
-    @JsonProperty("radius")
+    @SerializedName("radius")
     private Float radius = null;
 
-    @JsonProperty("type_id")
+    @SerializedName("type_id")
     private Integer typeId = null;
 
-    @JsonProperty("volume")
+    @SerializedName("volume")
     private Float volume = null;
 
     public TypeResponse capacity(Float capacity) {

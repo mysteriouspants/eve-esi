@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.OffsetDateTime;
@@ -26,16 +25,16 @@ import java.io.Serializable;
 public class CorporationContractsBidsResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("amount")
+    @SerializedName("amount")
     private Float amount = null;
 
-    @JsonProperty("bid_id")
+    @SerializedName("bid_id")
     private Integer bidId = null;
 
-    @JsonProperty("bidder_id")
+    @SerializedName("bidder_id")
     private Integer bidderId = null;
 
-    @JsonProperty("date_bid")
+    @SerializedName("date_bid")
     private OffsetDateTime dateBid = null;
 
     public CorporationContractsBidsResponse amount(Float amount) {

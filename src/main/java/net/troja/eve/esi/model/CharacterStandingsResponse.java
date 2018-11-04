@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -25,17 +24,20 @@ import java.io.Serializable;
 public class CharacterStandingsResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("from_id")
+    @SerializedName("from_id")
     private Integer fromId = null;
 
     /**
      * from_type string
      */
     public enum FromTypeEnum {
+        @SerializedName("agent")
         AGENT("agent"),
 
+        @SerializedName("npc_corp")
         NPC_CORP("npc_corp"),
 
+        @SerializedName("faction")
         FACTION("faction");
 
         private String value;
@@ -48,22 +50,12 @@ public class CharacterStandingsResponse implements Serializable {
         public String toString() {
             return String.valueOf(value);
         }
-
-        @JsonCreator
-        public static FromTypeEnum fromValue(String text) {
-            for (FromTypeEnum b : FromTypeEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
     }
 
-    @JsonProperty("from_type")
+    @SerializedName("from_type")
     private FromTypeEnum fromType = null;
 
-    @JsonProperty("standing")
+    @SerializedName("standing")
     private Float standing = null;
 
     public CharacterStandingsResponse fromId(Integer fromId) {

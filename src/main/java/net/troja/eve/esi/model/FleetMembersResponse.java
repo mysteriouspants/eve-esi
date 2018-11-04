@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.OffsetDateTime;
@@ -26,22 +25,26 @@ import java.io.Serializable;
 public class FleetMembersResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("character_id")
+    @SerializedName("character_id")
     private Integer characterId = null;
 
-    @JsonProperty("join_time")
+    @SerializedName("join_time")
     private OffsetDateTime joinTime = null;
 
     /**
      * Member’s role in fleet
      */
     public enum RoleEnum {
+        @SerializedName("fleet_commander")
         FLEET_COMMANDER("fleet_commander"),
 
+        @SerializedName("wing_commander")
         WING_COMMANDER("wing_commander"),
 
+        @SerializedName("squad_commander")
         SQUAD_COMMANDER("squad_commander"),
 
+        @SerializedName("squad_member")
         SQUAD_MEMBER("squad_member");
 
         private String value;
@@ -54,40 +57,30 @@ public class FleetMembersResponse implements Serializable {
         public String toString() {
             return String.valueOf(value);
         }
-
-        @JsonCreator
-        public static RoleEnum fromValue(String text) {
-            for (RoleEnum b : RoleEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
     }
 
-    @JsonProperty("role")
+    @SerializedName("role")
     private RoleEnum role = null;
 
-    @JsonProperty("role_name")
+    @SerializedName("role_name")
     private String roleName = null;
 
-    @JsonProperty("ship_type_id")
+    @SerializedName("ship_type_id")
     private Integer shipTypeId = null;
 
-    @JsonProperty("solar_system_id")
+    @SerializedName("solar_system_id")
     private Integer solarSystemId = null;
 
-    @JsonProperty("squad_id")
+    @SerializedName("squad_id")
     private Long squadId = null;
 
-    @JsonProperty("station_id")
+    @SerializedName("station_id")
     private Long stationId = null;
 
-    @JsonProperty("takes_fleet_warp")
+    @SerializedName("takes_fleet_warp")
     private Boolean takesFleetWarp = null;
 
-    @JsonProperty("wing_id")
+    @SerializedName("wing_id")
     private Long wingId = null;
 
     public FleetMembersResponse characterId(Integer characterId) {

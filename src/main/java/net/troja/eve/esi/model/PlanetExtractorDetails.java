@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -28,19 +27,19 @@ import java.io.Serializable;
 public class PlanetExtractorDetails implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("cycle_time")
+    @SerializedName("cycle_time")
     private Integer cycleTime = null;
 
-    @JsonProperty("head_radius")
+    @SerializedName("head_radius")
     private Float headRadius = null;
 
-    @JsonProperty("heads")
+    @SerializedName("heads")
     private List<PlanetHead> heads = new ArrayList<PlanetHead>();
 
-    @JsonProperty("product_type_id")
+    @SerializedName("product_type_id")
     private Integer productTypeId = null;
 
-    @JsonProperty("qty_per_cycle")
+    @SerializedName("qty_per_cycle")
     private Integer qtyPerCycle = null;
 
     public PlanetExtractorDetails cycleTime(Integer cycleTime) {

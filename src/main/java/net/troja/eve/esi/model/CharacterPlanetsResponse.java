@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.OffsetDateTime;
@@ -26,36 +25,44 @@ import java.io.Serializable;
 public class CharacterPlanetsResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("last_update")
+    @SerializedName("last_update")
     private OffsetDateTime lastUpdate = null;
 
-    @JsonProperty("num_pins")
+    @SerializedName("num_pins")
     private Integer numPins = null;
 
-    @JsonProperty("owner_id")
+    @SerializedName("owner_id")
     private Integer ownerId = null;
 
-    @JsonProperty("planet_id")
+    @SerializedName("planet_id")
     private Integer planetId = null;
 
     /**
      * planet_type string
      */
     public enum PlanetTypeEnum {
+        @SerializedName("temperate")
         TEMPERATE("temperate"),
 
+        @SerializedName("barren")
         BARREN("barren"),
 
+        @SerializedName("oceanic")
         OCEANIC("oceanic"),
 
+        @SerializedName("ice")
         ICE("ice"),
 
+        @SerializedName("gas")
         GAS("gas"),
 
+        @SerializedName("lava")
         LAVA("lava"),
 
+        @SerializedName("storm")
         STORM("storm"),
 
+        @SerializedName("plasma")
         PLASMA("plasma");
 
         private String value;
@@ -68,25 +75,15 @@ public class CharacterPlanetsResponse implements Serializable {
         public String toString() {
             return String.valueOf(value);
         }
-
-        @JsonCreator
-        public static PlanetTypeEnum fromValue(String text) {
-            for (PlanetTypeEnum b : PlanetTypeEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
     }
 
-    @JsonProperty("planet_type")
+    @SerializedName("planet_type")
     private PlanetTypeEnum planetType = null;
 
-    @JsonProperty("solar_system_id")
+    @SerializedName("solar_system_id")
     private Integer solarSystemId = null;
 
-    @JsonProperty("upgrade_level")
+    @SerializedName("upgrade_level")
     private Integer upgradeLevel = null;
 
     public CharacterPlanetsResponse lastUpdate(OffsetDateTime lastUpdate) {

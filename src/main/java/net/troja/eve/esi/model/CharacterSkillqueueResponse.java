@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.OffsetDateTime;
@@ -26,28 +25,28 @@ import java.io.Serializable;
 public class CharacterSkillqueueResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("finish_date")
+    @SerializedName("finish_date")
     private OffsetDateTime finishDate = null;
 
-    @JsonProperty("finished_level")
+    @SerializedName("finished_level")
     private Integer finishedLevel = null;
 
-    @JsonProperty("level_end_sp")
+    @SerializedName("level_end_sp")
     private Integer levelEndSp = null;
 
-    @JsonProperty("level_start_sp")
+    @SerializedName("level_start_sp")
     private Integer levelStartSp = null;
 
-    @JsonProperty("queue_position")
+    @SerializedName("queue_position")
     private Integer queuePosition = null;
 
-    @JsonProperty("skill_id")
+    @SerializedName("skill_id")
     private Integer skillId = null;
 
-    @JsonProperty("start_date")
+    @SerializedName("start_date")
     private OffsetDateTime startDate = null;
 
-    @JsonProperty("training_start_sp")
+    @SerializedName("training_start_sp")
     private Integer trainingStartSp = null;
 
     public CharacterSkillqueueResponse finishDate(OffsetDateTime finishDate) {

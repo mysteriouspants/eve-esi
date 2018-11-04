@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.OffsetDateTime;
@@ -29,25 +28,25 @@ import java.io.Serializable;
 public class MailHeadersResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("from")
+    @SerializedName("from")
     private Integer from = null;
 
-    @JsonProperty("is_read")
+    @SerializedName("is_read")
     private Boolean isRead = null;
 
-    @JsonProperty("labels")
+    @SerializedName("labels")
     private List<Integer> labels = new ArrayList<Integer>();
 
-    @JsonProperty("mail_id")
+    @SerializedName("mail_id")
     private Integer mailId = null;
 
-    @JsonProperty("recipients")
+    @SerializedName("recipients")
     private List<Recipient> recipients = new ArrayList<Recipient>();
 
-    @JsonProperty("subject")
+    @SerializedName("subject")
     private String subject = null;
 
-    @JsonProperty("timestamp")
+    @SerializedName("timestamp")
     private OffsetDateTime timestamp = null;
 
     public MailHeadersResponse from(Integer from) {

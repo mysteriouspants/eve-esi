@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.OffsetDateTime;
@@ -26,16 +25,16 @@ import java.io.Serializable;
 public class StatusResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("players")
+    @SerializedName("players")
     private Integer players = null;
 
-    @JsonProperty("server_version")
+    @SerializedName("server_version")
     private String serverVersion = null;
 
-    @JsonProperty("start_time")
+    @SerializedName("start_time")
     private OffsetDateTime startTime = null;
 
-    @JsonProperty("vip")
+    @SerializedName("vip")
     private Boolean vip = null;
 
     public StatusResponse players(Integer players) {

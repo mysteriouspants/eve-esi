@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.OffsetDateTime;
@@ -28,31 +27,31 @@ import java.io.Serializable;
 public class CharacterBookmarksResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("bookmark_id")
+    @SerializedName("bookmark_id")
     private Integer bookmarkId = null;
 
-    @JsonProperty("coordinates")
+    @SerializedName("coordinates")
     private CharacterBookmarksCoordinates coordinates = null;
 
-    @JsonProperty("created")
+    @SerializedName("created")
     private OffsetDateTime created = null;
 
-    @JsonProperty("creator_id")
+    @SerializedName("creator_id")
     private Integer creatorId = null;
 
-    @JsonProperty("folder_id")
+    @SerializedName("folder_id")
     private Integer folderId = null;
 
-    @JsonProperty("item")
+    @SerializedName("item")
     private CharacterBookmarkItem item = null;
 
-    @JsonProperty("label")
+    @SerializedName("label")
     private String label = null;
 
-    @JsonProperty("location_id")
+    @SerializedName("location_id")
     private Integer locationId = null;
 
-    @JsonProperty("notes")
+    @SerializedName("notes")
     private String notes = null;
 
     public CharacterBookmarksResponse bookmarkId(Integer bookmarkId) {

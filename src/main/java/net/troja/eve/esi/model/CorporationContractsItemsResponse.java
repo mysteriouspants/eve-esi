@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -25,22 +24,22 @@ import java.io.Serializable;
 public class CorporationContractsItemsResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("is_included")
+    @SerializedName("is_included")
     private Boolean isIncluded = null;
 
-    @JsonProperty("is_singleton")
+    @SerializedName("is_singleton")
     private Boolean isSingleton = null;
 
-    @JsonProperty("quantity")
+    @SerializedName("quantity")
     private Integer quantity = null;
 
-    @JsonProperty("raw_quantity")
+    @SerializedName("raw_quantity")
     private Integer rawQuantity = null;
 
-    @JsonProperty("record_id")
+    @SerializedName("record_id")
     private Long recordId = null;
 
-    @JsonProperty("type_id")
+    @SerializedName("type_id")
     private Integer typeId = null;
 
     public CorporationContractsItemsResponse isIncluded(Boolean isIncluded) {

@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -25,10 +24,10 @@ import java.io.Serializable;
 public class CharacterStatsInventory implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("abandon_loot_quantity")
+    @SerializedName("abandon_loot_quantity")
     private Long abandonLootQuantity = null;
 
-    @JsonProperty("trash_item_quantity")
+    @SerializedName("trash_item_quantity")
     private Long trashItemQuantity = null;
 
     public CharacterStatsInventory abandonLootQuantity(Long abandonLootQuantity) {

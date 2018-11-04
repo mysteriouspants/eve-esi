@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.OffsetDateTime;
@@ -30,16 +29,16 @@ import java.io.Serializable;
 public class CharacterClonesResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("home_location")
+    @SerializedName("home_location")
     private CloneHomeLocation homeLocation = null;
 
-    @JsonProperty("jump_clones")
+    @SerializedName("jump_clones")
     private List<Clone> jumpClones = new ArrayList<Clone>();
 
-    @JsonProperty("last_clone_jump_date")
+    @SerializedName("last_clone_jump_date")
     private OffsetDateTime lastCloneJumpDate = null;
 
-    @JsonProperty("last_station_change_date")
+    @SerializedName("last_station_change_date")
     private OffsetDateTime lastStationChangeDate = null;
 
     public CharacterClonesResponse homeLocation(CloneHomeLocation homeLocation) {

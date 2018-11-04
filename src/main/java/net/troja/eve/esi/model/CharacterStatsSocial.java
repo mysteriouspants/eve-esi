@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -25,79 +24,79 @@ import java.io.Serializable;
 public class CharacterStatsSocial implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("add_contact_bad")
+    @SerializedName("add_contact_bad")
     private Long addContactBad = null;
 
-    @JsonProperty("add_contact_good")
+    @SerializedName("add_contact_good")
     private Long addContactGood = null;
 
-    @JsonProperty("add_contact_high")
+    @SerializedName("add_contact_high")
     private Long addContactHigh = null;
 
-    @JsonProperty("add_contact_horrible")
+    @SerializedName("add_contact_horrible")
     private Long addContactHorrible = null;
 
-    @JsonProperty("add_contact_neutral")
+    @SerializedName("add_contact_neutral")
     private Long addContactNeutral = null;
 
-    @JsonProperty("add_note")
+    @SerializedName("add_note")
     private Long addNote = null;
 
-    @JsonProperty("added_as_contact_bad")
+    @SerializedName("added_as_contact_bad")
     private Long addedAsContactBad = null;
 
-    @JsonProperty("added_as_contact_good")
+    @SerializedName("added_as_contact_good")
     private Long addedAsContactGood = null;
 
-    @JsonProperty("added_as_contact_high")
+    @SerializedName("added_as_contact_high")
     private Long addedAsContactHigh = null;
 
-    @JsonProperty("added_as_contact_horrible")
+    @SerializedName("added_as_contact_horrible")
     private Long addedAsContactHorrible = null;
 
-    @JsonProperty("added_as_contact_neutral")
+    @SerializedName("added_as_contact_neutral")
     private Long addedAsContactNeutral = null;
 
-    @JsonProperty("calendar_event_created")
+    @SerializedName("calendar_event_created")
     private Long calendarEventCreated = null;
 
-    @JsonProperty("chat_messages_alliance")
+    @SerializedName("chat_messages_alliance")
     private Long chatMessagesAlliance = null;
 
-    @JsonProperty("chat_messages_constellation")
+    @SerializedName("chat_messages_constellation")
     private Long chatMessagesConstellation = null;
 
-    @JsonProperty("chat_messages_corporation")
+    @SerializedName("chat_messages_corporation")
     private Long chatMessagesCorporation = null;
 
-    @JsonProperty("chat_messages_fleet")
+    @SerializedName("chat_messages_fleet")
     private Long chatMessagesFleet = null;
 
-    @JsonProperty("chat_messages_region")
+    @SerializedName("chat_messages_region")
     private Long chatMessagesRegion = null;
 
-    @JsonProperty("chat_messages_solarsystem")
+    @SerializedName("chat_messages_solarsystem")
     private Long chatMessagesSolarsystem = null;
 
-    @JsonProperty("chat_messages_warfaction")
+    @SerializedName("chat_messages_warfaction")
     private Long chatMessagesWarfaction = null;
 
-    @JsonProperty("chat_total_message_length")
+    @SerializedName("chat_total_message_length")
     private Long chatTotalMessageLength = null;
 
-    @JsonProperty("direct_trades")
+    @SerializedName("direct_trades")
     private Long directTrades = null;
 
-    @JsonProperty("fleet_broadcasts")
+    @SerializedName("fleet_broadcasts")
     private Long fleetBroadcasts = null;
 
-    @JsonProperty("fleet_joins")
+    @SerializedName("fleet_joins")
     private Long fleetJoins = null;
 
-    @JsonProperty("mails_received")
+    @SerializedName("mails_received")
     private Long mailsReceived = null;
 
-    @JsonProperty("mails_sent")
+    @SerializedName("mails_sent")
     private Long mailsSent = null;
 
     public CharacterStatsSocial addContactBad(Long addContactBad) {

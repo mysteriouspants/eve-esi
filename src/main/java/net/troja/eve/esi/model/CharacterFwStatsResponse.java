@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.OffsetDateTime;
@@ -28,22 +27,22 @@ import java.io.Serializable;
 public class CharacterFwStatsResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("current_rank")
+    @SerializedName("current_rank")
     private Integer currentRank = null;
 
-    @JsonProperty("enlisted_on")
+    @SerializedName("enlisted_on")
     private OffsetDateTime enlistedOn = null;
 
-    @JsonProperty("faction_id")
+    @SerializedName("faction_id")
     private Integer factionId = null;
 
-    @JsonProperty("highest_rank")
+    @SerializedName("highest_rank")
     private Integer highestRank = null;
 
-    @JsonProperty("kills")
+    @SerializedName("kills")
     private CharacterFwStatsKills kills = null;
 
-    @JsonProperty("victory_points")
+    @SerializedName("victory_points")
     private CharacterFwStatsVictoryPoints victoryPoints = null;
 
     public CharacterFwStatsResponse currentRank(Integer currentRank) {

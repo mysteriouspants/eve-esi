@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -25,61 +24,61 @@ import java.io.Serializable;
 public class CharacterStatsMining implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("drone_mine")
+    @SerializedName("drone_mine")
     private Long droneMine = null;
 
-    @JsonProperty("ore_arkonor")
+    @SerializedName("ore_arkonor")
     private Long oreArkonor = null;
 
-    @JsonProperty("ore_bistot")
+    @SerializedName("ore_bistot")
     private Long oreBistot = null;
 
-    @JsonProperty("ore_crokite")
+    @SerializedName("ore_crokite")
     private Long oreCrokite = null;
 
-    @JsonProperty("ore_dark_ochre")
+    @SerializedName("ore_dark_ochre")
     private Long oreDarkOchre = null;
 
-    @JsonProperty("ore_gneiss")
+    @SerializedName("ore_gneiss")
     private Long oreGneiss = null;
 
-    @JsonProperty("ore_harvestable_cloud")
+    @SerializedName("ore_harvestable_cloud")
     private Long oreHarvestableCloud = null;
 
-    @JsonProperty("ore_hedbergite")
+    @SerializedName("ore_hedbergite")
     private Long oreHedbergite = null;
 
-    @JsonProperty("ore_hemorphite")
+    @SerializedName("ore_hemorphite")
     private Long oreHemorphite = null;
 
-    @JsonProperty("ore_ice")
+    @SerializedName("ore_ice")
     private Long oreIce = null;
 
-    @JsonProperty("ore_jaspet")
+    @SerializedName("ore_jaspet")
     private Long oreJaspet = null;
 
-    @JsonProperty("ore_kernite")
+    @SerializedName("ore_kernite")
     private Long oreKernite = null;
 
-    @JsonProperty("ore_mercoxit")
+    @SerializedName("ore_mercoxit")
     private Long oreMercoxit = null;
 
-    @JsonProperty("ore_omber")
+    @SerializedName("ore_omber")
     private Long oreOmber = null;
 
-    @JsonProperty("ore_plagioclase")
+    @SerializedName("ore_plagioclase")
     private Long orePlagioclase = null;
 
-    @JsonProperty("ore_pyroxeres")
+    @SerializedName("ore_pyroxeres")
     private Long orePyroxeres = null;
 
-    @JsonProperty("ore_scordite")
+    @SerializedName("ore_scordite")
     private Long oreScordite = null;
 
-    @JsonProperty("ore_spodumain")
+    @SerializedName("ore_spodumain")
     private Long oreSpodumain = null;
 
-    @JsonProperty("ore_veldspar")
+    @SerializedName("ore_veldspar")
     private Long oreVeldspar = null;
 
     public CharacterStatsMining droneMine(Long droneMine) {

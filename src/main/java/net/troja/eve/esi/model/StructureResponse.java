@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import net.troja.eve.esi.model.Position;
@@ -26,19 +25,19 @@ import java.io.Serializable;
 public class StructureResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("name")
+    @SerializedName("name")
     private String name = null;
 
-    @JsonProperty("owner_id")
+    @SerializedName("owner_id")
     private Integer ownerId = null;
 
-    @JsonProperty("position")
+    @SerializedName("position")
     private Position position = null;
 
-    @JsonProperty("solar_system_id")
+    @SerializedName("solar_system_id")
     private Integer solarSystemId = null;
 
-    @JsonProperty("type_id")
+    @SerializedName("type_id")
     private Integer typeId = null;
 
     public StructureResponse name(String name) {

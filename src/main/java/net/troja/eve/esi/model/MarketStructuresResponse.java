@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.OffsetDateTime;
@@ -26,53 +25,65 @@ import java.io.Serializable;
 public class MarketStructuresResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("duration")
+    @SerializedName("duration")
     private Integer duration = null;
 
-    @JsonProperty("is_buy_order")
+    @SerializedName("is_buy_order")
     private Boolean isBuyOrder = null;
 
-    @JsonProperty("issued")
+    @SerializedName("issued")
     private OffsetDateTime issued = null;
 
-    @JsonProperty("location_id")
+    @SerializedName("location_id")
     private Long locationId = null;
 
-    @JsonProperty("min_volume")
+    @SerializedName("min_volume")
     private Integer minVolume = null;
 
-    @JsonProperty("order_id")
+    @SerializedName("order_id")
     private Long orderId = null;
 
-    @JsonProperty("price")
+    @SerializedName("price")
     private Double price = null;
 
     /**
      * range string
      */
     public enum RangeEnum {
+        @SerializedName("station")
         STATION("station"),
 
+        @SerializedName("region")
         REGION("region"),
 
+        @SerializedName("solarsystem")
         SOLARSYSTEM("solarsystem"),
 
+        @SerializedName("1")
         _1("1"),
 
+        @SerializedName("2")
         _2("2"),
 
+        @SerializedName("3")
         _3("3"),
 
+        @SerializedName("4")
         _4("4"),
 
+        @SerializedName("5")
         _5("5"),
 
+        @SerializedName("10")
         _10("10"),
 
+        @SerializedName("20")
         _20("20"),
 
+        @SerializedName("30")
         _30("30"),
 
+        @SerializedName("40")
         _40("40");
 
         private String value;
@@ -85,28 +96,18 @@ public class MarketStructuresResponse implements Serializable {
         public String toString() {
             return String.valueOf(value);
         }
-
-        @JsonCreator
-        public static RangeEnum fromValue(String text) {
-            for (RangeEnum b : RangeEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
     }
 
-    @JsonProperty("range")
+    @SerializedName("range")
     private RangeEnum range = null;
 
-    @JsonProperty("type_id")
+    @SerializedName("type_id")
     private Integer typeId = null;
 
-    @JsonProperty("volume_remain")
+    @SerializedName("volume_remain")
     private Integer volumeRemain = null;
 
-    @JsonProperty("volume_total")
+    @SerializedName("volume_total")
     private Integer volumeTotal = null;
 
     public MarketStructuresResponse duration(Integer duration) {

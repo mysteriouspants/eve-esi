@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.LocalDate;
@@ -26,22 +25,22 @@ import java.io.Serializable;
 public class MarketHistoryResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("average")
+    @SerializedName("average")
     private Double average = null;
 
-    @JsonProperty("date")
+    @SerializedName("date")
     private LocalDate date = null;
 
-    @JsonProperty("highest")
+    @SerializedName("highest")
     private Double highest = null;
 
-    @JsonProperty("lowest")
+    @SerializedName("lowest")
     private Double lowest = null;
 
-    @JsonProperty("order_count")
+    @SerializedName("order_count")
     private Long orderCount = null;
 
-    @JsonProperty("volume")
+    @SerializedName("volume")
     private Long volume = null;
 
     public MarketHistoryResponse average(Double average) {

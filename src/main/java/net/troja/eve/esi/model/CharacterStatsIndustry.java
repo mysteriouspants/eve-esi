@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -25,112 +24,112 @@ import java.io.Serializable;
 public class CharacterStatsIndustry implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("hacking_successes")
+    @SerializedName("hacking_successes")
     private Long hackingSuccesses = null;
 
-    @JsonProperty("jobs_cancelled")
+    @SerializedName("jobs_cancelled")
     private Long jobsCancelled = null;
 
-    @JsonProperty("jobs_completed_copy_blueprint")
+    @SerializedName("jobs_completed_copy_blueprint")
     private Long jobsCompletedCopyBlueprint = null;
 
-    @JsonProperty("jobs_completed_invention")
+    @SerializedName("jobs_completed_invention")
     private Long jobsCompletedInvention = null;
 
-    @JsonProperty("jobs_completed_manufacture")
+    @SerializedName("jobs_completed_manufacture")
     private Long jobsCompletedManufacture = null;
 
-    @JsonProperty("jobs_completed_manufacture_asteroid")
+    @SerializedName("jobs_completed_manufacture_asteroid")
     private Long jobsCompletedManufactureAsteroid = null;
 
-    @JsonProperty("jobs_completed_manufacture_asteroid_quantity")
+    @SerializedName("jobs_completed_manufacture_asteroid_quantity")
     private Long jobsCompletedManufactureAsteroidQuantity = null;
 
-    @JsonProperty("jobs_completed_manufacture_charge")
+    @SerializedName("jobs_completed_manufacture_charge")
     private Long jobsCompletedManufactureCharge = null;
 
-    @JsonProperty("jobs_completed_manufacture_charge_quantity")
+    @SerializedName("jobs_completed_manufacture_charge_quantity")
     private Long jobsCompletedManufactureChargeQuantity = null;
 
-    @JsonProperty("jobs_completed_manufacture_commodity")
+    @SerializedName("jobs_completed_manufacture_commodity")
     private Long jobsCompletedManufactureCommodity = null;
 
-    @JsonProperty("jobs_completed_manufacture_commodity_quantity")
+    @SerializedName("jobs_completed_manufacture_commodity_quantity")
     private Long jobsCompletedManufactureCommodityQuantity = null;
 
-    @JsonProperty("jobs_completed_manufacture_deployable")
+    @SerializedName("jobs_completed_manufacture_deployable")
     private Long jobsCompletedManufactureDeployable = null;
 
-    @JsonProperty("jobs_completed_manufacture_deployable_quantity")
+    @SerializedName("jobs_completed_manufacture_deployable_quantity")
     private Long jobsCompletedManufactureDeployableQuantity = null;
 
-    @JsonProperty("jobs_completed_manufacture_drone")
+    @SerializedName("jobs_completed_manufacture_drone")
     private Long jobsCompletedManufactureDrone = null;
 
-    @JsonProperty("jobs_completed_manufacture_drone_quantity")
+    @SerializedName("jobs_completed_manufacture_drone_quantity")
     private Long jobsCompletedManufactureDroneQuantity = null;
 
-    @JsonProperty("jobs_completed_manufacture_implant")
+    @SerializedName("jobs_completed_manufacture_implant")
     private Long jobsCompletedManufactureImplant = null;
 
-    @JsonProperty("jobs_completed_manufacture_implant_quantity")
+    @SerializedName("jobs_completed_manufacture_implant_quantity")
     private Long jobsCompletedManufactureImplantQuantity = null;
 
-    @JsonProperty("jobs_completed_manufacture_module")
+    @SerializedName("jobs_completed_manufacture_module")
     private Long jobsCompletedManufactureModule = null;
 
-    @JsonProperty("jobs_completed_manufacture_module_quantity")
+    @SerializedName("jobs_completed_manufacture_module_quantity")
     private Long jobsCompletedManufactureModuleQuantity = null;
 
-    @JsonProperty("jobs_completed_manufacture_other")
+    @SerializedName("jobs_completed_manufacture_other")
     private Long jobsCompletedManufactureOther = null;
 
-    @JsonProperty("jobs_completed_manufacture_other_quantity")
+    @SerializedName("jobs_completed_manufacture_other_quantity")
     private Long jobsCompletedManufactureOtherQuantity = null;
 
-    @JsonProperty("jobs_completed_manufacture_ship")
+    @SerializedName("jobs_completed_manufacture_ship")
     private Long jobsCompletedManufactureShip = null;
 
-    @JsonProperty("jobs_completed_manufacture_ship_quantity")
+    @SerializedName("jobs_completed_manufacture_ship_quantity")
     private Long jobsCompletedManufactureShipQuantity = null;
 
-    @JsonProperty("jobs_completed_manufacture_structure")
+    @SerializedName("jobs_completed_manufacture_structure")
     private Long jobsCompletedManufactureStructure = null;
 
-    @JsonProperty("jobs_completed_manufacture_structure_quantity")
+    @SerializedName("jobs_completed_manufacture_structure_quantity")
     private Long jobsCompletedManufactureStructureQuantity = null;
 
-    @JsonProperty("jobs_completed_manufacture_subsystem")
+    @SerializedName("jobs_completed_manufacture_subsystem")
     private Long jobsCompletedManufactureSubsystem = null;
 
-    @JsonProperty("jobs_completed_manufacture_subsystem_quantity")
+    @SerializedName("jobs_completed_manufacture_subsystem_quantity")
     private Long jobsCompletedManufactureSubsystemQuantity = null;
 
-    @JsonProperty("jobs_completed_material_productivity")
+    @SerializedName("jobs_completed_material_productivity")
     private Long jobsCompletedMaterialProductivity = null;
 
-    @JsonProperty("jobs_completed_time_productivity")
+    @SerializedName("jobs_completed_time_productivity")
     private Long jobsCompletedTimeProductivity = null;
 
-    @JsonProperty("jobs_started_copy_blueprint")
+    @SerializedName("jobs_started_copy_blueprint")
     private Long jobsStartedCopyBlueprint = null;
 
-    @JsonProperty("jobs_started_invention")
+    @SerializedName("jobs_started_invention")
     private Long jobsStartedInvention = null;
 
-    @JsonProperty("jobs_started_manufacture")
+    @SerializedName("jobs_started_manufacture")
     private Long jobsStartedManufacture = null;
 
-    @JsonProperty("jobs_started_material_productivity")
+    @SerializedName("jobs_started_material_productivity")
     private Long jobsStartedMaterialProductivity = null;
 
-    @JsonProperty("jobs_started_time_productivity")
+    @SerializedName("jobs_started_time_productivity")
     private Long jobsStartedTimeProductivity = null;
 
-    @JsonProperty("reprocess_item")
+    @SerializedName("reprocess_item")
     private Long reprocessItem = null;
 
-    @JsonProperty("reprocess_item_quantity")
+    @SerializedName("reprocess_item_quantity")
     private Long reprocessItemQuantity = null;
 
     public CharacterStatsIndustry hackingSuccesses(Long hackingSuccesses) {

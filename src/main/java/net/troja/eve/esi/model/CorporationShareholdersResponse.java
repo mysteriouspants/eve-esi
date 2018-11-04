@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -25,18 +24,20 @@ import java.io.Serializable;
 public class CorporationShareholdersResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("share_count")
+    @SerializedName("share_count")
     private Long shareCount = null;
 
-    @JsonProperty("shareholder_id")
+    @SerializedName("shareholder_id")
     private Integer shareholderId = null;
 
     /**
      * shareholder_type string
      */
     public enum ShareholderTypeEnum {
+        @SerializedName("character")
         CHARACTER("character"),
 
+        @SerializedName("corporation")
         CORPORATION("corporation");
 
         private String value;
@@ -49,19 +50,9 @@ public class CorporationShareholdersResponse implements Serializable {
         public String toString() {
             return String.valueOf(value);
         }
-
-        @JsonCreator
-        public static ShareholderTypeEnum fromValue(String text) {
-            for (ShareholderTypeEnum b : ShareholderTypeEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
     }
 
-    @JsonProperty("shareholder_type")
+    @SerializedName("shareholder_type")
     private ShareholderTypeEnum shareholderType = null;
 
     public CorporationShareholdersResponse shareCount(Long shareCount) {

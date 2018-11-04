@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -26,13 +25,13 @@ import java.io.Serializable;
 public class CorporationFwStatsVictoryPoints implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("last_week")
+    @SerializedName("last_week")
     private Integer lastWeek = null;
 
-    @JsonProperty("total")
+    @SerializedName("total")
     private Integer total = null;
 
-    @JsonProperty("yesterday")
+    @SerializedName("yesterday")
     private Integer yesterday = null;
 
     public CorporationFwStatsVictoryPoints lastWeek(Integer lastWeek) {

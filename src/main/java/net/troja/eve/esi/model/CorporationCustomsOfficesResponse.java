@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -25,51 +24,56 @@ import java.io.Serializable;
 public class CorporationCustomsOfficesResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("alliance_tax_rate")
+    @SerializedName("alliance_tax_rate")
     private Float allianceTaxRate = null;
 
-    @JsonProperty("allow_access_with_standings")
+    @SerializedName("allow_access_with_standings")
     private Boolean allowAccessWithStandings = null;
 
-    @JsonProperty("allow_alliance_access")
+    @SerializedName("allow_alliance_access")
     private Boolean allowAllianceAccess = null;
 
-    @JsonProperty("bad_standing_tax_rate")
+    @SerializedName("bad_standing_tax_rate")
     private Float badStandingTaxRate = null;
 
-    @JsonProperty("corporation_tax_rate")
+    @SerializedName("corporation_tax_rate")
     private Float corporationTaxRate = null;
 
-    @JsonProperty("excellent_standing_tax_rate")
+    @SerializedName("excellent_standing_tax_rate")
     private Float excellentStandingTaxRate = null;
 
-    @JsonProperty("good_standing_tax_rate")
+    @SerializedName("good_standing_tax_rate")
     private Float goodStandingTaxRate = null;
 
-    @JsonProperty("neutral_standing_tax_rate")
+    @SerializedName("neutral_standing_tax_rate")
     private Float neutralStandingTaxRate = null;
 
-    @JsonProperty("office_id")
+    @SerializedName("office_id")
     private Long officeId = null;
 
-    @JsonProperty("reinforce_exit_end")
+    @SerializedName("reinforce_exit_end")
     private Integer reinforceExitEnd = null;
 
-    @JsonProperty("reinforce_exit_start")
+    @SerializedName("reinforce_exit_start")
     private Integer reinforceExitStart = null;
 
     /**
      * Access is allowed only for entities with this level of standing or better
      */
     public enum StandingLevelEnum {
+        @SerializedName("bad")
         BAD("bad"),
 
+        @SerializedName("excellent")
         EXCELLENT("excellent"),
 
+        @SerializedName("good")
         GOOD("good"),
 
+        @SerializedName("neutral")
         NEUTRAL("neutral"),
 
+        @SerializedName("terrible")
         TERRIBLE("terrible");
 
         private String value;
@@ -82,25 +86,15 @@ public class CorporationCustomsOfficesResponse implements Serializable {
         public String toString() {
             return String.valueOf(value);
         }
-
-        @JsonCreator
-        public static StandingLevelEnum fromValue(String text) {
-            for (StandingLevelEnum b : StandingLevelEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
     }
 
-    @JsonProperty("standing_level")
+    @SerializedName("standing_level")
     private StandingLevelEnum standingLevel = null;
 
-    @JsonProperty("system_id")
+    @SerializedName("system_id")
     private Integer systemId = null;
 
-    @JsonProperty("terrible_standing_tax_rate")
+    @SerializedName("terrible_standing_tax_rate")
     private Float terribleStandingTaxRate = null;
 
     public CorporationCustomsOfficesResponse allianceTaxRate(Float allianceTaxRate) {

@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -28,16 +27,16 @@ import java.io.Serializable;
 public class Mail implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("approved_cost")
+    @SerializedName("approved_cost")
     private Long approvedCost = 0l;
 
-    @JsonProperty("body")
+    @SerializedName("body")
     private String body = null;
 
-    @JsonProperty("recipients")
+    @SerializedName("recipients")
     private List<Recipient> recipients = new ArrayList<Recipient>();
 
-    @JsonProperty("subject")
+    @SerializedName("subject")
     private String subject = null;
 
     public Mail approvedCost(Long approvedCost) {

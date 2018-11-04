@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.OffsetDateTime;
@@ -26,19 +25,19 @@ import java.io.Serializable;
 public class CorporationMiningExtractionsResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("chunk_arrival_time")
+    @SerializedName("chunk_arrival_time")
     private OffsetDateTime chunkArrivalTime = null;
 
-    @JsonProperty("extraction_start_time")
+    @SerializedName("extraction_start_time")
     private OffsetDateTime extractionStartTime = null;
 
-    @JsonProperty("moon_id")
+    @SerializedName("moon_id")
     private Integer moonId = null;
 
-    @JsonProperty("natural_decay_time")
+    @SerializedName("natural_decay_time")
     private OffsetDateTime naturalDecayTime = null;
 
-    @JsonProperty("structure_id")
+    @SerializedName("structure_id")
     private Long structureId = null;
 
     public CorporationMiningExtractionsResponse chunkArrivalTime(OffsetDateTime chunkArrivalTime) {

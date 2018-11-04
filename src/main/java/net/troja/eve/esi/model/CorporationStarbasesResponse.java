@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.OffsetDateTime;
@@ -26,30 +25,35 @@ import java.io.Serializable;
 public class CorporationStarbasesResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("moon_id")
+    @SerializedName("moon_id")
     private Integer moonId = null;
 
-    @JsonProperty("onlined_since")
+    @SerializedName("onlined_since")
     private OffsetDateTime onlinedSince = null;
 
-    @JsonProperty("reinforced_until")
+    @SerializedName("reinforced_until")
     private OffsetDateTime reinforcedUntil = null;
 
-    @JsonProperty("starbase_id")
+    @SerializedName("starbase_id")
     private Long starbaseId = null;
 
     /**
      * state string
      */
     public enum StateEnum {
+        @SerializedName("offline")
         OFFLINE("offline"),
 
+        @SerializedName("online")
         ONLINE("online"),
 
+        @SerializedName("onlining")
         ONLINING("onlining"),
 
+        @SerializedName("reinforced")
         REINFORCED("reinforced"),
 
+        @SerializedName("unanchoring")
         UNANCHORING("unanchoring");
 
         private String value;
@@ -62,28 +66,18 @@ public class CorporationStarbasesResponse implements Serializable {
         public String toString() {
             return String.valueOf(value);
         }
-
-        @JsonCreator
-        public static StateEnum fromValue(String text) {
-            for (StateEnum b : StateEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
     }
 
-    @JsonProperty("state")
+    @SerializedName("state")
     private StateEnum state = null;
 
-    @JsonProperty("system_id")
+    @SerializedName("system_id")
     private Integer systemId = null;
 
-    @JsonProperty("type_id")
+    @SerializedName("type_id")
     private Integer typeId = null;
 
-    @JsonProperty("unanchor_at")
+    @SerializedName("unanchor_at")
     private OffsetDateTime unanchorAt = null;
 
     public CorporationStarbasesResponse moonId(Integer moonId) {

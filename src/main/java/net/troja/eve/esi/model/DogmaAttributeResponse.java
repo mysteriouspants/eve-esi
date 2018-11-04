@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -25,34 +24,34 @@ import java.io.Serializable;
 public class DogmaAttributeResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("attribute_id")
+    @SerializedName("attribute_id")
     private Integer attributeId = null;
 
-    @JsonProperty("default_value")
+    @SerializedName("default_value")
     private Float defaultValue = null;
 
-    @JsonProperty("description")
+    @SerializedName("description")
     private String description = null;
 
-    @JsonProperty("display_name")
+    @SerializedName("display_name")
     private String displayName = null;
 
-    @JsonProperty("high_is_good")
+    @SerializedName("high_is_good")
     private Boolean highIsGood = null;
 
-    @JsonProperty("icon_id")
+    @SerializedName("icon_id")
     private Integer iconId = null;
 
-    @JsonProperty("name")
+    @SerializedName("name")
     private String name = null;
 
-    @JsonProperty("published")
+    @SerializedName("published")
     private Boolean published = null;
 
-    @JsonProperty("stackable")
+    @SerializedName("stackable")
     private Boolean stackable = null;
 
-    @JsonProperty("unit_id")
+    @SerializedName("unit_id")
     private Integer unitId = null;
 
     public DogmaAttributeResponse attributeId(Integer attributeId) {

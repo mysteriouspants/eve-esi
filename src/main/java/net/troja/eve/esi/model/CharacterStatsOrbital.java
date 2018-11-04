@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -25,13 +24,13 @@ import java.io.Serializable;
 public class CharacterStatsOrbital implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("strike_characters_killed")
+    @SerializedName("strike_characters_killed")
     private Long strikeCharactersKilled = null;
 
-    @JsonProperty("strike_damage_to_players_armor_amount")
+    @SerializedName("strike_damage_to_players_armor_amount")
     private Long strikeDamageToPlayersArmorAmount = null;
 
-    @JsonProperty("strike_damage_to_players_shield_amount")
+    @SerializedName("strike_damage_to_players_shield_amount")
     private Long strikeDamageToPlayersShieldAmount = null;
 
     public CharacterStatsOrbital strikeCharactersKilled(Long strikeCharactersKilled) {

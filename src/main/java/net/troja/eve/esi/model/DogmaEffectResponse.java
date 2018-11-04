@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -28,67 +27,67 @@ import java.io.Serializable;
 public class DogmaEffectResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("description")
+    @SerializedName("description")
     private String description = null;
 
-    @JsonProperty("disallow_auto_repeat")
+    @SerializedName("disallow_auto_repeat")
     private Boolean disallowAutoRepeat = null;
 
-    @JsonProperty("discharge_attribute_id")
+    @SerializedName("discharge_attribute_id")
     private Integer dischargeAttributeId = null;
 
-    @JsonProperty("display_name")
+    @SerializedName("display_name")
     private String displayName = null;
 
-    @JsonProperty("duration_attribute_id")
+    @SerializedName("duration_attribute_id")
     private Integer durationAttributeId = null;
 
-    @JsonProperty("effect_category")
+    @SerializedName("effect_category")
     private Integer effectCategory = null;
 
-    @JsonProperty("effect_id")
+    @SerializedName("effect_id")
     private Integer effectId = null;
 
-    @JsonProperty("electronic_chance")
+    @SerializedName("electronic_chance")
     private Boolean electronicChance = null;
 
-    @JsonProperty("falloff_attribute_id")
+    @SerializedName("falloff_attribute_id")
     private Integer falloffAttributeId = null;
 
-    @JsonProperty("icon_id")
+    @SerializedName("icon_id")
     private Integer iconId = null;
 
-    @JsonProperty("is_assistance")
+    @SerializedName("is_assistance")
     private Boolean isAssistance = null;
 
-    @JsonProperty("is_offensive")
+    @SerializedName("is_offensive")
     private Boolean isOffensive = null;
 
-    @JsonProperty("is_warp_safe")
+    @SerializedName("is_warp_safe")
     private Boolean isWarpSafe = null;
 
-    @JsonProperty("modifiers")
+    @SerializedName("modifiers")
     private List<DogmaEffectModifier> modifiers = new ArrayList<DogmaEffectModifier>();
 
-    @JsonProperty("name")
+    @SerializedName("name")
     private String name = null;
 
-    @JsonProperty("post_expression")
+    @SerializedName("post_expression")
     private Integer postExpression = null;
 
-    @JsonProperty("pre_expression")
+    @SerializedName("pre_expression")
     private Integer preExpression = null;
 
-    @JsonProperty("published")
+    @SerializedName("published")
     private Boolean published = null;
 
-    @JsonProperty("range_attribute_id")
+    @SerializedName("range_attribute_id")
     private Integer rangeAttributeId = null;
 
-    @JsonProperty("range_chance")
+    @SerializedName("range_chance")
     private Boolean rangeChance = null;
 
-    @JsonProperty("tracking_speed_attribute_id")
+    @SerializedName("tracking_speed_attribute_id")
     private Integer trackingSpeedAttributeId = null;
 
     public DogmaEffectResponse description(String description) {

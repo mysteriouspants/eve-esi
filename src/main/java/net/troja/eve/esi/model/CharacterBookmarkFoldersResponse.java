@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -25,10 +24,10 @@ import java.io.Serializable;
 public class CharacterBookmarkFoldersResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("folder_id")
+    @SerializedName("folder_id")
     private Integer folderId = null;
 
-    @JsonProperty("name")
+    @SerializedName("name")
     private String name = null;
 
     public CharacterBookmarkFoldersResponse folderId(Integer folderId) {

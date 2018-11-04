@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -25,22 +24,22 @@ import java.io.Serializable;
 public class DogmaEffectModifier implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("domain")
+    @SerializedName("domain")
     private String domain = null;
 
-    @JsonProperty("effect_id")
+    @SerializedName("effect_id")
     private Integer effectId = null;
 
-    @JsonProperty("func")
+    @SerializedName("func")
     private String func = null;
 
-    @JsonProperty("modified_attribute_id")
+    @SerializedName("modified_attribute_id")
     private Integer modifiedAttributeId = null;
 
-    @JsonProperty("modifying_attribute_id")
+    @SerializedName("modifying_attribute_id")
     private Integer modifyingAttributeId = null;
 
-    @JsonProperty("operator")
+    @SerializedName("operator")
     private Integer operator = null;
 
     public DogmaEffectModifier domain(String domain) {

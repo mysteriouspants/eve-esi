@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -25,211 +24,211 @@ import java.io.Serializable;
 public class CharacterStatsModule implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("activations_armor_hardener")
+    @SerializedName("activations_armor_hardener")
     private Long activationsArmorHardener = null;
 
-    @JsonProperty("activations_armor_repair_unit")
+    @SerializedName("activations_armor_repair_unit")
     private Long activationsArmorRepairUnit = null;
 
-    @JsonProperty("activations_armor_resistance_shift_hardener")
+    @SerializedName("activations_armor_resistance_shift_hardener")
     private Long activationsArmorResistanceShiftHardener = null;
 
-    @JsonProperty("activations_automated_targeting_system")
+    @SerializedName("activations_automated_targeting_system")
     private Long activationsAutomatedTargetingSystem = null;
 
-    @JsonProperty("activations_bastion")
+    @SerializedName("activations_bastion")
     private Long activationsBastion = null;
 
-    @JsonProperty("activations_bomb_launcher")
+    @SerializedName("activations_bomb_launcher")
     private Long activationsBombLauncher = null;
 
-    @JsonProperty("activations_capacitor_booster")
+    @SerializedName("activations_capacitor_booster")
     private Long activationsCapacitorBooster = null;
 
-    @JsonProperty("activations_cargo_scanner")
+    @SerializedName("activations_cargo_scanner")
     private Long activationsCargoScanner = null;
 
-    @JsonProperty("activations_cloaking_device")
+    @SerializedName("activations_cloaking_device")
     private Long activationsCloakingDevice = null;
 
-    @JsonProperty("activations_clone_vat_bay")
+    @SerializedName("activations_clone_vat_bay")
     private Long activationsCloneVatBay = null;
 
-    @JsonProperty("activations_cynosural_field")
+    @SerializedName("activations_cynosural_field")
     private Long activationsCynosuralField = null;
 
-    @JsonProperty("activations_damage_control")
+    @SerializedName("activations_damage_control")
     private Long activationsDamageControl = null;
 
-    @JsonProperty("activations_data_miners")
+    @SerializedName("activations_data_miners")
     private Long activationsDataMiners = null;
 
-    @JsonProperty("activations_drone_control_unit")
+    @SerializedName("activations_drone_control_unit")
     private Long activationsDroneControlUnit = null;
 
-    @JsonProperty("activations_drone_tracking_modules")
+    @SerializedName("activations_drone_tracking_modules")
     private Long activationsDroneTrackingModules = null;
 
-    @JsonProperty("activations_eccm")
+    @SerializedName("activations_eccm")
     private Long activationsEccm = null;
 
-    @JsonProperty("activations_ecm")
+    @SerializedName("activations_ecm")
     private Long activationsEcm = null;
 
-    @JsonProperty("activations_ecm_burst")
+    @SerializedName("activations_ecm_burst")
     private Long activationsEcmBurst = null;
 
-    @JsonProperty("activations_energy_destabilizer")
+    @SerializedName("activations_energy_destabilizer")
     private Long activationsEnergyDestabilizer = null;
 
-    @JsonProperty("activations_energy_vampire")
+    @SerializedName("activations_energy_vampire")
     private Long activationsEnergyVampire = null;
 
-    @JsonProperty("activations_energy_weapon")
+    @SerializedName("activations_energy_weapon")
     private Long activationsEnergyWeapon = null;
 
-    @JsonProperty("activations_festival_launcher")
+    @SerializedName("activations_festival_launcher")
     private Long activationsFestivalLauncher = null;
 
-    @JsonProperty("activations_frequency_mining_laser")
+    @SerializedName("activations_frequency_mining_laser")
     private Long activationsFrequencyMiningLaser = null;
 
-    @JsonProperty("activations_fueled_armor_repairer")
+    @SerializedName("activations_fueled_armor_repairer")
     private Long activationsFueledArmorRepairer = null;
 
-    @JsonProperty("activations_fueled_shield_booster")
+    @SerializedName("activations_fueled_shield_booster")
     private Long activationsFueledShieldBooster = null;
 
-    @JsonProperty("activations_gang_coordinator")
+    @SerializedName("activations_gang_coordinator")
     private Long activationsGangCoordinator = null;
 
-    @JsonProperty("activations_gas_cloud_harvester")
+    @SerializedName("activations_gas_cloud_harvester")
     private Long activationsGasCloudHarvester = null;
 
-    @JsonProperty("activations_hull_repair_unit")
+    @SerializedName("activations_hull_repair_unit")
     private Long activationsHullRepairUnit = null;
 
-    @JsonProperty("activations_hybrid_weapon")
+    @SerializedName("activations_hybrid_weapon")
     private Long activationsHybridWeapon = null;
 
-    @JsonProperty("activations_industrial_core")
+    @SerializedName("activations_industrial_core")
     private Long activationsIndustrialCore = null;
 
-    @JsonProperty("activations_interdiction_sphere_launcher")
+    @SerializedName("activations_interdiction_sphere_launcher")
     private Long activationsInterdictionSphereLauncher = null;
 
-    @JsonProperty("activations_micro_jump_drive")
+    @SerializedName("activations_micro_jump_drive")
     private Long activationsMicroJumpDrive = null;
 
-    @JsonProperty("activations_mining_laser")
+    @SerializedName("activations_mining_laser")
     private Long activationsMiningLaser = null;
 
-    @JsonProperty("activations_missile_launcher")
+    @SerializedName("activations_missile_launcher")
     private Long activationsMissileLauncher = null;
 
-    @JsonProperty("activations_passive_targeting_system")
+    @SerializedName("activations_passive_targeting_system")
     private Long activationsPassiveTargetingSystem = null;
 
-    @JsonProperty("activations_probe_launcher")
+    @SerializedName("activations_probe_launcher")
     private Long activationsProbeLauncher = null;
 
-    @JsonProperty("activations_projected_eccm")
+    @SerializedName("activations_projected_eccm")
     private Long activationsProjectedEccm = null;
 
-    @JsonProperty("activations_projectile_weapon")
+    @SerializedName("activations_projectile_weapon")
     private Long activationsProjectileWeapon = null;
 
-    @JsonProperty("activations_propulsion_module")
+    @SerializedName("activations_propulsion_module")
     private Long activationsPropulsionModule = null;
 
-    @JsonProperty("activations_remote_armor_repairer")
+    @SerializedName("activations_remote_armor_repairer")
     private Long activationsRemoteArmorRepairer = null;
 
-    @JsonProperty("activations_remote_capacitor_transmitter")
+    @SerializedName("activations_remote_capacitor_transmitter")
     private Long activationsRemoteCapacitorTransmitter = null;
 
-    @JsonProperty("activations_remote_ecm_burst")
+    @SerializedName("activations_remote_ecm_burst")
     private Long activationsRemoteEcmBurst = null;
 
-    @JsonProperty("activations_remote_hull_repairer")
+    @SerializedName("activations_remote_hull_repairer")
     private Long activationsRemoteHullRepairer = null;
 
-    @JsonProperty("activations_remote_sensor_booster")
+    @SerializedName("activations_remote_sensor_booster")
     private Long activationsRemoteSensorBooster = null;
 
-    @JsonProperty("activations_remote_sensor_damper")
+    @SerializedName("activations_remote_sensor_damper")
     private Long activationsRemoteSensorDamper = null;
 
-    @JsonProperty("activations_remote_shield_booster")
+    @SerializedName("activations_remote_shield_booster")
     private Long activationsRemoteShieldBooster = null;
 
-    @JsonProperty("activations_remote_tracking_computer")
+    @SerializedName("activations_remote_tracking_computer")
     private Long activationsRemoteTrackingComputer = null;
 
-    @JsonProperty("activations_salvager")
+    @SerializedName("activations_salvager")
     private Long activationsSalvager = null;
 
-    @JsonProperty("activations_sensor_booster")
+    @SerializedName("activations_sensor_booster")
     private Long activationsSensorBooster = null;
 
-    @JsonProperty("activations_shield_booster")
+    @SerializedName("activations_shield_booster")
     private Long activationsShieldBooster = null;
 
-    @JsonProperty("activations_shield_hardener")
+    @SerializedName("activations_shield_hardener")
     private Long activationsShieldHardener = null;
 
-    @JsonProperty("activations_ship_scanner")
+    @SerializedName("activations_ship_scanner")
     private Long activationsShipScanner = null;
 
-    @JsonProperty("activations_siege")
+    @SerializedName("activations_siege")
     private Long activationsSiege = null;
 
-    @JsonProperty("activations_smart_bomb")
+    @SerializedName("activations_smart_bomb")
     private Long activationsSmartBomb = null;
 
-    @JsonProperty("activations_stasis_web")
+    @SerializedName("activations_stasis_web")
     private Long activationsStasisWeb = null;
 
-    @JsonProperty("activations_strip_miner")
+    @SerializedName("activations_strip_miner")
     private Long activationsStripMiner = null;
 
-    @JsonProperty("activations_super_weapon")
+    @SerializedName("activations_super_weapon")
     private Long activationsSuperWeapon = null;
 
-    @JsonProperty("activations_survey_scanner")
+    @SerializedName("activations_survey_scanner")
     private Long activationsSurveyScanner = null;
 
-    @JsonProperty("activations_target_breaker")
+    @SerializedName("activations_target_breaker")
     private Long activationsTargetBreaker = null;
 
-    @JsonProperty("activations_target_painter")
+    @SerializedName("activations_target_painter")
     private Long activationsTargetPainter = null;
 
-    @JsonProperty("activations_tracking_computer")
+    @SerializedName("activations_tracking_computer")
     private Long activationsTrackingComputer = null;
 
-    @JsonProperty("activations_tracking_disruptor")
+    @SerializedName("activations_tracking_disruptor")
     private Long activationsTrackingDisruptor = null;
 
-    @JsonProperty("activations_tractor_beam")
+    @SerializedName("activations_tractor_beam")
     private Long activationsTractorBeam = null;
 
-    @JsonProperty("activations_triage")
+    @SerializedName("activations_triage")
     private Long activationsTriage = null;
 
-    @JsonProperty("activations_warp_disrupt_field_generator")
+    @SerializedName("activations_warp_disrupt_field_generator")
     private Long activationsWarpDisruptFieldGenerator = null;
 
-    @JsonProperty("activations_warp_scrambler")
+    @SerializedName("activations_warp_scrambler")
     private Long activationsWarpScrambler = null;
 
-    @JsonProperty("link_weapons")
+    @SerializedName("link_weapons")
     private Long linkWeapons = null;
 
-    @JsonProperty("overload")
+    @SerializedName("overload")
     private Long overload = null;
 
-    @JsonProperty("repairs")
+    @SerializedName("repairs")
     private Long repairs = null;
 
     public CharacterStatsModule activationsArmorHardener(Long activationsArmorHardener) {

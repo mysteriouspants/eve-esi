@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.OffsetDateTime;
@@ -30,25 +29,25 @@ import java.io.Serializable;
 public class KillmailResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("attackers")
+    @SerializedName("attackers")
     private List<KillmailAttacker> attackers = new ArrayList<KillmailAttacker>();
 
-    @JsonProperty("killmail_id")
+    @SerializedName("killmail_id")
     private Integer killmailId = null;
 
-    @JsonProperty("killmail_time")
+    @SerializedName("killmail_time")
     private OffsetDateTime killmailTime = null;
 
-    @JsonProperty("moon_id")
+    @SerializedName("moon_id")
     private Integer moonId = null;
 
-    @JsonProperty("solar_system_id")
+    @SerializedName("solar_system_id")
     private Integer solarSystemId = null;
 
-    @JsonProperty("victim")
+    @SerializedName("victim")
     private KillmailVictim victim = null;
 
-    @JsonProperty("war_id")
+    @SerializedName("war_id")
     private Integer warId = null;
 
     public KillmailResponse attackers(List<KillmailAttacker> attackers) {

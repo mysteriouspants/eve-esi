@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -30,13 +29,13 @@ import java.io.Serializable;
 public class CharacterPlanetResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("links")
+    @SerializedName("links")
     private List<PlanetLink> links = new ArrayList<PlanetLink>();
 
-    @JsonProperty("pins")
+    @SerializedName("pins")
     private List<PlanetPin> pins = new ArrayList<PlanetPin>();
 
-    @JsonProperty("routes")
+    @SerializedName("routes")
     private List<PlanetRoute> routes = new ArrayList<PlanetRoute>();
 
     public CharacterPlanetResponse links(List<PlanetLink> links) {

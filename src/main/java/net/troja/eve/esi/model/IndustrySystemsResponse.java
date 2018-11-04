@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -28,10 +27,10 @@ import java.io.Serializable;
 public class IndustrySystemsResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("cost_indices")
+    @SerializedName("cost_indices")
     private List<SystemCostIndice> costIndices = new ArrayList<SystemCostIndice>();
 
-    @JsonProperty("solar_system_id")
+    @SerializedName("solar_system_id")
     private Integer solarSystemId = null;
 
     public IndustrySystemsResponse costIndices(List<SystemCostIndice> costIndices) {

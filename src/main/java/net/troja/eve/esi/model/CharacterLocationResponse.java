@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -25,13 +24,13 @@ import java.io.Serializable;
 public class CharacterLocationResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("solar_system_id")
+    @SerializedName("solar_system_id")
     private Integer solarSystemId = null;
 
-    @JsonProperty("station_id")
+    @SerializedName("station_id")
     private Integer stationId = null;
 
-    @JsonProperty("structure_id")
+    @SerializedName("structure_id")
     private Long structureId = null;
 
     public CharacterLocationResponse solarSystemId(Integer solarSystemId) {

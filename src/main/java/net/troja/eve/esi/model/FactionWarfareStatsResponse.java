@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import net.troja.eve.esi.model.FactionWarfareStatsKills;
@@ -27,19 +26,19 @@ import java.io.Serializable;
 public class FactionWarfareStatsResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("faction_id")
+    @SerializedName("faction_id")
     private Integer factionId = null;
 
-    @JsonProperty("kills")
+    @SerializedName("kills")
     private FactionWarfareStatsKills kills = null;
 
-    @JsonProperty("pilots")
+    @SerializedName("pilots")
     private Integer pilots = null;
 
-    @JsonProperty("systems_controlled")
+    @SerializedName("systems_controlled")
     private Integer systemsControlled = null;
 
-    @JsonProperty("victory_points")
+    @SerializedName("victory_points")
     private FactionWarfareStatsVictoryPoints victoryPoints = null;
 
     public FactionWarfareStatsResponse factionId(Integer factionId) {

@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.OffsetDateTime;
@@ -26,36 +25,41 @@ import java.io.Serializable;
 public class CharacterCalendarEventResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("date")
+    @SerializedName("date")
     private OffsetDateTime date = null;
 
-    @JsonProperty("duration")
+    @SerializedName("duration")
     private Integer duration = null;
 
-    @JsonProperty("event_id")
+    @SerializedName("event_id")
     private Integer eventId = null;
 
-    @JsonProperty("importance")
+    @SerializedName("importance")
     private Integer importance = null;
 
-    @JsonProperty("owner_id")
+    @SerializedName("owner_id")
     private Integer ownerId = null;
 
-    @JsonProperty("owner_name")
+    @SerializedName("owner_name")
     private String ownerName = null;
 
     /**
      * owner_type string
      */
     public enum OwnerTypeEnum {
+        @SerializedName("eve_server")
         EVE_SERVER("eve_server"),
 
+        @SerializedName("corporation")
         CORPORATION("corporation"),
 
+        @SerializedName("faction")
         FACTION("faction"),
 
+        @SerializedName("character")
         CHARACTER("character"),
 
+        @SerializedName("alliance")
         ALLIANCE("alliance");
 
         private String value;
@@ -68,28 +72,18 @@ public class CharacterCalendarEventResponse implements Serializable {
         public String toString() {
             return String.valueOf(value);
         }
-
-        @JsonCreator
-        public static OwnerTypeEnum fromValue(String text) {
-            for (OwnerTypeEnum b : OwnerTypeEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
     }
 
-    @JsonProperty("owner_type")
+    @SerializedName("owner_type")
     private OwnerTypeEnum ownerType = null;
 
-    @JsonProperty("response")
+    @SerializedName("response")
     private String response = null;
 
-    @JsonProperty("text")
+    @SerializedName("text")
     private String text = null;
 
-    @JsonProperty("title")
+    @SerializedName("title")
     private String title = null;
 
     public CharacterCalendarEventResponse date(OffsetDateTime date) {

@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.OffsetDateTime;
@@ -26,80 +25,86 @@ import java.io.Serializable;
 public class CorporationIndustryJobsResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("activity_id")
+    @SerializedName("activity_id")
     private Integer activityId = null;
 
-    @JsonProperty("blueprint_id")
+    @SerializedName("blueprint_id")
     private Long blueprintId = null;
 
-    @JsonProperty("blueprint_location_id")
+    @SerializedName("blueprint_location_id")
     private Long blueprintLocationId = null;
 
-    @JsonProperty("blueprint_type_id")
+    @SerializedName("blueprint_type_id")
     private Integer blueprintTypeId = null;
 
-    @JsonProperty("completed_character_id")
+    @SerializedName("completed_character_id")
     private Integer completedCharacterId = null;
 
-    @JsonProperty("completed_date")
+    @SerializedName("completed_date")
     private OffsetDateTime completedDate = null;
 
-    @JsonProperty("cost")
+    @SerializedName("cost")
     private Double cost = null;
 
-    @JsonProperty("duration")
+    @SerializedName("duration")
     private Integer duration = null;
 
-    @JsonProperty("end_date")
+    @SerializedName("end_date")
     private OffsetDateTime endDate = null;
 
-    @JsonProperty("facility_id")
+    @SerializedName("facility_id")
     private Long facilityId = null;
 
-    @JsonProperty("installer_id")
+    @SerializedName("installer_id")
     private Integer installerId = null;
 
-    @JsonProperty("job_id")
+    @SerializedName("job_id")
     private Integer jobId = null;
 
-    @JsonProperty("licensed_runs")
+    @SerializedName("licensed_runs")
     private Integer licensedRuns = null;
 
-    @JsonProperty("location_id")
+    @SerializedName("location_id")
     private Long locationId = null;
 
-    @JsonProperty("output_location_id")
+    @SerializedName("output_location_id")
     private Long outputLocationId = null;
 
-    @JsonProperty("pause_date")
+    @SerializedName("pause_date")
     private OffsetDateTime pauseDate = null;
 
-    @JsonProperty("probability")
+    @SerializedName("probability")
     private Float probability = null;
 
-    @JsonProperty("product_type_id")
+    @SerializedName("product_type_id")
     private Integer productTypeId = null;
 
-    @JsonProperty("runs")
+    @SerializedName("runs")
     private Integer runs = null;
 
-    @JsonProperty("start_date")
+    @SerializedName("start_date")
     private OffsetDateTime startDate = null;
 
     /**
      * status string
      */
     public enum StatusEnum {
+        @SerializedName("active")
         ACTIVE("active"),
 
+        @SerializedName("cancelled")
         CANCELLED("cancelled"),
 
+        @SerializedName("delivered")
         DELIVERED("delivered"),
 
+        @SerializedName("paused")
         PAUSED("paused"),
 
+        @SerializedName("ready")
         READY("ready"),
 
+        @SerializedName("reverted")
         REVERTED("reverted");
 
         private String value;
@@ -112,22 +117,12 @@ public class CorporationIndustryJobsResponse implements Serializable {
         public String toString() {
             return String.valueOf(value);
         }
-
-        @JsonCreator
-        public static StatusEnum fromValue(String text) {
-            for (StatusEnum b : StatusEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
     }
 
-    @JsonProperty("status")
+    @SerializedName("status")
     private StatusEnum status = null;
 
-    @JsonProperty("successful_runs")
+    @SerializedName("successful_runs")
     private Integer successfulRuns = null;
 
     public CorporationIndustryJobsResponse activityId(Integer activityId) {

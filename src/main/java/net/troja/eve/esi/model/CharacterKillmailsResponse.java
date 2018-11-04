@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -25,10 +24,10 @@ import java.io.Serializable;
 public class CharacterKillmailsResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("killmail_hash")
+    @SerializedName("killmail_hash")
     private String killmailHash = null;
 
-    @JsonProperty("killmail_id")
+    @SerializedName("killmail_id")
     private Integer killmailId = null;
 
     public CharacterKillmailsResponse killmailHash(String killmailHash) {

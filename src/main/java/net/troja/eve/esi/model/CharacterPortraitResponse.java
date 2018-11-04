@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -25,16 +24,16 @@ import java.io.Serializable;
 public class CharacterPortraitResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("px128x128")
+    @SerializedName("px128x128")
     private String px128x128 = null;
 
-    @JsonProperty("px256x256")
+    @SerializedName("px256x256")
     private String px256x256 = null;
 
-    @JsonProperty("px512x512")
+    @SerializedName("px512x512")
     private String px512x512 = null;
 
-    @JsonProperty("px64x64")
+    @SerializedName("px64x64")
     private String px64x64 = null;
 
     public CharacterPortraitResponse px128x128(String px128x128) {

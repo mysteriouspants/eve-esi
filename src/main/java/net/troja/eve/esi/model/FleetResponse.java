@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -25,16 +24,16 @@ import java.io.Serializable;
 public class FleetResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("is_free_move")
+    @SerializedName("is_free_move")
     private Boolean isFreeMove = null;
 
-    @JsonProperty("is_registered")
+    @SerializedName("is_registered")
     private Boolean isRegistered = null;
 
-    @JsonProperty("is_voice_enabled")
+    @SerializedName("is_voice_enabled")
     private Boolean isVoiceEnabled = null;
 
-    @JsonProperty("motd")
+    @SerializedName("motd")
     private String motd = null;
 
     public FleetResponse isFreeMove(Boolean isFreeMove) {

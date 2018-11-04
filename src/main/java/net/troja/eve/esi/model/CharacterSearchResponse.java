@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -27,37 +26,37 @@ import java.io.Serializable;
 public class CharacterSearchResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("agent")
+    @SerializedName("agent")
     private List<Integer> agent = new ArrayList<Integer>();
 
-    @JsonProperty("alliance")
+    @SerializedName("alliance")
     private List<Integer> alliance = new ArrayList<Integer>();
 
-    @JsonProperty("character")
+    @SerializedName("character")
     private List<Integer> character = new ArrayList<Integer>();
 
-    @JsonProperty("constellation")
+    @SerializedName("constellation")
     private List<Integer> constellation = new ArrayList<Integer>();
 
-    @JsonProperty("corporation")
+    @SerializedName("corporation")
     private List<Integer> corporation = new ArrayList<Integer>();
 
-    @JsonProperty("faction")
+    @SerializedName("faction")
     private List<Integer> faction = new ArrayList<Integer>();
 
-    @JsonProperty("inventory_type")
+    @SerializedName("inventory_type")
     private List<Integer> inventoryType = new ArrayList<Integer>();
 
-    @JsonProperty("region")
+    @SerializedName("region")
     private List<Integer> region = new ArrayList<Integer>();
 
-    @JsonProperty("solar_system")
+    @SerializedName("solar_system")
     private List<Integer> solarSystem = new ArrayList<Integer>();
 
-    @JsonProperty("station")
+    @SerializedName("station")
     private List<Integer> station = new ArrayList<Integer>();
 
-    @JsonProperty("structure")
+    @SerializedName("structure")
     private List<Long> structure = new ArrayList<Long>();
 
     public CharacterSearchResponse agent(List<Integer> agent) {

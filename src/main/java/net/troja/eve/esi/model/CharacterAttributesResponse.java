@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.OffsetDateTime;
@@ -26,28 +25,28 @@ import java.io.Serializable;
 public class CharacterAttributesResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("accrued_remap_cooldown_date")
+    @SerializedName("accrued_remap_cooldown_date")
     private OffsetDateTime accruedRemapCooldownDate = null;
 
-    @JsonProperty("bonus_remaps")
+    @SerializedName("bonus_remaps")
     private Integer bonusRemaps = null;
 
-    @JsonProperty("charisma")
+    @SerializedName("charisma")
     private Integer charisma = null;
 
-    @JsonProperty("intelligence")
+    @SerializedName("intelligence")
     private Integer intelligence = null;
 
-    @JsonProperty("last_remap_date")
+    @SerializedName("last_remap_date")
     private OffsetDateTime lastRemapDate = null;
 
-    @JsonProperty("memory")
+    @SerializedName("memory")
     private Integer memory = null;
 
-    @JsonProperty("perception")
+    @SerializedName("perception")
     private Integer perception = null;
 
-    @JsonProperty("willpower")
+    @SerializedName("willpower")
     private Integer willpower = null;
 
     public CharacterAttributesResponse accruedRemapCooldownDate(OffsetDateTime accruedRemapCooldownDate) {

@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -25,16 +24,16 @@ import java.io.Serializable;
 public class Skill implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("active_skill_level")
+    @SerializedName("active_skill_level")
     private Integer activeSkillLevel = null;
 
-    @JsonProperty("skill_id")
+    @SerializedName("skill_id")
     private Integer skillId = null;
 
-    @JsonProperty("skillpoints_in_skill")
+    @SerializedName("skillpoints_in_skill")
     private Long skillpointsInSkill = null;
 
-    @JsonProperty("trained_skill_level")
+    @SerializedName("trained_skill_level")
     private Integer trainedSkillLevel = null;
 
     public Skill activeSkillLevel(Integer activeSkillLevel) {

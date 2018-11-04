@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.OffsetDateTime;
@@ -26,19 +25,19 @@ import java.io.Serializable;
 public class NewContactNotificationsResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("message")
+    @SerializedName("message")
     private String message = null;
 
-    @JsonProperty("notification_id")
+    @SerializedName("notification_id")
     private Integer notificationId = null;
 
-    @JsonProperty("send_date")
+    @SerializedName("send_date")
     private OffsetDateTime sendDate = null;
 
-    @JsonProperty("sender_character_id")
+    @SerializedName("sender_character_id")
     private Integer senderCharacterId = null;
 
-    @JsonProperty("standing_level")
+    @SerializedName("standing_level")
     private Float standingLevel = null;
 
     public NewContactNotificationsResponse message(String message) {

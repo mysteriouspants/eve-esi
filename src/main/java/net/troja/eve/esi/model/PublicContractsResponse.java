@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.OffsetDateTime;
@@ -26,60 +25,65 @@ import java.io.Serializable;
 public class PublicContractsResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("buyout")
+    @SerializedName("buyout")
     private Double buyout = null;
 
-    @JsonProperty("collateral")
+    @SerializedName("collateral")
     private Double collateral = null;
 
-    @JsonProperty("contract_id")
+    @SerializedName("contract_id")
     private Integer contractId = null;
 
-    @JsonProperty("date_expired")
+    @SerializedName("date_expired")
     private OffsetDateTime dateExpired = null;
 
-    @JsonProperty("date_issued")
+    @SerializedName("date_issued")
     private OffsetDateTime dateIssued = null;
 
-    @JsonProperty("days_to_complete")
+    @SerializedName("days_to_complete")
     private Integer daysToComplete = null;
 
-    @JsonProperty("end_location_id")
+    @SerializedName("end_location_id")
     private Long endLocationId = null;
 
-    @JsonProperty("for_corporation")
+    @SerializedName("for_corporation")
     private Boolean forCorporation = null;
 
-    @JsonProperty("issuer_corporation_id")
+    @SerializedName("issuer_corporation_id")
     private Integer issuerCorporationId = null;
 
-    @JsonProperty("issuer_id")
+    @SerializedName("issuer_id")
     private Integer issuerId = null;
 
-    @JsonProperty("price")
+    @SerializedName("price")
     private Double price = null;
 
-    @JsonProperty("reward")
+    @SerializedName("reward")
     private Double reward = null;
 
-    @JsonProperty("start_location_id")
+    @SerializedName("start_location_id")
     private Long startLocationId = null;
 
-    @JsonProperty("title")
+    @SerializedName("title")
     private String title = null;
 
     /**
      * Type of the contract
      */
     public enum TypeEnum {
+        @SerializedName("unknown")
         UNKNOWN("unknown"),
 
+        @SerializedName("item_exchange")
         ITEM_EXCHANGE("item_exchange"),
 
+        @SerializedName("auction")
         AUCTION("auction"),
 
+        @SerializedName("courier")
         COURIER("courier"),
 
+        @SerializedName("loan")
         LOAN("loan");
 
         private String value;
@@ -92,22 +96,12 @@ public class PublicContractsResponse implements Serializable {
         public String toString() {
             return String.valueOf(value);
         }
-
-        @JsonCreator
-        public static TypeEnum fromValue(String text) {
-            for (TypeEnum b : TypeEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
     }
 
-    @JsonProperty("type")
+    @SerializedName("type")
     private TypeEnum type = null;
 
-    @JsonProperty("volume")
+    @SerializedName("volume")
     private Double volume = null;
 
     public PublicContractsResponse buyout(Double buyout) {

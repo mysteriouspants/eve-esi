@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -25,31 +24,31 @@ import java.io.Serializable;
 public class PublicContractsItemsResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("is_blueprint_copy")
+    @SerializedName("is_blueprint_copy")
     private Boolean isBlueprintCopy = null;
 
-    @JsonProperty("is_included")
+    @SerializedName("is_included")
     private Boolean isIncluded = null;
 
-    @JsonProperty("item_id")
+    @SerializedName("item_id")
     private Long itemId = null;
 
-    @JsonProperty("material_efficiency")
+    @SerializedName("material_efficiency")
     private Integer materialEfficiency = null;
 
-    @JsonProperty("quantity")
+    @SerializedName("quantity")
     private Integer quantity = null;
 
-    @JsonProperty("record_id")
+    @SerializedName("record_id")
     private Long recordId = null;
 
-    @JsonProperty("runs")
+    @SerializedName("runs")
     private Integer runs = null;
 
-    @JsonProperty("time_efficiency")
+    @SerializedName("time_efficiency")
     private Integer timeEfficiency = null;
 
-    @JsonProperty("type_id")
+    @SerializedName("type_id")
     private Integer typeId = null;
 
     public PublicContractsItemsResponse isBlueprintCopy(Boolean isBlueprintCopy) {

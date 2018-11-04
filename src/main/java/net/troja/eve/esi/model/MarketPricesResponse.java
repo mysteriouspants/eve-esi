@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -25,13 +24,13 @@ import java.io.Serializable;
 public class MarketPricesResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("adjusted_price")
+    @SerializedName("adjusted_price")
     private Double adjustedPrice = null;
 
-    @JsonProperty("average_price")
+    @SerializedName("average_price")
     private Double averagePrice = null;
 
-    @JsonProperty("type_id")
+    @SerializedName("type_id")
     private Integer typeId = null;
 
     public MarketPricesResponse adjustedPrice(Double adjustedPrice) {

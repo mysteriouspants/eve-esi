@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -25,34 +24,34 @@ import java.io.Serializable;
 public class FactionsResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("corporation_id")
+    @SerializedName("corporation_id")
     private Integer corporationId = null;
 
-    @JsonProperty("description")
+    @SerializedName("description")
     private String description = null;
 
-    @JsonProperty("faction_id")
+    @SerializedName("faction_id")
     private Integer factionId = null;
 
-    @JsonProperty("is_unique")
+    @SerializedName("is_unique")
     private Boolean isUnique = null;
 
-    @JsonProperty("militia_corporation_id")
+    @SerializedName("militia_corporation_id")
     private Integer militiaCorporationId = null;
 
-    @JsonProperty("name")
+    @SerializedName("name")
     private String name = null;
 
-    @JsonProperty("size_factor")
+    @SerializedName("size_factor")
     private Float sizeFactor = null;
 
-    @JsonProperty("solar_system_id")
+    @SerializedName("solar_system_id")
     private Integer solarSystemId = null;
 
-    @JsonProperty("station_count")
+    @SerializedName("station_count")
     private Integer stationCount = null;
 
-    @JsonProperty("station_system_count")
+    @SerializedName("station_system_count")
     private Integer stationSystemCount = null;
 
     public FactionsResponse corporationId(Integer corporationId) {

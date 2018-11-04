@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.OffsetDateTime;
@@ -26,22 +25,26 @@ import java.io.Serializable;
 public class CorporationContractsResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("acceptor_id")
+    @SerializedName("acceptor_id")
     private Integer acceptorId = null;
 
-    @JsonProperty("assignee_id")
+    @SerializedName("assignee_id")
     private Integer assigneeId = null;
 
     /**
      * To whom the contract is available
      */
     public enum AvailabilityEnum {
+        @SerializedName("public")
         PUBLIC("public"),
 
+        @SerializedName("personal")
         PERSONAL("personal"),
 
+        @SerializedName("corporation")
         CORPORATION("corporation"),
 
+        @SerializedName("alliance")
         ALLIANCE("alliance");
 
         private String value;
@@ -54,88 +57,88 @@ public class CorporationContractsResponse implements Serializable {
         public String toString() {
             return String.valueOf(value);
         }
-
-        @JsonCreator
-        public static AvailabilityEnum fromValue(String text) {
-            for (AvailabilityEnum b : AvailabilityEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
     }
 
-    @JsonProperty("availability")
+    @SerializedName("availability")
     private AvailabilityEnum availability = null;
 
-    @JsonProperty("buyout")
+    @SerializedName("buyout")
     private Double buyout = null;
 
-    @JsonProperty("collateral")
+    @SerializedName("collateral")
     private Double collateral = null;
 
-    @JsonProperty("contract_id")
+    @SerializedName("contract_id")
     private Integer contractId = null;
 
-    @JsonProperty("date_accepted")
+    @SerializedName("date_accepted")
     private OffsetDateTime dateAccepted = null;
 
-    @JsonProperty("date_completed")
+    @SerializedName("date_completed")
     private OffsetDateTime dateCompleted = null;
 
-    @JsonProperty("date_expired")
+    @SerializedName("date_expired")
     private OffsetDateTime dateExpired = null;
 
-    @JsonProperty("date_issued")
+    @SerializedName("date_issued")
     private OffsetDateTime dateIssued = null;
 
-    @JsonProperty("days_to_complete")
+    @SerializedName("days_to_complete")
     private Integer daysToComplete = null;
 
-    @JsonProperty("end_location_id")
+    @SerializedName("end_location_id")
     private Long endLocationId = null;
 
-    @JsonProperty("for_corporation")
+    @SerializedName("for_corporation")
     private Boolean forCorporation = null;
 
-    @JsonProperty("issuer_corporation_id")
+    @SerializedName("issuer_corporation_id")
     private Integer issuerCorporationId = null;
 
-    @JsonProperty("issuer_id")
+    @SerializedName("issuer_id")
     private Integer issuerId = null;
 
-    @JsonProperty("price")
+    @SerializedName("price")
     private Double price = null;
 
-    @JsonProperty("reward")
+    @SerializedName("reward")
     private Double reward = null;
 
-    @JsonProperty("start_location_id")
+    @SerializedName("start_location_id")
     private Long startLocationId = null;
 
     /**
      * Status of the the contract
      */
     public enum StatusEnum {
+        @SerializedName("outstanding")
         OUTSTANDING("outstanding"),
 
+        @SerializedName("in_progress")
         IN_PROGRESS("in_progress"),
 
+        @SerializedName("finished_issuer")
         FINISHED_ISSUER("finished_issuer"),
 
+        @SerializedName("finished_contractor")
         FINISHED_CONTRACTOR("finished_contractor"),
 
+        @SerializedName("finished")
         FINISHED("finished"),
 
+        @SerializedName("cancelled")
         CANCELLED("cancelled"),
 
+        @SerializedName("rejected")
         REJECTED("rejected"),
 
+        @SerializedName("failed")
         FAILED("failed"),
 
+        @SerializedName("deleted")
         DELETED("deleted"),
 
+        @SerializedName("reversed")
         REVERSED("reversed");
 
         private String value;
@@ -148,36 +151,31 @@ public class CorporationContractsResponse implements Serializable {
         public String toString() {
             return String.valueOf(value);
         }
-
-        @JsonCreator
-        public static StatusEnum fromValue(String text) {
-            for (StatusEnum b : StatusEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
     }
 
-    @JsonProperty("status")
+    @SerializedName("status")
     private StatusEnum status = null;
 
-    @JsonProperty("title")
+    @SerializedName("title")
     private String title = null;
 
     /**
      * Type of the contract
      */
     public enum TypeEnum {
+        @SerializedName("unknown")
         UNKNOWN("unknown"),
 
+        @SerializedName("item_exchange")
         ITEM_EXCHANGE("item_exchange"),
 
+        @SerializedName("auction")
         AUCTION("auction"),
 
+        @SerializedName("courier")
         COURIER("courier"),
 
+        @SerializedName("loan")
         LOAN("loan");
 
         private String value;
@@ -190,22 +188,12 @@ public class CorporationContractsResponse implements Serializable {
         public String toString() {
             return String.valueOf(value);
         }
-
-        @JsonCreator
-        public static TypeEnum fromValue(String text) {
-            for (TypeEnum b : TypeEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
     }
 
-    @JsonProperty("type")
+    @SerializedName("type")
     private TypeEnum type = null;
 
-    @JsonProperty("volume")
+    @SerializedName("volume")
     private Double volume = null;
 
     public CorporationContractsResponse acceptorId(Integer acceptorId) {

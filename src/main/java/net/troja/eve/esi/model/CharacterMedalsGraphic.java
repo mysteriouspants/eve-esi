@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -25,16 +24,16 @@ import java.io.Serializable;
 public class CharacterMedalsGraphic implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("color")
+    @SerializedName("color")
     private Integer color = null;
 
-    @JsonProperty("graphic")
+    @SerializedName("graphic")
     private String graphic = null;
 
-    @JsonProperty("layer")
+    @SerializedName("layer")
     private Integer layer = null;
 
-    @JsonProperty("part")
+    @SerializedName("part")
     private Integer part = null;
 
     public CharacterMedalsGraphic color(Integer color) {

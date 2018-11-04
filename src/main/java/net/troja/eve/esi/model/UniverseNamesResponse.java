@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -29,20 +28,28 @@ public class UniverseNamesResponse implements Serializable {
      * category string
      */
     public enum CategoryEnum {
+        @SerializedName("alliance")
         ALLIANCE("alliance"),
 
+        @SerializedName("character")
         CHARACTER("character"),
 
+        @SerializedName("constellation")
         CONSTELLATION("constellation"),
 
+        @SerializedName("corporation")
         CORPORATION("corporation"),
 
+        @SerializedName("inventory_type")
         INVENTORY_TYPE("inventory_type"),
 
+        @SerializedName("region")
         REGION("region"),
 
+        @SerializedName("solar_system")
         SOLAR_SYSTEM("solar_system"),
 
+        @SerializedName("station")
         STATION("station");
 
         private String value;
@@ -55,25 +62,15 @@ public class UniverseNamesResponse implements Serializable {
         public String toString() {
             return String.valueOf(value);
         }
-
-        @JsonCreator
-        public static CategoryEnum fromValue(String text) {
-            for (CategoryEnum b : CategoryEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
     }
 
-    @JsonProperty("category")
+    @SerializedName("category")
     private CategoryEnum category = null;
 
-    @JsonProperty("id")
+    @SerializedName("id")
     private Integer id = null;
 
-    @JsonProperty("name")
+    @SerializedName("name")
     private String name = null;
 
     public UniverseNamesResponse category(CategoryEnum category) {

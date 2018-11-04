@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -25,37 +24,37 @@ import java.io.Serializable;
 public class BloodlinesResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("bloodline_id")
+    @SerializedName("bloodline_id")
     private Integer bloodlineId = null;
 
-    @JsonProperty("charisma")
+    @SerializedName("charisma")
     private Integer charisma = null;
 
-    @JsonProperty("corporation_id")
+    @SerializedName("corporation_id")
     private Integer corporationId = null;
 
-    @JsonProperty("description")
+    @SerializedName("description")
     private String description = null;
 
-    @JsonProperty("intelligence")
+    @SerializedName("intelligence")
     private Integer intelligence = null;
 
-    @JsonProperty("memory")
+    @SerializedName("memory")
     private Integer memory = null;
 
-    @JsonProperty("name")
+    @SerializedName("name")
     private String name = null;
 
-    @JsonProperty("perception")
+    @SerializedName("perception")
     private Integer perception = null;
 
-    @JsonProperty("race_id")
+    @SerializedName("race_id")
     private Integer raceId = null;
 
-    @JsonProperty("ship_type_id")
+    @SerializedName("ship_type_id")
     private Integer shipTypeId = null;
 
-    @JsonProperty("willpower")
+    @SerializedName("willpower")
     private Integer willpower = null;
 
     public BloodlinesResponse bloodlineId(Integer bloodlineId) {

@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -25,22 +24,22 @@ import java.io.Serializable;
 public class UniverseAncestriesResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("bloodline_id")
+    @SerializedName("bloodline_id")
     private Integer bloodlineId = null;
 
-    @JsonProperty("description")
+    @SerializedName("description")
     private String description = null;
 
-    @JsonProperty("icon_id")
+    @SerializedName("icon_id")
     private Integer iconId = null;
 
-    @JsonProperty("id")
+    @SerializedName("id")
     private Integer id = null;
 
-    @JsonProperty("name")
+    @SerializedName("name")
     private String name = null;
 
-    @JsonProperty("short_description")
+    @SerializedName("short_description")
     private String shortDescription = null;
 
     public UniverseAncestriesResponse bloodlineId(Integer bloodlineId) {

@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -28,19 +27,19 @@ import java.io.Serializable;
 public class CharacterFittingsResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("description")
+    @SerializedName("description")
     private String description = null;
 
-    @JsonProperty("fitting_id")
+    @SerializedName("fitting_id")
     private Integer fittingId = null;
 
-    @JsonProperty("items")
+    @SerializedName("items")
     private List<FittingItem> items = new ArrayList<FittingItem>();
 
-    @JsonProperty("name")
+    @SerializedName("name")
     private String name = null;
 
-    @JsonProperty("ship_type_id")
+    @SerializedName("ship_type_id")
     private Integer shipTypeId = null;
 
     public CharacterFittingsResponse description(String description) {

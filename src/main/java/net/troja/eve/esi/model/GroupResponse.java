@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -27,19 +26,19 @@ import java.io.Serializable;
 public class GroupResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("category_id")
+    @SerializedName("category_id")
     private Integer categoryId = null;
 
-    @JsonProperty("group_id")
+    @SerializedName("group_id")
     private Integer groupId = null;
 
-    @JsonProperty("name")
+    @SerializedName("name")
     private String name = null;
 
-    @JsonProperty("published")
+    @SerializedName("published")
     private Boolean published = null;
 
-    @JsonProperty("types")
+    @SerializedName("types")
     private List<Integer> types = new ArrayList<Integer>();
 
     public GroupResponse categoryId(Integer categoryId) {

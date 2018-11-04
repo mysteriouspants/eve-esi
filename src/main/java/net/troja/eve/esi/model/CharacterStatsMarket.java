@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -25,43 +24,43 @@ import java.io.Serializable;
 public class CharacterStatsMarket implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("accept_contracts_courier")
+    @SerializedName("accept_contracts_courier")
     private Long acceptContractsCourier = null;
 
-    @JsonProperty("accept_contracts_item_exchange")
+    @SerializedName("accept_contracts_item_exchange")
     private Long acceptContractsItemExchange = null;
 
-    @JsonProperty("buy_orders_placed")
+    @SerializedName("buy_orders_placed")
     private Long buyOrdersPlaced = null;
 
-    @JsonProperty("cancel_market_order")
+    @SerializedName("cancel_market_order")
     private Long cancelMarketOrder = null;
 
-    @JsonProperty("create_contracts_auction")
+    @SerializedName("create_contracts_auction")
     private Long createContractsAuction = null;
 
-    @JsonProperty("create_contracts_courier")
+    @SerializedName("create_contracts_courier")
     private Long createContractsCourier = null;
 
-    @JsonProperty("create_contracts_item_exchange")
+    @SerializedName("create_contracts_item_exchange")
     private Long createContractsItemExchange = null;
 
-    @JsonProperty("deliver_courier_contract")
+    @SerializedName("deliver_courier_contract")
     private Long deliverCourierContract = null;
 
-    @JsonProperty("isk_gained")
+    @SerializedName("isk_gained")
     private Long iskGained = null;
 
-    @JsonProperty("isk_spent")
+    @SerializedName("isk_spent")
     private Long iskSpent = null;
 
-    @JsonProperty("modify_market_order")
+    @SerializedName("modify_market_order")
     private Long modifyMarketOrder = null;
 
-    @JsonProperty("search_contracts")
+    @SerializedName("search_contracts")
     private Long searchContracts = null;
 
-    @JsonProperty("sell_orders_placed")
+    @SerializedName("sell_orders_placed")
     private Long sellOrdersPlaced = null;
 
     public CharacterStatsMarket acceptContractsCourier(Long acceptContractsCourier) {

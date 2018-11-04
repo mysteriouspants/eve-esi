@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -29,34 +28,34 @@ import java.io.Serializable;
 public class SystemResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("constellation_id")
+    @SerializedName("constellation_id")
     private Integer constellationId = null;
 
-    @JsonProperty("name")
+    @SerializedName("name")
     private String name = null;
 
-    @JsonProperty("planets")
+    @SerializedName("planets")
     private List<SystemPlanet> planets = new ArrayList<SystemPlanet>();
 
-    @JsonProperty("position")
+    @SerializedName("position")
     private Position position = null;
 
-    @JsonProperty("security_class")
+    @SerializedName("security_class")
     private String securityClass = null;
 
-    @JsonProperty("security_status")
+    @SerializedName("security_status")
     private Float securityStatus = null;
 
-    @JsonProperty("star_id")
+    @SerializedName("star_id")
     private Integer starId = null;
 
-    @JsonProperty("stargates")
+    @SerializedName("stargates")
     private List<Integer> stargates = new ArrayList<Integer>();
 
-    @JsonProperty("stations")
+    @SerializedName("stations")
     private List<Integer> stations = new ArrayList<Integer>();
 
-    @JsonProperty("system_id")
+    @SerializedName("system_id")
     private Integer systemId = null;
 
     public SystemResponse constellationId(Integer constellationId) {

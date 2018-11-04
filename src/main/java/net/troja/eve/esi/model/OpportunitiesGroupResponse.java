@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -27,22 +26,22 @@ import java.io.Serializable;
 public class OpportunitiesGroupResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("connected_groups")
+    @SerializedName("connected_groups")
     private List<Integer> connectedGroups = new ArrayList<Integer>();
 
-    @JsonProperty("description")
+    @SerializedName("description")
     private String description = null;
 
-    @JsonProperty("group_id")
+    @SerializedName("group_id")
     private Integer groupId = null;
 
-    @JsonProperty("name")
+    @SerializedName("name")
     private String name = null;
 
-    @JsonProperty("notification")
+    @SerializedName("notification")
     private String notification = null;
 
-    @JsonProperty("required_tasks")
+    @SerializedName("required_tasks")
     private List<Integer> requiredTasks = new ArrayList<Integer>();
 
     public OpportunitiesGroupResponse connectedGroups(List<Integer> connectedGroups) {

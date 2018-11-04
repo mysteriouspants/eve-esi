@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.OffsetDateTime;
@@ -26,16 +25,16 @@ import java.io.Serializable;
 public class CharacterCorporationHistoryResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("corporation_id")
+    @SerializedName("corporation_id")
     private Integer corporationId = null;
 
-    @JsonProperty("is_deleted")
+    @SerializedName("is_deleted")
     private Boolean isDeleted = null;
 
-    @JsonProperty("record_id")
+    @SerializedName("record_id")
     private Integer recordId = null;
 
-    @JsonProperty("start_date")
+    @SerializedName("start_date")
     private OffsetDateTime startDate = null;
 
     public CharacterCorporationHistoryResponse corporationId(Integer corporationId) {

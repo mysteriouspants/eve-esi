@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -29,24 +28,34 @@ public class SystemCostIndice implements Serializable {
      * activity string
      */
     public enum ActivityEnum {
+        @SerializedName("copying")
         COPYING("copying"),
 
+        @SerializedName("duplicating")
         DUPLICATING("duplicating"),
 
+        @SerializedName("invention")
         INVENTION("invention"),
 
+        @SerializedName("manufacturing")
         MANUFACTURING("manufacturing"),
 
+        @SerializedName("none")
         NONE("none"),
 
+        @SerializedName("reaction")
         REACTION("reaction"),
 
+        @SerializedName("researching_material_efficiency")
         RESEARCHING_MATERIAL_EFFICIENCY("researching_material_efficiency"),
 
+        @SerializedName("researching_technology")
         RESEARCHING_TECHNOLOGY("researching_technology"),
 
+        @SerializedName("researching_time_efficiency")
         RESEARCHING_TIME_EFFICIENCY("researching_time_efficiency"),
 
+        @SerializedName("reverse_engineering")
         REVERSE_ENGINEERING("reverse_engineering");
 
         private String value;
@@ -59,22 +68,12 @@ public class SystemCostIndice implements Serializable {
         public String toString() {
             return String.valueOf(value);
         }
-
-        @JsonCreator
-        public static ActivityEnum fromValue(String text) {
-            for (ActivityEnum b : ActivityEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
     }
 
-    @JsonProperty("activity")
+    @SerializedName("activity")
     private ActivityEnum activity = null;
 
-    @JsonProperty("cost_index")
+    @SerializedName("cost_index")
     private Float costIndex = null;
 
     public SystemCostIndice activity(ActivityEnum activity) {

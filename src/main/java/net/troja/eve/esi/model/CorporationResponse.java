@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.OffsetDateTime;
@@ -26,43 +25,43 @@ import java.io.Serializable;
 public class CorporationResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("alliance_id")
+    @SerializedName("alliance_id")
     private Integer allianceId = null;
 
-    @JsonProperty("ceo_id")
+    @SerializedName("ceo_id")
     private Integer ceoId = null;
 
-    @JsonProperty("creator_id")
+    @SerializedName("creator_id")
     private Integer creatorId = null;
 
-    @JsonProperty("date_founded")
+    @SerializedName("date_founded")
     private OffsetDateTime dateFounded = null;
 
-    @JsonProperty("description")
+    @SerializedName("description")
     private String description = null;
 
-    @JsonProperty("faction_id")
+    @SerializedName("faction_id")
     private Integer factionId = null;
 
-    @JsonProperty("home_station_id")
+    @SerializedName("home_station_id")
     private Integer homeStationId = null;
 
-    @JsonProperty("member_count")
+    @SerializedName("member_count")
     private Integer memberCount = null;
 
-    @JsonProperty("name")
+    @SerializedName("name")
     private String name = null;
 
-    @JsonProperty("shares")
+    @SerializedName("shares")
     private Long shares = null;
 
-    @JsonProperty("tax_rate")
+    @SerializedName("tax_rate")
     private Float taxRate = null;
 
-    @JsonProperty("ticker")
+    @SerializedName("ticker")
     private String ticker = null;
 
-    @JsonProperty("url")
+    @SerializedName("url")
     private String url = null;
 
     public CorporationResponse allianceId(Integer allianceId) {

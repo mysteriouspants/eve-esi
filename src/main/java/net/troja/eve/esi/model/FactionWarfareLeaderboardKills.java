@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -31,13 +30,13 @@ import java.io.Serializable;
 public class FactionWarfareLeaderboardKills implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("active_total")
+    @SerializedName("active_total")
     private List<FactionWarfareLeaderboardActiveTotalKills> activeTotal = new ArrayList<FactionWarfareLeaderboardActiveTotalKills>();
 
-    @JsonProperty("last_week")
+    @SerializedName("last_week")
     private List<FactionWarfareLeaderboardLastWeekKills> lastWeek = new ArrayList<FactionWarfareLeaderboardLastWeekKills>();
 
-    @JsonProperty("yesterday")
+    @SerializedName("yesterday")
     private List<FactionWarfareLeaderboardYesterdayKills> yesterday = new ArrayList<FactionWarfareLeaderboardYesterdayKills>();
 
     public FactionWarfareLeaderboardKills activeTotal(List<FactionWarfareLeaderboardActiveTotalKills> activeTotal) {

@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -29,19 +28,19 @@ import java.io.Serializable;
 public class DogmaDynamicItemsResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("created_by")
+    @SerializedName("created_by")
     private Integer createdBy = null;
 
-    @JsonProperty("dogma_attributes")
+    @SerializedName("dogma_attributes")
     private List<DogmaDynamicAttribute> dogmaAttributes = new ArrayList<DogmaDynamicAttribute>();
 
-    @JsonProperty("dogma_effects")
+    @SerializedName("dogma_effects")
     private List<DogmaDynamicEffect> dogmaEffects = new ArrayList<DogmaDynamicEffect>();
 
-    @JsonProperty("mutator_type_id")
+    @SerializedName("mutator_type_id")
     private Integer mutatorTypeId = null;
 
-    @JsonProperty("source_type_id")
+    @SerializedName("source_type_id")
     private Integer sourceTypeId = null;
 
     public DogmaDynamicItemsResponse createdBy(Integer createdBy) {

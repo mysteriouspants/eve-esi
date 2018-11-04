@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -28,22 +27,26 @@ import java.io.Serializable;
 public class CorporationStarbaseResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("allow_alliance_members")
+    @SerializedName("allow_alliance_members")
     private Boolean allowAllianceMembers = null;
 
-    @JsonProperty("allow_corporation_members")
+    @SerializedName("allow_corporation_members")
     private Boolean allowCorporationMembers = null;
 
     /**
      * Who can anchor starbase (POS) and its structures
      */
     public enum AnchorEnum {
+        @SerializedName("alliance_member")
         ALLIANCE_MEMBER("alliance_member"),
 
+        @SerializedName("config_starbase_equipment_role")
         CONFIG_STARBASE_EQUIPMENT_ROLE("config_starbase_equipment_role"),
 
+        @SerializedName("corporation_member")
         CORPORATION_MEMBER("corporation_member"),
 
+        @SerializedName("starbase_fuel_technician_role")
         STARBASE_FUEL_TECHNICIAN_ROLE("starbase_fuel_technician_role");
 
         private String value;
@@ -56,43 +59,37 @@ public class CorporationStarbaseResponse implements Serializable {
         public String toString() {
             return String.valueOf(value);
         }
-
-        @JsonCreator
-        public static AnchorEnum fromValue(String text) {
-            for (AnchorEnum b : AnchorEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
     }
 
-    @JsonProperty("anchor")
+    @SerializedName("anchor")
     private AnchorEnum anchor = null;
 
-    @JsonProperty("attack_if_at_war")
+    @SerializedName("attack_if_at_war")
     private Boolean attackIfAtWar = null;
 
-    @JsonProperty("attack_if_other_security_status_dropping")
+    @SerializedName("attack_if_other_security_status_dropping")
     private Boolean attackIfOtherSecurityStatusDropping = null;
 
-    @JsonProperty("attack_security_status_threshold")
+    @SerializedName("attack_security_status_threshold")
     private Float attackSecurityStatusThreshold = null;
 
-    @JsonProperty("attack_standing_threshold")
+    @SerializedName("attack_standing_threshold")
     private Float attackStandingThreshold = null;
 
     /**
      * Who can take fuel blocks out of the starbase (POS)'s fuel bay
      */
     public enum FuelBayTakeEnum {
+        @SerializedName("alliance_member")
         ALLIANCE_MEMBER("alliance_member"),
 
+        @SerializedName("config_starbase_equipment_role")
         CONFIG_STARBASE_EQUIPMENT_ROLE("config_starbase_equipment_role"),
 
+        @SerializedName("corporation_member")
         CORPORATION_MEMBER("corporation_member"),
 
+        @SerializedName("starbase_fuel_technician_role")
         STARBASE_FUEL_TECHNICIAN_ROLE("starbase_fuel_technician_role");
 
         private String value;
@@ -105,19 +102,9 @@ public class CorporationStarbaseResponse implements Serializable {
         public String toString() {
             return String.valueOf(value);
         }
-
-        @JsonCreator
-        public static FuelBayTakeEnum fromValue(String text) {
-            for (FuelBayTakeEnum b : FuelBayTakeEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
     }
 
-    @JsonProperty("fuel_bay_take")
+    @SerializedName("fuel_bay_take")
     private FuelBayTakeEnum fuelBayTake = null;
 
     /**
@@ -127,12 +114,16 @@ public class CorporationStarbaseResponse implements Serializable {
      * same scheme
      */
     public enum FuelBayViewEnum {
+        @SerializedName("alliance_member")
         ALLIANCE_MEMBER("alliance_member"),
 
+        @SerializedName("config_starbase_equipment_role")
         CONFIG_STARBASE_EQUIPMENT_ROLE("config_starbase_equipment_role"),
 
+        @SerializedName("corporation_member")
         CORPORATION_MEMBER("corporation_member"),
 
+        @SerializedName("starbase_fuel_technician_role")
         STARBASE_FUEL_TECHNICIAN_ROLE("starbase_fuel_technician_role");
 
         private String value;
@@ -145,34 +136,28 @@ public class CorporationStarbaseResponse implements Serializable {
         public String toString() {
             return String.valueOf(value);
         }
-
-        @JsonCreator
-        public static FuelBayViewEnum fromValue(String text) {
-            for (FuelBayViewEnum b : FuelBayViewEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
     }
 
-    @JsonProperty("fuel_bay_view")
+    @SerializedName("fuel_bay_view")
     private FuelBayViewEnum fuelBayView = null;
 
-    @JsonProperty("fuels")
+    @SerializedName("fuels")
     private List<CorporationStarbaseFuel> fuels = new ArrayList<CorporationStarbaseFuel>();
 
     /**
      * Who can offline starbase (POS) and its structures
      */
     public enum OfflineEnum {
+        @SerializedName("alliance_member")
         ALLIANCE_MEMBER("alliance_member"),
 
+        @SerializedName("config_starbase_equipment_role")
         CONFIG_STARBASE_EQUIPMENT_ROLE("config_starbase_equipment_role"),
 
+        @SerializedName("corporation_member")
         CORPORATION_MEMBER("corporation_member"),
 
+        @SerializedName("starbase_fuel_technician_role")
         STARBASE_FUEL_TECHNICIAN_ROLE("starbase_fuel_technician_role");
 
         private String value;
@@ -185,31 +170,25 @@ public class CorporationStarbaseResponse implements Serializable {
         public String toString() {
             return String.valueOf(value);
         }
-
-        @JsonCreator
-        public static OfflineEnum fromValue(String text) {
-            for (OfflineEnum b : OfflineEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
     }
 
-    @JsonProperty("offline")
+    @SerializedName("offline")
     private OfflineEnum offline = null;
 
     /**
      * Who can online starbase (POS) and its structures
      */
     public enum OnlineEnum {
+        @SerializedName("alliance_member")
         ALLIANCE_MEMBER("alliance_member"),
 
+        @SerializedName("config_starbase_equipment_role")
         CONFIG_STARBASE_EQUIPMENT_ROLE("config_starbase_equipment_role"),
 
+        @SerializedName("corporation_member")
         CORPORATION_MEMBER("corporation_member"),
 
+        @SerializedName("starbase_fuel_technician_role")
         STARBASE_FUEL_TECHNICIAN_ROLE("starbase_fuel_technician_role");
 
         private String value;
@@ -222,31 +201,25 @@ public class CorporationStarbaseResponse implements Serializable {
         public String toString() {
             return String.valueOf(value);
         }
-
-        @JsonCreator
-        public static OnlineEnum fromValue(String text) {
-            for (OnlineEnum b : OnlineEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
     }
 
-    @JsonProperty("online")
+    @SerializedName("online")
     private OnlineEnum online = null;
 
     /**
      * Who can unanchor starbase (POS) and its structures
      */
     public enum UnanchorEnum {
+        @SerializedName("alliance_member")
         ALLIANCE_MEMBER("alliance_member"),
 
+        @SerializedName("config_starbase_equipment_role")
         CONFIG_STARBASE_EQUIPMENT_ROLE("config_starbase_equipment_role"),
 
+        @SerializedName("corporation_member")
         CORPORATION_MEMBER("corporation_member"),
 
+        @SerializedName("starbase_fuel_technician_role")
         STARBASE_FUEL_TECHNICIAN_ROLE("starbase_fuel_technician_role");
 
         private String value;
@@ -259,22 +232,12 @@ public class CorporationStarbaseResponse implements Serializable {
         public String toString() {
             return String.valueOf(value);
         }
-
-        @JsonCreator
-        public static UnanchorEnum fromValue(String text) {
-            for (UnanchorEnum b : UnanchorEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
     }
 
-    @JsonProperty("unanchor")
+    @SerializedName("unanchor")
     private UnanchorEnum unanchor = null;
 
-    @JsonProperty("use_alliance_standings")
+    @SerializedName("use_alliance_standings")
     private Boolean useAllianceStandings = null;
 
     public CorporationStarbaseResponse allowAllianceMembers(Boolean allowAllianceMembers) {

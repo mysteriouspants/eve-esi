@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -25,19 +24,23 @@ import java.io.Serializable;
 public class CharacterCalendarAttendeesResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("character_id")
+    @SerializedName("character_id")
     private Integer characterId = null;
 
     /**
      * event_response string
      */
     public enum EventResponseEnum {
+        @SerializedName("declined")
         DECLINED("declined"),
 
+        @SerializedName("not_responded")
         NOT_RESPONDED("not_responded"),
 
+        @SerializedName("accepted")
         ACCEPTED("accepted"),
 
+        @SerializedName("tentative")
         TENTATIVE("tentative");
 
         private String value;
@@ -50,19 +53,9 @@ public class CharacterCalendarAttendeesResponse implements Serializable {
         public String toString() {
             return String.valueOf(value);
         }
-
-        @JsonCreator
-        public static EventResponseEnum fromValue(String text) {
-            for (EventResponseEnum b : EventResponseEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
     }
 
-    @JsonProperty("event_response")
+    @SerializedName("event_response")
     private EventResponseEnum eventResponse = null;
 
     public CharacterCalendarAttendeesResponse characterId(Integer characterId) {

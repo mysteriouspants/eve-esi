@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -25,28 +24,28 @@ import java.io.Serializable;
 public class GraphicResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("collision_file")
+    @SerializedName("collision_file")
     private String collisionFile = null;
 
-    @JsonProperty("graphic_file")
+    @SerializedName("graphic_file")
     private String graphicFile = null;
 
-    @JsonProperty("graphic_id")
+    @SerializedName("graphic_id")
     private Integer graphicId = null;
 
-    @JsonProperty("icon_folder")
+    @SerializedName("icon_folder")
     private String iconFolder = null;
 
-    @JsonProperty("sof_dna")
+    @SerializedName("sof_dna")
     private String sofDna = null;
 
-    @JsonProperty("sof_fation_name")
+    @SerializedName("sof_fation_name")
     private String sofFationName = null;
 
-    @JsonProperty("sof_hull_name")
+    @SerializedName("sof_hull_name")
     private String sofHullName = null;
 
-    @JsonProperty("sof_race_name")
+    @SerializedName("sof_race_name")
     private String sofRaceName = null;
 
     public GraphicResponse collisionFile(String collisionFile) {

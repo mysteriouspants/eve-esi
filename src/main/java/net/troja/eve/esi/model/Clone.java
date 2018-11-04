@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -27,21 +26,23 @@ import java.io.Serializable;
 public class Clone implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("implants")
+    @SerializedName("implants")
     private List<Integer> implants = new ArrayList<Integer>();
 
-    @JsonProperty("jump_clone_id")
+    @SerializedName("jump_clone_id")
     private Integer jumpCloneId = null;
 
-    @JsonProperty("location_id")
+    @SerializedName("location_id")
     private Long locationId = null;
 
     /**
      * location_type string
      */
     public enum LocationTypeEnum {
+        @SerializedName("station")
         STATION("station"),
 
+        @SerializedName("structure")
         STRUCTURE("structure");
 
         private String value;
@@ -54,22 +55,12 @@ public class Clone implements Serializable {
         public String toString() {
             return String.valueOf(value);
         }
-
-        @JsonCreator
-        public static LocationTypeEnum fromValue(String text) {
-            for (LocationTypeEnum b : LocationTypeEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
     }
 
-    @JsonProperty("location_type")
+    @SerializedName("location_type")
     private LocationTypeEnum locationType = null;
 
-    @JsonProperty("name")
+    @SerializedName("name")
     private String name = null;
 
     public Clone implants(List<Integer> implants) {

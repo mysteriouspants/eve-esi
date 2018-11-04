@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.Serializable;
@@ -25,13 +24,13 @@ import java.io.Serializable;
 public class PlanetLink implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("destination_pin_id")
+    @SerializedName("destination_pin_id")
     private Long destinationPinId = null;
 
-    @JsonProperty("link_level")
+    @SerializedName("link_level")
     private Integer linkLevel = null;
 
-    @JsonProperty("source_pin_id")
+    @SerializedName("source_pin_id")
     private Long sourcePinId = null;
 
     public PlanetLink destinationPinId(Long destinationPinId) {

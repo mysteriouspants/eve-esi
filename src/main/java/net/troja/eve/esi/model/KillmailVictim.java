@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -29,28 +28,28 @@ import java.io.Serializable;
 public class KillmailVictim implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("alliance_id")
+    @SerializedName("alliance_id")
     private Integer allianceId = null;
 
-    @JsonProperty("character_id")
+    @SerializedName("character_id")
     private Integer characterId = null;
 
-    @JsonProperty("corporation_id")
+    @SerializedName("corporation_id")
     private Integer corporationId = null;
 
-    @JsonProperty("damage_taken")
+    @SerializedName("damage_taken")
     private Integer damageTaken = null;
 
-    @JsonProperty("faction_id")
+    @SerializedName("faction_id")
     private Integer factionId = null;
 
-    @JsonProperty("items")
+    @SerializedName("items")
     private List<KillmailItem> items = new ArrayList<KillmailItem>();
 
-    @JsonProperty("position")
+    @SerializedName("position")
     private Position position = null;
 
-    @JsonProperty("ship_type_id")
+    @SerializedName("ship_type_id")
     private Integer shipTypeId = null;
 
     public KillmailVictim allianceId(Integer allianceId) {

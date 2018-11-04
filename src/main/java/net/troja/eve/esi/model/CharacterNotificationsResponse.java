@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.OffsetDateTime;
@@ -26,27 +25,32 @@ import java.io.Serializable;
 public class CharacterNotificationsResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("is_read")
+    @SerializedName("is_read")
     private Boolean isRead = null;
 
-    @JsonProperty("notification_id")
+    @SerializedName("notification_id")
     private Long notificationId = null;
 
-    @JsonProperty("sender_id")
+    @SerializedName("sender_id")
     private Integer senderId = null;
 
     /**
      * sender_type string
      */
     public enum SenderTypeEnum {
+        @SerializedName("character")
         CHARACTER("character"),
 
+        @SerializedName("corporation")
         CORPORATION("corporation"),
 
+        @SerializedName("alliance")
         ALLIANCE("alliance"),
 
+        @SerializedName("faction")
         FACTION("faction"),
 
+        @SerializedName("other")
         OTHER("other");
 
         private String value;
@@ -59,393 +63,565 @@ public class CharacterNotificationsResponse implements Serializable {
         public String toString() {
             return String.valueOf(value);
         }
-
-        @JsonCreator
-        public static SenderTypeEnum fromValue(String text) {
-            for (SenderTypeEnum b : SenderTypeEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
     }
 
-    @JsonProperty("sender_type")
+    @SerializedName("sender_type")
     private SenderTypeEnum senderType = null;
 
-    @JsonProperty("text")
+    @SerializedName("text")
     private String text = null;
 
-    @JsonProperty("timestamp")
+    @SerializedName("timestamp")
     private OffsetDateTime timestamp = null;
 
     /**
      * type string
      */
     public enum TypeEnum {
+        @SerializedName("AcceptedAlly")
         ACCEPTEDALLY("AcceptedAlly"),
 
+        @SerializedName("AcceptedSurrender")
         ACCEPTEDSURRENDER("AcceptedSurrender"),
 
+        @SerializedName("AllAnchoringMsg")
         ALLANCHORINGMSG("AllAnchoringMsg"),
 
+        @SerializedName("AllMaintenanceBillMsg")
         ALLMAINTENANCEBILLMSG("AllMaintenanceBillMsg"),
 
+        @SerializedName("AllStrucInvulnerableMsg")
         ALLSTRUCINVULNERABLEMSG("AllStrucInvulnerableMsg"),
 
+        @SerializedName("AllStructVulnerableMsg")
         ALLSTRUCTVULNERABLEMSG("AllStructVulnerableMsg"),
 
+        @SerializedName("AllWarCorpJoinedAllianceMsg")
         ALLWARCORPJOINEDALLIANCEMSG("AllWarCorpJoinedAllianceMsg"),
 
+        @SerializedName("AllWarDeclaredMsg")
         ALLWARDECLAREDMSG("AllWarDeclaredMsg"),
 
+        @SerializedName("AllWarInvalidatedMsg")
         ALLWARINVALIDATEDMSG("AllWarInvalidatedMsg"),
 
+        @SerializedName("AllWarRetractedMsg")
         ALLWARRETRACTEDMSG("AllWarRetractedMsg"),
 
+        @SerializedName("AllWarSurrenderMsg")
         ALLWARSURRENDERMSG("AllWarSurrenderMsg"),
 
+        @SerializedName("AllianceCapitalChanged")
         ALLIANCECAPITALCHANGED("AllianceCapitalChanged"),
 
+        @SerializedName("AllyContractCancelled")
         ALLYCONTRACTCANCELLED("AllyContractCancelled"),
 
+        @SerializedName("AllyJoinedWarAggressorMsg")
         ALLYJOINEDWARAGGRESSORMSG("AllyJoinedWarAggressorMsg"),
 
+        @SerializedName("AllyJoinedWarAllyMsg")
         ALLYJOINEDWARALLYMSG("AllyJoinedWarAllyMsg"),
 
+        @SerializedName("AllyJoinedWarDefenderMsg")
         ALLYJOINEDWARDEFENDERMSG("AllyJoinedWarDefenderMsg"),
 
+        @SerializedName("BattlePunishFriendlyFire")
         BATTLEPUNISHFRIENDLYFIRE("BattlePunishFriendlyFire"),
 
+        @SerializedName("BillOutOfMoneyMsg")
         BILLOUTOFMONEYMSG("BillOutOfMoneyMsg"),
 
+        @SerializedName("BillPaidCorpAllMsg")
         BILLPAIDCORPALLMSG("BillPaidCorpAllMsg"),
 
+        @SerializedName("BountyClaimMsg")
         BOUNTYCLAIMMSG("BountyClaimMsg"),
 
+        @SerializedName("BountyESSShared")
         BOUNTYESSSHARED("BountyESSShared"),
 
+        @SerializedName("BountyESSTaken")
         BOUNTYESSTAKEN("BountyESSTaken"),
 
+        @SerializedName("BountyPlacedAlliance")
         BOUNTYPLACEDALLIANCE("BountyPlacedAlliance"),
 
+        @SerializedName("BountyPlacedChar")
         BOUNTYPLACEDCHAR("BountyPlacedChar"),
 
+        @SerializedName("BountyPlacedCorp")
         BOUNTYPLACEDCORP("BountyPlacedCorp"),
 
+        @SerializedName("BountyYourBountyClaimed")
         BOUNTYYOURBOUNTYCLAIMED("BountyYourBountyClaimed"),
 
+        @SerializedName("BuddyConnectContactAdd")
         BUDDYCONNECTCONTACTADD("BuddyConnectContactAdd"),
 
+        @SerializedName("CharAppAcceptMsg")
         CHARAPPACCEPTMSG("CharAppAcceptMsg"),
 
+        @SerializedName("CharAppRejectMsg")
         CHARAPPREJECTMSG("CharAppRejectMsg"),
 
+        @SerializedName("CharAppWithdrawMsg")
         CHARAPPWITHDRAWMSG("CharAppWithdrawMsg"),
 
+        @SerializedName("CharLeftCorpMsg")
         CHARLEFTCORPMSG("CharLeftCorpMsg"),
 
+        @SerializedName("CharMedalMsg")
         CHARMEDALMSG("CharMedalMsg"),
 
+        @SerializedName("CharTerminationMsg")
         CHARTERMINATIONMSG("CharTerminationMsg"),
 
+        @SerializedName("CloneActivationMsg")
         CLONEACTIVATIONMSG("CloneActivationMsg"),
 
+        @SerializedName("CloneActivationMsg2")
         CLONEACTIVATIONMSG2("CloneActivationMsg2"),
 
+        @SerializedName("CloneMovedMsg")
         CLONEMOVEDMSG("CloneMovedMsg"),
 
+        @SerializedName("CloneRevokedMsg1")
         CLONEREVOKEDMSG1("CloneRevokedMsg1"),
 
+        @SerializedName("CloneRevokedMsg2")
         CLONEREVOKEDMSG2("CloneRevokedMsg2"),
 
+        @SerializedName("ContactAdd")
         CONTACTADD("ContactAdd"),
 
+        @SerializedName("ContactEdit")
         CONTACTEDIT("ContactEdit"),
 
+        @SerializedName("ContainerPasswordMsg")
         CONTAINERPASSWORDMSG("ContainerPasswordMsg"),
 
+        @SerializedName("CorpAllBillMsg")
         CORPALLBILLMSG("CorpAllBillMsg"),
 
+        @SerializedName("CorpAppAcceptMsg")
         CORPAPPACCEPTMSG("CorpAppAcceptMsg"),
 
+        @SerializedName("CorpAppInvitedMsg")
         CORPAPPINVITEDMSG("CorpAppInvitedMsg"),
 
+        @SerializedName("CorpAppNewMsg")
         CORPAPPNEWMSG("CorpAppNewMsg"),
 
+        @SerializedName("CorpAppRejectCustomMsg")
         CORPAPPREJECTCUSTOMMSG("CorpAppRejectCustomMsg"),
 
+        @SerializedName("CorpAppRejectMsg")
         CORPAPPREJECTMSG("CorpAppRejectMsg"),
 
+        @SerializedName("CorpDividendMsg")
         CORPDIVIDENDMSG("CorpDividendMsg"),
 
+        @SerializedName("CorpFriendlyFireDisableTimerCompleted")
         CORPFRIENDLYFIREDISABLETIMERCOMPLETED("CorpFriendlyFireDisableTimerCompleted"),
 
+        @SerializedName("CorpFriendlyFireDisableTimerStarted")
         CORPFRIENDLYFIREDISABLETIMERSTARTED("CorpFriendlyFireDisableTimerStarted"),
 
+        @SerializedName("CorpFriendlyFireEnableTimerCompleted")
         CORPFRIENDLYFIREENABLETIMERCOMPLETED("CorpFriendlyFireEnableTimerCompleted"),
 
+        @SerializedName("CorpFriendlyFireEnableTimerStarted")
         CORPFRIENDLYFIREENABLETIMERSTARTED("CorpFriendlyFireEnableTimerStarted"),
 
+        @SerializedName("CorpKicked")
         CORPKICKED("CorpKicked"),
 
+        @SerializedName("CorpLiquidationMsg")
         CORPLIQUIDATIONMSG("CorpLiquidationMsg"),
 
+        @SerializedName("CorpNewCEOMsg")
         CORPNEWCEOMSG("CorpNewCEOMsg"),
 
+        @SerializedName("CorpNewsMsg")
         CORPNEWSMSG("CorpNewsMsg"),
 
+        @SerializedName("CorpOfficeExpirationMsg")
         CORPOFFICEEXPIRATIONMSG("CorpOfficeExpirationMsg"),
 
+        @SerializedName("CorpStructLostMsg")
         CORPSTRUCTLOSTMSG("CorpStructLostMsg"),
 
+        @SerializedName("CorpTaxChangeMsg")
         CORPTAXCHANGEMSG("CorpTaxChangeMsg"),
 
+        @SerializedName("CorpVoteCEORevokedMsg")
         CORPVOTECEOREVOKEDMSG("CorpVoteCEORevokedMsg"),
 
+        @SerializedName("CorpVoteMsg")
         CORPVOTEMSG("CorpVoteMsg"),
 
+        @SerializedName("CorpWarDeclaredMsg")
         CORPWARDECLAREDMSG("CorpWarDeclaredMsg"),
 
+        @SerializedName("CorpWarFightingLegalMsg")
         CORPWARFIGHTINGLEGALMSG("CorpWarFightingLegalMsg"),
 
+        @SerializedName("CorpWarInvalidatedMsg")
         CORPWARINVALIDATEDMSG("CorpWarInvalidatedMsg"),
 
+        @SerializedName("CorpWarRetractedMsg")
         CORPWARRETRACTEDMSG("CorpWarRetractedMsg"),
 
+        @SerializedName("CorpWarSurrenderMsg")
         CORPWARSURRENDERMSG("CorpWarSurrenderMsg"),
 
+        @SerializedName("CustomsMsg")
         CUSTOMSMSG("CustomsMsg"),
 
+        @SerializedName("DeclareWar")
         DECLAREWAR("DeclareWar"),
 
+        @SerializedName("DistrictAttacked")
         DISTRICTATTACKED("DistrictAttacked"),
 
+        @SerializedName("DustAppAcceptedMsg")
         DUSTAPPACCEPTEDMSG("DustAppAcceptedMsg"),
 
+        @SerializedName("EntosisCaptureStarted")
         ENTOSISCAPTURESTARTED("EntosisCaptureStarted"),
 
+        @SerializedName("FWAllianceKickMsg")
         FWALLIANCEKICKMSG("FWAllianceKickMsg"),
 
+        @SerializedName("FWAllianceWarningMsg")
         FWALLIANCEWARNINGMSG("FWAllianceWarningMsg"),
 
+        @SerializedName("FWCharKickMsg")
         FWCHARKICKMSG("FWCharKickMsg"),
 
+        @SerializedName("FWCharRankGainMsg")
         FWCHARRANKGAINMSG("FWCharRankGainMsg"),
 
+        @SerializedName("FWCharRankLossMsg")
         FWCHARRANKLOSSMSG("FWCharRankLossMsg"),
 
+        @SerializedName("FWCharWarningMsg")
         FWCHARWARNINGMSG("FWCharWarningMsg"),
 
+        @SerializedName("FWCorpJoinMsg")
         FWCORPJOINMSG("FWCorpJoinMsg"),
 
+        @SerializedName("FWCorpKickMsg")
         FWCORPKICKMSG("FWCorpKickMsg"),
 
+        @SerializedName("FWCorpLeaveMsg")
         FWCORPLEAVEMSG("FWCorpLeaveMsg"),
 
+        @SerializedName("FWCorpWarningMsg")
         FWCORPWARNINGMSG("FWCorpWarningMsg"),
 
+        @SerializedName("FacWarCorpJoinRequestMsg")
         FACWARCORPJOINREQUESTMSG("FacWarCorpJoinRequestMsg"),
 
+        @SerializedName("FacWarCorpJoinWithdrawMsg")
         FACWARCORPJOINWITHDRAWMSG("FacWarCorpJoinWithdrawMsg"),
 
+        @SerializedName("FacWarCorpLeaveRequestMsg")
         FACWARCORPLEAVEREQUESTMSG("FacWarCorpLeaveRequestMsg"),
 
+        @SerializedName("FacWarCorpLeaveWithdrawMsg")
         FACWARCORPLEAVEWITHDRAWMSG("FacWarCorpLeaveWithdrawMsg"),
 
+        @SerializedName("FacWarLPDisqualifiedEvent")
         FACWARLPDISQUALIFIEDEVENT("FacWarLPDisqualifiedEvent"),
 
+        @SerializedName("FacWarLPDisqualifiedKill")
         FACWARLPDISQUALIFIEDKILL("FacWarLPDisqualifiedKill"),
 
+        @SerializedName("FacWarLPPayoutEvent")
         FACWARLPPAYOUTEVENT("FacWarLPPayoutEvent"),
 
+        @SerializedName("FacWarLPPayoutKill")
         FACWARLPPAYOUTKILL("FacWarLPPayoutKill"),
 
+        @SerializedName("GameTimeAdded")
         GAMETIMEADDED("GameTimeAdded"),
 
+        @SerializedName("GameTimeReceived")
         GAMETIMERECEIVED("GameTimeReceived"),
 
+        @SerializedName("GameTimeSent")
         GAMETIMESENT("GameTimeSent"),
 
+        @SerializedName("GiftReceived")
         GIFTRECEIVED("GiftReceived"),
 
+        @SerializedName("IHubDestroyedByBillFailure")
         IHUBDESTROYEDBYBILLFAILURE("IHubDestroyedByBillFailure"),
 
+        @SerializedName("IncursionCompletedMsg")
         INCURSIONCOMPLETEDMSG("IncursionCompletedMsg"),
 
+        @SerializedName("IndustryTeamAuctionLost")
         INDUSTRYTEAMAUCTIONLOST("IndustryTeamAuctionLost"),
 
+        @SerializedName("IndustryTeamAuctionWon")
         INDUSTRYTEAMAUCTIONWON("IndustryTeamAuctionWon"),
 
+        @SerializedName("InfrastructureHubBillAboutToExpire")
         INFRASTRUCTUREHUBBILLABOUTTOEXPIRE("InfrastructureHubBillAboutToExpire"),
 
+        @SerializedName("InsuranceExpirationMsg")
         INSURANCEEXPIRATIONMSG("InsuranceExpirationMsg"),
 
+        @SerializedName("InsuranceFirstShipMsg")
         INSURANCEFIRSTSHIPMSG("InsuranceFirstShipMsg"),
 
+        @SerializedName("InsuranceInvalidatedMsg")
         INSURANCEINVALIDATEDMSG("InsuranceInvalidatedMsg"),
 
+        @SerializedName("InsuranceIssuedMsg")
         INSURANCEISSUEDMSG("InsuranceIssuedMsg"),
 
+        @SerializedName("InsurancePayoutMsg")
         INSURANCEPAYOUTMSG("InsurancePayoutMsg"),
 
+        @SerializedName("JumpCloneDeletedMsg1")
         JUMPCLONEDELETEDMSG1("JumpCloneDeletedMsg1"),
 
+        @SerializedName("JumpCloneDeletedMsg2")
         JUMPCLONEDELETEDMSG2("JumpCloneDeletedMsg2"),
 
+        @SerializedName("KillReportFinalBlow")
         KILLREPORTFINALBLOW("KillReportFinalBlow"),
 
+        @SerializedName("KillReportVictim")
         KILLREPORTVICTIM("KillReportVictim"),
 
+        @SerializedName("KillRightAvailable")
         KILLRIGHTAVAILABLE("KillRightAvailable"),
 
+        @SerializedName("KillRightAvailableOpen")
         KILLRIGHTAVAILABLEOPEN("KillRightAvailableOpen"),
 
+        @SerializedName("KillRightEarned")
         KILLRIGHTEARNED("KillRightEarned"),
 
+        @SerializedName("KillRightUnavailable")
         KILLRIGHTUNAVAILABLE("KillRightUnavailable"),
 
+        @SerializedName("KillRightUnavailableOpen")
         KILLRIGHTUNAVAILABLEOPEN("KillRightUnavailableOpen"),
 
+        @SerializedName("KillRightUsed")
         KILLRIGHTUSED("KillRightUsed"),
 
+        @SerializedName("LocateCharMsg")
         LOCATECHARMSG("LocateCharMsg"),
 
+        @SerializedName("MadeWarMutual")
         MADEWARMUTUAL("MadeWarMutual"),
 
+        @SerializedName("MercOfferedNegotiationMsg")
         MERCOFFEREDNEGOTIATIONMSG("MercOfferedNegotiationMsg"),
 
+        @SerializedName("MissionOfferExpirationMsg")
         MISSIONOFFEREXPIRATIONMSG("MissionOfferExpirationMsg"),
 
+        @SerializedName("MissionTimeoutMsg")
         MISSIONTIMEOUTMSG("MissionTimeoutMsg"),
 
+        @SerializedName("MoonminingAutomaticFracture")
         MOONMININGAUTOMATICFRACTURE("MoonminingAutomaticFracture"),
 
+        @SerializedName("MoonminingExtractionCancelled")
         MOONMININGEXTRACTIONCANCELLED("MoonminingExtractionCancelled"),
 
+        @SerializedName("MoonminingExtractionFinished")
         MOONMININGEXTRACTIONFINISHED("MoonminingExtractionFinished"),
 
+        @SerializedName("MoonminingExtractionStarted")
         MOONMININGEXTRACTIONSTARTED("MoonminingExtractionStarted"),
 
+        @SerializedName("MoonminingLaserFired")
         MOONMININGLASERFIRED("MoonminingLaserFired"),
 
+        @SerializedName("NPCStandingsGained")
         NPCSTANDINGSGAINED("NPCStandingsGained"),
 
+        @SerializedName("NPCStandingsLost")
         NPCSTANDINGSLOST("NPCStandingsLost"),
 
+        @SerializedName("OfferedSurrender")
         OFFEREDSURRENDER("OfferedSurrender"),
 
+        @SerializedName("OfferedToAlly")
         OFFEREDTOALLY("OfferedToAlly"),
 
+        @SerializedName("OldLscMessages")
         OLDLSCMESSAGES("OldLscMessages"),
 
+        @SerializedName("OperationFinished")
         OPERATIONFINISHED("OperationFinished"),
 
+        @SerializedName("OrbitalAttacked")
         ORBITALATTACKED("OrbitalAttacked"),
 
+        @SerializedName("OrbitalReinforced")
         ORBITALREINFORCED("OrbitalReinforced"),
 
+        @SerializedName("OwnershipTransferred")
         OWNERSHIPTRANSFERRED("OwnershipTransferred"),
 
+        @SerializedName("ReimbursementMsg")
         REIMBURSEMENTMSG("ReimbursementMsg"),
 
+        @SerializedName("ResearchMissionAvailableMsg")
         RESEARCHMISSIONAVAILABLEMSG("ResearchMissionAvailableMsg"),
 
+        @SerializedName("RetractsWar")
         RETRACTSWAR("RetractsWar"),
 
+        @SerializedName("SeasonalChallengeCompleted")
         SEASONALCHALLENGECOMPLETED("SeasonalChallengeCompleted"),
 
+        @SerializedName("SovAllClaimAquiredMsg")
         SOVALLCLAIMAQUIREDMSG("SovAllClaimAquiredMsg"),
 
+        @SerializedName("SovAllClaimLostMsg")
         SOVALLCLAIMLOSTMSG("SovAllClaimLostMsg"),
 
+        @SerializedName("SovCommandNodeEventStarted")
         SOVCOMMANDNODEEVENTSTARTED("SovCommandNodeEventStarted"),
 
+        @SerializedName("SovCorpBillLateMsg")
         SOVCORPBILLLATEMSG("SovCorpBillLateMsg"),
 
+        @SerializedName("SovCorpClaimFailMsg")
         SOVCORPCLAIMFAILMSG("SovCorpClaimFailMsg"),
 
+        @SerializedName("SovDisruptorMsg")
         SOVDISRUPTORMSG("SovDisruptorMsg"),
 
+        @SerializedName("SovStationEnteredFreeport")
         SOVSTATIONENTEREDFREEPORT("SovStationEnteredFreeport"),
 
+        @SerializedName("SovStructureDestroyed")
         SOVSTRUCTUREDESTROYED("SovStructureDestroyed"),
 
+        @SerializedName("SovStructureReinforced")
         SOVSTRUCTUREREINFORCED("SovStructureReinforced"),
 
+        @SerializedName("SovStructureSelfDestructCancel")
         SOVSTRUCTURESELFDESTRUCTCANCEL("SovStructureSelfDestructCancel"),
 
+        @SerializedName("SovStructureSelfDestructFinished")
         SOVSTRUCTURESELFDESTRUCTFINISHED("SovStructureSelfDestructFinished"),
 
+        @SerializedName("SovStructureSelfDestructRequested")
         SOVSTRUCTURESELFDESTRUCTREQUESTED("SovStructureSelfDestructRequested"),
 
+        @SerializedName("SovereigntyIHDamageMsg")
         SOVEREIGNTYIHDAMAGEMSG("SovereigntyIHDamageMsg"),
 
+        @SerializedName("SovereigntySBUDamageMsg")
         SOVEREIGNTYSBUDAMAGEMSG("SovereigntySBUDamageMsg"),
 
+        @SerializedName("SovereigntyTCUDamageMsg")
         SOVEREIGNTYTCUDAMAGEMSG("SovereigntyTCUDamageMsg"),
 
+        @SerializedName("StationAggressionMsg1")
         STATIONAGGRESSIONMSG1("StationAggressionMsg1"),
 
+        @SerializedName("StationAggressionMsg2")
         STATIONAGGRESSIONMSG2("StationAggressionMsg2"),
 
+        @SerializedName("StationConquerMsg")
         STATIONCONQUERMSG("StationConquerMsg"),
 
+        @SerializedName("StationServiceDisabled")
         STATIONSERVICEDISABLED("StationServiceDisabled"),
 
+        @SerializedName("StationServiceEnabled")
         STATIONSERVICEENABLED("StationServiceEnabled"),
 
+        @SerializedName("StationStateChangeMsg")
         STATIONSTATECHANGEMSG("StationStateChangeMsg"),
 
+        @SerializedName("StoryLineMissionAvailableMsg")
         STORYLINEMISSIONAVAILABLEMSG("StoryLineMissionAvailableMsg"),
 
+        @SerializedName("StructureAnchoring")
         STRUCTUREANCHORING("StructureAnchoring"),
 
+        @SerializedName("StructureCourierContractChanged")
         STRUCTURECOURIERCONTRACTCHANGED("StructureCourierContractChanged"),
 
+        @SerializedName("StructureDestroyed")
         STRUCTUREDESTROYED("StructureDestroyed"),
 
+        @SerializedName("StructureFuelAlert")
         STRUCTUREFUELALERT("StructureFuelAlert"),
 
+        @SerializedName("StructureItemsDelivered")
         STRUCTUREITEMSDELIVERED("StructureItemsDelivered"),
 
+        @SerializedName("StructureItemsMovedToSafety")
         STRUCTUREITEMSMOVEDTOSAFETY("StructureItemsMovedToSafety"),
 
+        @SerializedName("StructureLostArmor")
         STRUCTURELOSTARMOR("StructureLostArmor"),
 
+        @SerializedName("StructureLostShields")
         STRUCTURELOSTSHIELDS("StructureLostShields"),
 
+        @SerializedName("StructureOnline")
         STRUCTUREONLINE("StructureOnline"),
 
+        @SerializedName("StructureServicesOffline")
         STRUCTURESERVICESOFFLINE("StructureServicesOffline"),
 
+        @SerializedName("StructureUnanchoring")
         STRUCTUREUNANCHORING("StructureUnanchoring"),
 
+        @SerializedName("StructureUnderAttack")
         STRUCTUREUNDERATTACK("StructureUnderAttack"),
 
+        @SerializedName("StructureWentHighPower")
         STRUCTUREWENTHIGHPOWER("StructureWentHighPower"),
 
+        @SerializedName("StructureWentLowPower")
         STRUCTUREWENTLOWPOWER("StructureWentLowPower"),
 
+        @SerializedName("StructuresJobsCancelled")
         STRUCTURESJOBSCANCELLED("StructuresJobsCancelled"),
 
+        @SerializedName("StructuresJobsPaused")
         STRUCTURESJOBSPAUSED("StructuresJobsPaused"),
 
+        @SerializedName("StructuresReinforcementChanged")
         STRUCTURESREINFORCEMENTCHANGED("StructuresReinforcementChanged"),
 
+        @SerializedName("TowerAlertMsg")
         TOWERALERTMSG("TowerAlertMsg"),
 
+        @SerializedName("TowerResourceAlertMsg")
         TOWERRESOURCEALERTMSG("TowerResourceAlertMsg"),
 
+        @SerializedName("TransactionReversalMsg")
         TRANSACTIONREVERSALMSG("TransactionReversalMsg"),
 
+        @SerializedName("TutorialMsg")
         TUTORIALMSG("TutorialMsg"),
 
+        @SerializedName("WarAllyOfferDeclinedMsg")
         WARALLYOFFERDECLINEDMSG("WarAllyOfferDeclinedMsg"),
 
+        @SerializedName("WarSurrenderDeclinedMsg")
         WARSURRENDERDECLINEDMSG("WarSurrenderDeclinedMsg"),
 
+        @SerializedName("WarSurrenderOfferMsg")
         WARSURRENDEROFFERMSG("WarSurrenderOfferMsg");
 
         private String value;
@@ -458,19 +634,9 @@ public class CharacterNotificationsResponse implements Serializable {
         public String toString() {
             return String.valueOf(value);
         }
-
-        @JsonCreator
-        public static TypeEnum fromValue(String text) {
-            for (TypeEnum b : TypeEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
     }
 
-    @JsonProperty("type")
+    @SerializedName("type")
     private TypeEnum type = null;
 
     public CharacterNotificationsResponse isRead(Boolean isRead) {

@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -28,86 +27,113 @@ import java.io.Serializable;
 public class StationResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("max_dockable_ship_volume")
+    @SerializedName("max_dockable_ship_volume")
     private Float maxDockableShipVolume = null;
 
-    @JsonProperty("name")
+    @SerializedName("name")
     private String name = null;
 
-    @JsonProperty("office_rental_cost")
+    @SerializedName("office_rental_cost")
     private Float officeRentalCost = null;
 
-    @JsonProperty("owner")
+    @SerializedName("owner")
     private Integer owner = null;
 
-    @JsonProperty("position")
+    @SerializedName("position")
     private Position position = null;
 
-    @JsonProperty("race_id")
+    @SerializedName("race_id")
     private Integer raceId = null;
 
-    @JsonProperty("reprocessing_efficiency")
+    @SerializedName("reprocessing_efficiency")
     private Float reprocessingEfficiency = null;
 
-    @JsonProperty("reprocessing_stations_take")
+    @SerializedName("reprocessing_stations_take")
     private Float reprocessingStationsTake = null;
 
     /**
      * service string
      */
     public enum ServicesEnum {
+        @SerializedName("bounty-missions")
         BOUNTY_MISSIONS("bounty-missions"),
 
+        @SerializedName("assasination-missions")
         ASSASINATION_MISSIONS("assasination-missions"),
 
+        @SerializedName("courier-missions")
         COURIER_MISSIONS("courier-missions"),
 
+        @SerializedName("interbus")
         INTERBUS("interbus"),
 
+        @SerializedName("reprocessing-plant")
         REPROCESSING_PLANT("reprocessing-plant"),
 
+        @SerializedName("refinery")
         REFINERY("refinery"),
 
+        @SerializedName("market")
         MARKET("market"),
 
+        @SerializedName("black-market")
         BLACK_MARKET("black-market"),
 
+        @SerializedName("stock-exchange")
         STOCK_EXCHANGE("stock-exchange"),
 
+        @SerializedName("cloning")
         CLONING("cloning"),
 
+        @SerializedName("surgery")
         SURGERY("surgery"),
 
+        @SerializedName("dna-therapy")
         DNA_THERAPY("dna-therapy"),
 
+        @SerializedName("repair-facilities")
         REPAIR_FACILITIES("repair-facilities"),
 
+        @SerializedName("factory")
         FACTORY("factory"),
 
+        @SerializedName("labratory")
         LABRATORY("labratory"),
 
+        @SerializedName("gambling")
         GAMBLING("gambling"),
 
+        @SerializedName("fitting")
         FITTING("fitting"),
 
+        @SerializedName("paintshop")
         PAINTSHOP("paintshop"),
 
+        @SerializedName("news")
         NEWS("news"),
 
+        @SerializedName("storage")
         STORAGE("storage"),
 
+        @SerializedName("insurance")
         INSURANCE("insurance"),
 
+        @SerializedName("docking")
         DOCKING("docking"),
 
+        @SerializedName("office-rental")
         OFFICE_RENTAL("office-rental"),
 
+        @SerializedName("jump-clone-facility")
         JUMP_CLONE_FACILITY("jump-clone-facility"),
 
+        @SerializedName("loyalty-point-store")
         LOYALTY_POINT_STORE("loyalty-point-store"),
 
+        @SerializedName("navy-offices")
         NAVY_OFFICES("navy-offices"),
 
+        @SerializedName("security-offices")
         SECURITY_OFFICES("security-offices");
 
         private String value;
@@ -120,28 +146,18 @@ public class StationResponse implements Serializable {
         public String toString() {
             return String.valueOf(value);
         }
-
-        @JsonCreator
-        public static ServicesEnum fromValue(String text) {
-            for (ServicesEnum b : ServicesEnum.values()) {
-                if (String.valueOf(b.value).equals(text)) {
-                    return b;
-                }
-            }
-            return null;
-        }
     }
 
-    @JsonProperty("services")
+    @SerializedName("services")
     private List<ServicesEnum> services = new ArrayList<ServicesEnum>();
 
-    @JsonProperty("station_id")
+    @SerializedName("station_id")
     private Integer stationId = null;
 
-    @JsonProperty("system_id")
+    @SerializedName("system_id")
     private Integer systemId = null;
 
-    @JsonProperty("type_id")
+    @SerializedName("type_id")
     private Integer typeId = null;
 
     public StationResponse maxDockableShipVolume(Float maxDockableShipVolume) {

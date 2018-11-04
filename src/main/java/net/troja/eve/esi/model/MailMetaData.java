@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -27,10 +26,10 @@ import java.io.Serializable;
 public class MailMetaData implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("labels")
+    @SerializedName("labels")
     private List<Integer> labels = new ArrayList<Integer>();
 
-    @JsonProperty("read")
+    @SerializedName("read")
     private Boolean read = null;
 
     public MailMetaData labels(List<Integer> labels) {

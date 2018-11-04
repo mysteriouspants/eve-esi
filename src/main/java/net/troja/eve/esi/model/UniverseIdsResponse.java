@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.util.ArrayList;
@@ -37,34 +36,34 @@ import java.io.Serializable;
 public class UniverseIdsResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("agents")
+    @SerializedName("agents")
     private List<UniverseIdsAgent> agents = new ArrayList<UniverseIdsAgent>();
 
-    @JsonProperty("alliances")
+    @SerializedName("alliances")
     private List<UniverseIdsAlliance> alliances = new ArrayList<UniverseIdsAlliance>();
 
-    @JsonProperty("characters")
+    @SerializedName("characters")
     private List<UniverseIdsCharacter> characters = new ArrayList<UniverseIdsCharacter>();
 
-    @JsonProperty("constellations")
+    @SerializedName("constellations")
     private List<UniverseIdsConstellation> constellations = new ArrayList<UniverseIdsConstellation>();
 
-    @JsonProperty("corporations")
+    @SerializedName("corporations")
     private List<UniverseIdsCorporation> corporations = new ArrayList<UniverseIdsCorporation>();
 
-    @JsonProperty("factions")
+    @SerializedName("factions")
     private List<UniverseIdsFaction> factions = new ArrayList<UniverseIdsFaction>();
 
-    @JsonProperty("inventory_types")
+    @SerializedName("inventory_types")
     private List<UniverseIdsInventoryType> inventoryTypes = new ArrayList<UniverseIdsInventoryType>();
 
-    @JsonProperty("regions")
+    @SerializedName("regions")
     private List<UniverseIdsRegion> regions = new ArrayList<UniverseIdsRegion>();
 
-    @JsonProperty("stations")
+    @SerializedName("stations")
     private List<UniverseIdsStation> stations = new ArrayList<UniverseIdsStation>();
 
-    @JsonProperty("systems")
+    @SerializedName("systems")
     private List<UniverseIdsSystem> systems = new ArrayList<UniverseIdsSystem>();
 
     public UniverseIdsResponse agents(List<UniverseIdsAgent> agents) {

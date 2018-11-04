@@ -12,8 +12,7 @@
 package net.troja.eve.esi.model;
 
 import java.util.Objects;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
+import com.google.gson.annotations.SerializedName;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.time.OffsetDateTime;
@@ -26,31 +25,31 @@ import java.io.Serializable;
 public class CorporationWalletTransactionsResponse implements Serializable {
     private static final long serialVersionUID = 1L;
 
-    @JsonProperty("client_id")
+    @SerializedName("client_id")
     private Integer clientId = null;
 
-    @JsonProperty("date")
+    @SerializedName("date")
     private OffsetDateTime date = null;
 
-    @JsonProperty("is_buy")
+    @SerializedName("is_buy")
     private Boolean isBuy = null;
 
-    @JsonProperty("journal_ref_id")
+    @SerializedName("journal_ref_id")
     private Long journalRefId = null;
 
-    @JsonProperty("location_id")
+    @SerializedName("location_id")
     private Long locationId = null;
 
-    @JsonProperty("quantity")
+    @SerializedName("quantity")
     private Integer quantity = null;
 
-    @JsonProperty("transaction_id")
+    @SerializedName("transaction_id")
     private Long transactionId = null;
 
-    @JsonProperty("type_id")
+    @SerializedName("type_id")
     private Integer typeId = null;
 
-    @JsonProperty("unit_price")
+    @SerializedName("unit_price")
     private Double unitPrice = null;
 
     public CorporationWalletTransactionsResponse clientId(Integer clientId) {
